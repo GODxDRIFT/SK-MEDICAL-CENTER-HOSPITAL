@@ -1,0 +1,13 @@
+{
+  "name": "SK Medical Center & Hospital",
+  "description": "Trusted 24x7 medical care in Vikas Nagar, Delhi. Featuring advanced surgery, pediatrics, and family medicine.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Emergency Care",
+    "Appointment Booking",
+    "Service Information",
+    "Patient Support"
+  ]
+}
