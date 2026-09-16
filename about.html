@@ -85,6 +85,46 @@
     </div>
   </header>
 
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="drawer-logo">
+        <span class="logo-name">S.K MULTI-SPECIALITY</span>
+        <span class="badge-247-inline">24×7</span>
+      </div>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="drawer-actions">
+        <a href="tel:07703964716" class="btn btn-emergency-red btn-block">
+          <i class="fa-solid fa-phone-volume"></i> Emergency: 077039 64716
+        </a>
+        <button class="btn btn-navy btn-block" onclick="openBookingModal(); toggleMobileMenu();">
+          <i class="fa-regular fa-calendar-check"></i> Book Doctor Appointment
+        </button>
+      </div>
+
+      <div class="mobile-verified-strip">
+        <span class="m-badge-g"><i class="fa-brands fa-google text-red"></i> 4.3/5 Rating (13 Reviews)</span>
+        <span class="m-badge-mp"><i class="fa-solid fa-circle-check text-red"></i> Magicpin Verified</span>
+      </div>
+
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house text-navy"></i> Home</a></li>
+        <li><a href="about.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital text-navy"></i> About S.K Hospital</a></li>
+        <li><a href="doctors.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-user-doctor text-teal"></i> Specialist Doctors</a></li>
+        <li><a href="departments.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope text-red"></i> Specialities & Treatments</a></li>
+        <li><a href="facilities.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital-user text-navy"></i> Facilities, ICU & Beds</a></li>
+        <li><a href="insurance-packages.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-halved text-teal"></i> Insurance & TPA</a></li>
+        <li><a href="contact.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-location-dot text-red"></i> Contact & Location</a></li>
+      </ul>
+      <div class="drawer-address-footer">
+        <p><i class="fa-solid fa-location-dot text-red"></i> Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Hastsal, Delhi – 110059</p>
+      </div>
+    </div>
+  </div>
+
+
   <main>
     <!-- Page Header Banner -->
     <section class="page-title-banner">

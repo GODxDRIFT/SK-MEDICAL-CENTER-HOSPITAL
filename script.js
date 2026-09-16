@@ -47,10 +47,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchWrapper = document.getElementById('heroSearchWrapper');
     const dropdown = document.getElementById('searchResultsDropdown');
     if (searchWrapper && !searchWrapper.contains(e.target)) {
-      dropdown.classList.remove('active');
+      if (dropdown) dropdown.classList.remove('active');
     }
   });
 });
+
+// Mobile Drawer Menu Toggle
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobileDrawer');
+  let overlay = document.getElementById('mobileDrawerOverlay');
+  
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'mobileDrawerOverlay';
+    overlay.className = 'mobile-drawer-overlay';
+    overlay.onclick = toggleMobileMenu;
+    document.body.appendChild(overlay);
+  }
+
+  if (drawer) {
+    drawer.classList.toggle('open');
+    if (drawer.classList.contains('open')) {
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } else {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+}
 
 // Set default booking date to tomorrow
 function initDefaultDate() {

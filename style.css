@@ -561,17 +561,40 @@ button, input, select, textarea {
   border-radius: 2px;
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer & Overlay */
+.mobile-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 14, 26, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 99998;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-drawer-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 310px;
+  width: 320px;
+  max-width: 85vw;
   height: 100vh;
   background: #ffffff;
-  box-shadow: var(--shadow-xl);
-  z-index: 200;
-  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
+  z-index: 100000;
+  transition: right 0.32s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
 }
@@ -596,11 +619,22 @@ button, input, select, textarea {
 }
 
 .close-drawer-btn {
-  background: none;
+  background: rgba(255, 255, 255, 0.15);
   border: none;
-  font-size: 1.8rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-fast);
+}
+
+.close-drawer-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .mobile-drawer-body {
@@ -2656,15 +2690,19 @@ button, input, select, textarea {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(6, 14, 26, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 300;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 14, 26, 0.75);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 99999;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .modal-overlay.active {
@@ -2677,12 +2715,15 @@ button, input, select, textarea {
   border-radius: var(--radius-xl);
   width: 100%;
   max-width: 580px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: var(--shadow-xl);
-  animation: scaleUp 0.25s ease;
+  max-height: calc(100dvh - 36px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  border: 1.5px solid var(--navy-border);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
 }
 
 .modal-box.modal-lg {
@@ -2690,52 +2731,79 @@ button, input, select, textarea {
 }
 
 .modal-header {
-  padding: 20px 24px;
+  flex-shrink: 0;
+  padding: 18px 22px;
   border-bottom: 1.5px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  background: #ffffff;
 }
 
 .modal-title-group {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+  flex: 1;
 }
 
 .modal-head-icon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--red-primary);
+  flex-shrink: 0;
 }
 
 .modal-header h3 {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 800;
   color: var(--navy-deep);
+  line-height: 1.25;
+  margin: 0;
 }
 
 .modal-header p {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
+  margin: 3px 0 0 0;
+  line-height: 1.3;
 }
 
 .close-modal-btn {
-  background: none;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f1f5f9;
   border: none;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   cursor: pointer;
-  color: var(--text-muted);
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-fast);
+}
+
+.close-modal-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .modal-body {
-  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 24px 26px 24px;
+  box-sizing: border-box;
 }
 
 .form-section-title {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: var(--navy-deep);
-  margin-bottom: 12px;
+  margin: 0 0 12px 0;
 }
 
 .mt-form {
@@ -2745,8 +2813,8 @@ button, input, select, textarea {
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .form-group {
@@ -2754,6 +2822,8 @@ button, input, select, textarea {
   flex-direction: column;
   gap: 6px;
   margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group label {
@@ -2766,7 +2836,11 @@ button, input, select, textarea {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 10px 14px;
   border: 1.5px solid var(--navy-border);
   border-radius: var(--radius-sm);
@@ -2775,12 +2849,14 @@ button, input, select, textarea {
   background: #ffffff;
   color: var(--text-main);
   transition: all var(--trans-fast);
+  text-overflow: ellipsis;
 }
 
 .form-group input:focus,
-.form-group select:focus {
-  border-color: var(--red-primary);
-  box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.12);
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal-primary);
+  box-shadow: 0 0 0 3px rgba(0, 119, 145, 0.15);
 }
 
 .modal-footer-btns {
@@ -3390,36 +3466,95 @@ button, input, select, textarea {
     justify-content: center;
   }
 
-  /* Modals */
+  /* Modals Mobile Optimizations */
+  .modal-overlay {
+    padding: 12px 10px;
+    align-items: center;
+  }
+
   .modal-box {
-    width: 94%;
-    max-height: 88vh;
-    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 24px);
+    border-radius: 18px;
+    margin: 0;
   }
 
   .modal-header {
     padding: 14px 16px;
+    gap: 8px;
+  }
+
+  .modal-title-group {
+    gap: 10px;
+  }
+
+  .modal-head-icon {
+    font-size: 1.25rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .modal-header p {
+    font-size: 0.72rem;
+  }
+
+  .close-modal-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.15rem;
+  }
+
+  .modal-body {
+    padding: 16px 14px 20px 14px;
+    max-height: calc(100dvh - 90px);
+  }
+
+  .form-section-title {
+    font-size: 0.85rem;
+    margin: 0 0 10px 0;
+  }
+
+  .mt-form {
+    margin-top: 14px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 0.78rem;
   }
 
   .form-group input,
-  .form-group select {
-    font-size: 16px; /* Prevents auto-zoom on iOS */
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
     padding: 10px 12px;
+    width: 100%;
   }
 
   .modal-footer-btns {
     flex-direction: column-reverse;
     gap: 8px;
+    margin-top: 16px;
+    width: 100%;
   }
 
   .modal-footer-btns .btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 16px;
   }
 }
 
@@ -3515,6 +3650,29 @@ button, input, select, textarea {
   .toast-msg {
     font-size: 0.82rem;
     padding: 10px 14px;
+  }
+
+  .modal-overlay {
+    padding: 8px 6px;
+  }
+
+  .modal-box {
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    padding: 12px 14px;
+  }
+
+  .modal-body {
+    padding: 14px 12px 18px 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13.5px;
+    padding: 9px 10px;
   }
 }
 
