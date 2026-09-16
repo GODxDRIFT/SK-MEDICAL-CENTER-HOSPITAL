@@ -1,44 +1,31 @@
 /* ==========================================================================
-   SK MULTISPECIALITY HOSPITAL - JAVASCRIPT INTERACTIONS
+   S.K MULTI-SPECIALITY HOSPITAL 24×7 - JAVASCRIPT INTERACTIONS
    ========================================================================== */
 
-// Sample Database for Search and Data Filters
+// Database for Search and Data Filters
 const HOSPITAL_DATABASE = {
   doctors: [
-    { name: "Dr. Ashok Seth", spec: "Cardiac Sciences / Cardiology", hospital: "Fortis Escorts Okhla", exp: "38+ Years", rating: 4.9 },
-    { name: "Dr. Vinod Raina", spec: "Medical Oncology / Cancer Care", hospital: "Fortis Memorial Gurugram", exp: "40+ Years", rating: 4.9 },
-    { name: "Dr. Subhash Chandra", spec: "Cardiac Sciences & Intervention", hospital: "Fortis Shalimar Bagh", exp: "34+ Years", rating: 4.8 },
-    { name: "Dr. Vivek Vij", spec: "Liver Transplant & GI Surgery", hospital: "Fortis Escorts Okhla", exp: "25+ Years", rating: 4.9 },
-    { name: "Dr. Sanjeev Gulati", spec: "Nephrology & Kidney Transplant", hospital: "Fortis Vasant Kunj", exp: "32+ Years", rating: 4.8 },
-    { name: "Dr. Atul Mishra", spec: "Orthopaedics & Joint Surgery", hospital: "Fortis Hospital Noida", exp: "24+ Years", rating: 4.7 },
-    { name: "Dr. Shuvanan Ray", spec: "Interventional Cardiology", hospital: "Fortis Hospital Kolkata", exp: "28+ Years", rating: 4.8 },
-    { name: "Dr. Gourdas Choudhuri", spec: "Gastroenterology & Hepatology", hospital: "Fortis Memorial Gurugram", exp: "35+ Years", rating: 4.9 }
+    { name: "Senior Consultant - General Medicine", spec: "General & Internal Medicine", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "15+ Years", rating: 4.8 },
+    { name: "Consultant General & Laparoscopic Surgeon", spec: "General & Laparoscopic Surgery", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "14+ Years", rating: 4.9 },
+    { name: "Consultant Orthopaedic Surgeon", spec: "Orthopaedics & Joint Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "12+ Years", rating: 4.8 },
+    { name: "Consultant Gynaecologist & Obstetrician", spec: "Gynaecology & Obstetrics", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "16+ Years", rating: 4.9 },
+    { name: "Senior Paediatrician & Child Specialist", spec: "Paediatrics & Child Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "10+ Years", rating: 4.8 },
+    { name: "Duty Medical Officer (24x7 Emergency)", spec: "24x7 Emergency & Critical Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "24x7 Available", rating: 4.9 }
   ],
   specialities: [
-    { name: "Cardiac Sciences & Heart Care", desc: "TAVI, Bypass CABG, Angioplasty, Valve Replacements" },
-    { name: "Oncology & Cancer Institute", desc: "CAR-T Therapy, TrueBeam Radiation, Surgical Oncology" },
-    { name: "Orthopaedics & Joint Replacement", desc: "Mako Robotic Knee & Hip Surgery, Arthroscopy" },
-    { name: "Neuro Sciences & Spine Care", desc: "Deep Brain Stimulation, Stroke Care, Neuro-trauma" },
-    { name: "Nephrology & Urology", desc: "Kidney Transplants, Dialysis, Robotic Uro-surgeries" },
-    { name: "Gastroenterology & Liver Transplant", desc: "Living Donor Liver Transplants, Endoscopy" },
-    { name: "Pulmonology & Respiratory Medicine", desc: "ECMO, Lung Failure Clinic, Sleep Apnea" },
-    { name: "Paediatrics & Neonatology", desc: "Paediatric Cardiac Surgery, Level 3 NICU" }
+    { name: "General & Internal Medicine", desc: "Fever, Diabetes, Hypertension, Infections, Health Checkups" },
+    { name: "General & Laparoscopic Surgery", desc: "Appendix, Hernia, Gallbladder Stones, Day Care Surgeries" },
+    { name: "Orthopaedics & Joint Care", desc: "Fracture Treatment, Plaster, Joint Pain, Arthritis, Trauma" },
+    { name: "Gynaecology & Obstetrics", desc: "Maternal Care, Normal & C-Section Deliveries, PCOD" },
+    { name: "Paediatrics & Neonatal Care", desc: "Newborn Care, Child Vaccination, Paediatric Emergencies" },
+    { name: "24x7 Emergency & Trauma Care", desc: "Immediate Trauma Care, Oxygen Support, Critical ICU Triage" },
+    { name: "Pathology & Diagnostic Lab", desc: "CBC, Blood Sugar, Lipid, LFT, KFT, Routine Tests & ECG" }
   ],
-  hospitals: [
-    { name: "Fortis Escorts Heart Institute", loc: "Okhla, New Delhi", beds: "310+ Beds" },
-    { name: "Fortis Memorial Research Institute", loc: "Gurugram, Haryana", beds: "1000+ Beds" },
-    { name: "Fortis Hospital Shalimar Bagh", loc: "North Delhi", beds: "260+ Beds" },
-    { name: "Fortis Hospital Vasant Kunj", loc: "South Delhi", beds: "200+ Beds" },
-    { name: "Fortis Hospital Noida", loc: "Sector 62, Noida", beds: "200+ Beds" },
-    { name: "Fortis Escorts Hospital Faridabad", loc: "Faridabad, Haryana", beds: "210+ Beds" }
-  ],
-  treatments: [
-    { name: "TAVI (Transcatheter Aortic Valve)", spec: "Cardiology" },
-    { name: "Mako Robotic Knee Replacement", spec: "Orthopaedics" },
-    { name: "CAR-T Cell Cancer Immunotherapy", spec: "Oncology" },
-    { name: "Deep Brain Stimulation (DBS)", spec: "Neurology" },
-    { name: "Living Donor Liver Transplant", spec: "Hepatology" },
-    { name: "Renal Angioplasty & Kidney Transplant", spec: "Nephrology" }
+  services: [
+    { name: "24x7 Emergency & Trauma Admission", loc: "Open 24 Hours Daily", desc: "Immediate critical response & patient triage" },
+    { name: "Diagnostic Laboratory & ECG", loc: "Ground Floor Diagnostic Wing", desc: "Fast & accurate medical reports" },
+    { name: "Inpatient Bed Admissions & Nursing", loc: "Special & General Wards", desc: "Attentive & friendly nursing care 24x7" },
+    { name: "Outpatient Doctor Consultations", loc: "Morning & Evening OPD", desc: "Experienced multi-speciality physicians" }
   ]
 };
 
@@ -142,29 +129,12 @@ function startPromoAutoplay() {
   promoInterval = setInterval(() => {
     currentPromoSlide++;
     updatePromoCarousel();
-  }, 5000);
+  }, 6000);
 }
 
 function resetPromoAutoplay() {
   if (promoInterval) clearInterval(promoInterval);
   startPromoAutoplay();
-}
-
-// ==========================================================================
-// HORIZONTAL CAROUSEL SCROLL HELPERS
-// ==========================================================================
-function scrollGridLeft(gridId) {
-  const grid = document.getElementById(gridId);
-  if (grid) {
-    grid.scrollBy({ left: -340, behavior: 'smooth' });
-  }
-}
-
-function scrollGridRight(gridId) {
-  const grid = document.getElementById(gridId);
-  if (grid) {
-    grid.scrollBy({ left: 340, behavior: 'smooth' });
-  }
 }
 
 // ==========================================================================
@@ -224,25 +194,7 @@ function renderSearchResults(query) {
   const q = query.toLowerCase();
   let resultsHtml = '';
 
-  // 1. Doctors
-  if (currentSearchCategory === 'all' || currentSearchCategory === 'doctor') {
-    const matchedDocs = HOSPITAL_DATABASE.doctors.filter(d => 
-      !q || d.name.toLowerCase().includes(q) || d.spec.toLowerCase().includes(q) || d.hospital.toLowerCase().includes(q)
-    );
-    matchedDocs.forEach(d => {
-      resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('doctor', '${d.name}', '${d.spec}')">
-          <div>
-            <div class="res-main-text"><i class="fa-solid fa-user-doctor text-green"></i> ${d.name}</div>
-            <div class="res-sub-text">${d.spec} | ${d.hospital}</div>
-          </div>
-          <span class="res-type-badge">Doctor</span>
-        </div>
-      `;
-    });
-  }
-
-  // 2. Specialities
+  // 1. Specialities
   if (currentSearchCategory === 'all' || currentSearchCategory === 'speciality') {
     const matchedSpecs = HOSPITAL_DATABASE.specialities.filter(s => 
       !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q)
@@ -260,44 +212,44 @@ function renderSearchResults(query) {
     });
   }
 
-  // 3. Hospitals
-  if (currentSearchCategory === 'all' || currentSearchCategory === 'hospital') {
-    const matchedHosps = HOSPITAL_DATABASE.hospitals.filter(h => 
-      !q || h.name.toLowerCase().includes(q) || h.loc.toLowerCase().includes(q)
+  // 2. Doctors
+  if (currentSearchCategory === 'all' || currentSearchCategory === 'doctor') {
+    const matchedDocs = HOSPITAL_DATABASE.doctors.filter(d => 
+      !q || d.name.toLowerCase().includes(q) || d.spec.toLowerCase().includes(q)
     );
-    matchedHosps.forEach(h => {
+    matchedDocs.forEach(d => {
       resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('hospital', '${h.name}', '${h.loc}')">
+        <div class="search-result-item" onclick="selectSearchResult('doctor', '${d.name}', '${d.spec}')">
           <div>
-            <div class="res-main-text"><i class="fa-solid fa-hospital text-cyan"></i> ${h.name}</div>
-            <div class="res-sub-text">${h.loc} (${h.beds})</div>
+            <div class="res-main-text"><i class="fa-solid fa-user-doctor text-green"></i> ${d.name}</div>
+            <div class="res-sub-text">${d.spec} | S.K Multi-Speciality Hospital</div>
           </div>
-          <span class="res-type-badge">Hospital</span>
+          <span class="res-type-badge">Doctor</span>
         </div>
       `;
     });
   }
 
-  // 4. Treatments
-  if (currentSearchCategory === 'all' || currentSearchCategory === 'treatment') {
-    const matchedTreat = HOSPITAL_DATABASE.treatments.filter(t => 
-      !q || t.name.toLowerCase().includes(q) || t.spec.toLowerCase().includes(q)
+  // 3. 24x7 Services
+  if (currentSearchCategory === 'all' || currentSearchCategory === 'service') {
+    const matchedServ = HOSPITAL_DATABASE.services.filter(srv => 
+      !q || srv.name.toLowerCase().includes(q) || srv.desc.toLowerCase().includes(q)
     );
-    matchedTreat.forEach(t => {
+    matchedServ.forEach(srv => {
       resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('treatment', '${t.name}', '${t.spec}')">
+        <div class="search-result-item" onclick="selectSearchResult('service', '${srv.name}', '')">
           <div>
-            <div class="res-main-text"><i class="fa-solid fa-heart-pulse text-peach"></i> ${t.name}</div>
-            <div class="res-sub-text">Speciality: ${t.spec}</div>
+            <div class="res-main-text"><i class="fa-solid fa-truck-medical text-cyan"></i> ${srv.name}</div>
+            <div class="res-sub-text">${srv.desc}</div>
           </div>
-          <span class="res-type-badge">Procedure</span>
+          <span class="res-type-badge">24x7 Service</span>
         </div>
       `;
     });
   }
 
   if (resultsHtml === '') {
-    resultsHtml = `<div style="padding: 16px; text-align:center; color:#64748b; font-size:0.85rem;">No matching medical services found for "${query}". Try searching "Cardiology", "Robotic", or "Dr. Ashok Seth".</div>`;
+    resultsHtml = `<div style="padding: 16px; text-align:center; color:#64748b; font-size:0.85rem;">No matching services found for "${query}". Try searching "Medicine", "Orthopaedics", "Emergency", or "Surgery".</div>`;
   }
 
   listContainer.innerHTML = resultsHtml;
@@ -311,23 +263,24 @@ function selectSearchResult(type, name, sub) {
     openBookingModal('', name);
   } else if (type === 'speciality') {
     openBookingModal(name);
-  } else if (type === 'hospital') {
-    showToast(`Filtering hospital services for: ${name}`, 'success');
-    scrollToSection('servicesHub');
-  } else if (type === 'treatment') {
-    openBookingModal(sub);
+  } else if (type === 'service') {
+    if (name.includes('Emergency')) {
+      openEmergencyModal();
+    } else {
+      openBookingModal();
+    }
   }
 }
 
 function executeSearch() {
   const query = document.getElementById('mainSearchInput')?.value || '';
   if (!query) {
-    showToast('Please type a doctor name, disease, or speciality', 'info');
+    showToast('Please type a department or medical service', 'info');
     focusMainSearch();
     return;
   }
-  showToast(`Searching for "${query}" across 28+ hospitals...`, 'success');
-  openDoctorSearch(query);
+  showToast(`Searching for "${query}" at S.K Multi-Speciality Hospital...`, 'success');
+  openBookingModal(query);
 }
 
 // ==========================================================================
@@ -396,22 +349,18 @@ function openCallbackModal() {
 
 function openHealthCheckModal() {
   openBookingModal('General Medicine');
-  showToast('Select your preferred branch for comprehensive preventive health packages.', 'info');
+  showToast('Booking preventive health checkup package at S.K Hospital.', 'info');
 }
 
 function openTestBookingModal() {
   openModal('reportPortalModal');
-  showToast('You can book diagnostic lab tests or download existing test reports here.', 'info');
-}
-
-function openReportPortalModal() {
-  openModal('reportPortalModal');
+  showToast('Access diagnostic lab records and blood test reports here.', 'info');
 }
 
 function openDoctorSearch(query = '') {
   openBookingModal();
   if (query) {
-    showToast(`Filtering specialist doctors for query: ${query}`, 'info');
+    showToast(`Filtering doctors for query: ${query}`, 'info');
   }
 }
 
@@ -422,15 +371,15 @@ function triggerAmbulanceSimulation() {
   if (!bar || !text) return;
 
   bar.style.display = 'flex';
-  text.textContent = 'Acquiring high-precision GPS coordinates...';
+  text.textContent = 'Connecting to S.K Hospital Emergency Triage Desk (077039 64716)...';
 
   setTimeout(() => {
-    text.textContent = 'GPS Found: 28.5355° N, 77.2783° E (Near Okhla, New Delhi)';
+    text.textContent = 'Area Tagged: Vikas Nagar / Hastsal / Uttam Nagar, West Delhi';
   }, 1200);
 
   setTimeout(() => {
-    text.textContent = 'Dispatched ALS Ambulance #DL-01-EB-4491! ETA: 8 minutes. Emergency Doctor onboard.';
-    showToast('🚨 Ambulance Dispatched! Emergency team is on the way.', 'success');
+    text.textContent = 'Emergency Team Alerted! Duty Medical Officer ready. Call 077039 64716 for live update.';
+    showToast('🚨 Emergency Team Notified at S.K Multi-Speciality Hospital!', 'success');
   }, 2800);
 }
 
@@ -439,21 +388,21 @@ function fetchSampleReports() {
   const uhidInput = document.getElementById('reportUHID');
   const val = uhidInput?.value.trim();
   if (!val) {
-    showToast('Please enter your UHID or 10-digit mobile number', 'error');
+    showToast('Please enter your Mobile No. or Patient ID', 'error');
     return;
   }
 
   const resultsView = document.getElementById('reportsResultView');
   if (resultsView) {
     resultsView.style.display = 'block';
-    showToast('Medical records retrieved securely from cloud archive.', 'success');
+    showToast('Diagnostic lab report retrieved from S.K Hospital archive.', 'success');
   }
 }
 
 function downloadSampleReport(filename) {
-  showToast(`Downloading verified medical report: ${filename}`, 'success');
+  showToast(`Downloading verified lab report: ${filename}`, 'success');
   const element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(`--- SK MULTISPECIALITY HOSPITAL ---\nCONFIDENTIAL MEDICAL LAB REPORT\nPatient: Rajesh Sharma | UHID: FTH-89104\nDoctor: Dr. Ashok Seth\nStatus: Clinically Normal / Verified\nDate: 14 Sep 2026`));
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(`--- S.K MULTI-SPECIALITY HOSPITAL 24X7 ---\nShiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059\nPhone: 077039 64716\n-------------------------------------------------\nCONFIDENTIAL MEDICAL LAB REPORT\nPatient ID: SKH-1049\nStatus: Clinically Normal / Verified\nFacility: S.K Multi-Speciality Hospital Pathology Lab`));
   element.setAttribute('download', filename);
   element.style.display = 'none';
   document.body.appendChild(element);
@@ -461,55 +410,17 @@ function downloadSampleReport(filename) {
   document.body.removeChild(element);
 }
 
-// Video Modal Player
-function playVideoModal(videoUrl, title) {
-  const modal = document.getElementById('videoModal');
-  const iframe = document.getElementById('videoIframe');
-  const titleEl = document.getElementById('videoModalTitle');
-
-  if (titleEl) titleEl.textContent = title;
-  if (iframe) iframe.src = videoUrl + "?autoplay=1";
-  openModal('videoModal');
-}
-
-function closeVideoModal() {
-  const iframe = document.getElementById('videoIframe');
-  if (iframe) iframe.src = "";
-  closeModal('videoModal');
-}
-
-// Case & Story Modals
-function openCaseModal(caseId) {
-  const cases = [
-    { title: "Rare Skull Bone TB Complete Recovery", details: "A 34-year-old Delhi resident presented with recurring cranial infections for 2.5 years. Multidisciplinary surgical intervention at Fortis Shalimar Bagh eradicated the rare osseous tuberculosis lesion followed by cranial contour reconstruction." },
-    { title: "Faridabad Dedicated Parkinson's Clinic Launch", details: "Offering high-frequency Subthalamic Nucleus Deep Brain Stimulation (DBS) and precision tremor neuro-rehab protocols under senior neurologist supervision." },
-    { title: "Octogenarian Transcatheter Aortic Valve Replacement", details: "Critical calcified aortic stenosis treated via percutaneous transfemoral catheter approach without sternotomy." }
-  ];
-  const c = cases[caseId - 1] || cases[0];
-  alert(`BREAKTHROUGH CASE: ${c.title}\n\n${c.details}`);
-}
-
-function openBlogModal(blogId) {
-  const blogs = [
-    "Kidney Health Guide: Stay hydrated, monitor annual creatinine/eGFR, and keep blood pressure below 120/80 mmHg.",
-    "Liver Transplant Milestones: Innovations in living donor surgeries with minimal incision and rapid recovery.",
-    "Hepatic Oncology Surgical Advances: Ultra-precise laparoscopic liver resections with intraoperative ultrasound.",
-    "Cancer Immunotherapy: How checkpoint inhibitors stimulate natural killer T-cells to destroy tumor clusters."
-  ];
-  alert(`CLINICAL BLOG INSIGHT:\n\n${blogs[blogId - 1] || blogs[0]}`);
-}
-
 // Appointment Form Submission
 function submitAppointment(e) {
   e.preventDefault();
 
-  const hospital = document.getElementById('modalHospital')?.value || 'Fortis Escorts Okhla';
-  const doctor = document.getElementById('modalDoctor')?.value || 'Dr. Ashok Seth';
+  const hospital = "S.K Multi-Speciality Hospital (Shiv Vihar Road, Vikas Nagar)";
+  const doctor = document.getElementById('modalDoctor')?.value || 'Senior Consultant';
   const date = document.getElementById('modalDate')?.value || '2026-09-17';
-  const slot = document.getElementById('modalSlot')?.value || '10:00 AM - 11:30 AM';
-  const patientName = document.getElementById('patientName')?.value || 'Rajesh Sharma';
+  const slot = document.getElementById('modalSlot')?.value || '11:00 AM - 01:00 PM';
+  const patientName = document.getElementById('patientName')?.value || 'Patient';
 
-  const randomRef = 'FTH-2026-' + Math.floor(1000 + Math.random() * 9000);
+  const randomRef = 'SKH-2026-' + Math.floor(1000 + Math.random() * 9000);
 
   // Update success ticket
   document.getElementById('confirmedAppId').textContent = randomRef;
@@ -522,7 +433,7 @@ function submitAppointment(e) {
   document.getElementById('bookingStep1').style.display = 'none';
   document.getElementById('bookingSuccessView').style.display = 'block';
 
-  showToast(`🎉 Appointment booked for ${patientName}! Reference: ${randomRef}`, 'success');
+  showToast(`🎉 Appointment booked for ${patientName}! Ref: ${randomRef}`, 'success');
 }
 
 function printAppointmentTicket() {
@@ -534,7 +445,7 @@ function submitCallback(e) {
   e.preventDefault();
   const name = document.getElementById('cbName')?.value;
   closeModal('callbackModal');
-  showToast(`Thank you, ${name}! A medical counselor will call you within 15 minutes.`, 'success');
+  showToast(`Thank you, ${name}! S.K Hospital staff will call you on 077039 64716 shortly.`, 'success');
 }
 
 // ==========================================================================
@@ -569,19 +480,18 @@ function submitFaqQuery() {
     return;
   }
   
-  // Auto-expand relevant section or notify
   const q = query.toLowerCase();
-  if (q.includes('about') || q.includes('hospital') || q.includes('bed')) {
+  if (q.includes('timings') || q.includes('hour') || q.includes('emergency') || q.includes('24')) {
     toggleAccordion('acc-about');
-  } else if (q.includes('insurance') || q.includes('care') || q.includes('service') || q.includes('emergency')) {
+  } else if (q.includes('where') || q.includes('location') || q.includes('address') || q.includes('road')) {
     toggleAccordion('acc-services');
-  } else if (q.includes('compliance') || q.includes('nabh') || q.includes('jci')) {
+  } else if (q.includes('book') || q.includes('appointment') || q.includes('doctor') || q.includes('phone')) {
     toggleAccordion('acc-compliance');
   } else {
     toggleAccordion('acc-outcomes');
   }
 
-  showToast(`Found clinical answers for: "${query}"`, 'success');
+  showToast(`Found hospital details for: "${query}"`, 'success');
 }
 
 // ==========================================================================
@@ -594,15 +504,6 @@ function toggleMobileMenu() {
   }
 }
 
-function updateLocation(loc) {
-  showToast(`📍 Showing doctors and facilities in: ${loc}`, 'info');
-}
-
-function filterByHospital(hospName) {
-  showToast(`Viewing facilities for: ${hospName}`, 'info');
-  scrollToSection('specialities');
-}
-
 function filterSpeciality(specName) {
   openBookingModal(specName);
 }
@@ -612,26 +513,6 @@ function scrollToSection(sectionId) {
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' });
   }
-}
-
-function viewAllCases() {
-  scrollToSection('breakthrough-cases');
-  showToast('Viewing all 120+ clinical breakthrough milestones.', 'info');
-}
-
-function viewAllStories() {
-  scrollToSection('patient-stories');
-  showToast('Viewing international & domestic patient testimonials.', 'info');
-}
-
-function viewAllBlogs() {
-  scrollToSection('blogs');
-  showToast('Accessing 500+ doctor-written health publications.', 'info');
-}
-
-function viewAllVideos() {
-  scrollToSection('videos');
-  showToast('Browse our video library of surgical procedures & wellness talks.', 'info');
 }
 
 // ==========================================================================
