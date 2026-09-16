@@ -254,9 +254,15 @@ button, input, select, textarea {
   background-color: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: var(--shadow-sm);
   border-bottom: 2px solid var(--navy-light);
+}
+
+.homepage .main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-container {
@@ -1080,6 +1086,7 @@ button, input, select, textarea {
   padding: 55px 0 50px 0;
   background: #f8fafc;
   overflow: visible;
+  isolation: isolate;
 }
 
 .fortis-hero-bg-media {
