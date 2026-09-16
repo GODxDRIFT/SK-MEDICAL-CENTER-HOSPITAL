@@ -1,18 +1,1393 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SK Medical Center | 24/7 Specialist Hospital in Vikas Nagar, Delhi</title>
-    <meta name="description" content="SK Medical Center (S.K. Hospital) provides 24-hour emergency care, surgery, and general treatments in Vikas Nagar, near Uttam Nagar, Delhi. Rated 4.9 stars for patient care." />
-    <!-- Global Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK Multispeciality Hospital | Healthcare for Good Today. Tomorrow. Always</title>
+  <meta name="description" content="SK Multispeciality Hospital - Leading Healthcare Network providing world-class medical treatments, expert doctors, 24x7 emergency services, and advanced surgical care.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- Top Utility Bar (Desktop) -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="#find-doctor" onclick="openDoctorSearch()"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="#investors">Investors</a>
+        <a href="#about-us">About us</a>
+        <a href="#careers">Careers</a>
+        <a href="#csr">CSR</a>
+        <a href="#contact-us">Contact us</a>
+      </div>
+      <div class="top-right-actions">
+        <!-- Location Picker -->
+        <div class="location-select-wrap">
+          <i class="fa-solid fa-location-dot loc-icon"></i>
+          <select id="locationSelect" class="location-dropdown" onchange="updateLocation(this.value)">
+            <option value="all">--Select Location--</option>
+            <option value="Delhi NCR" selected>Delhi NCR</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mohali">Mohali</option>
+            <option value="Faridabad">Faridabad</option>
+            <option value="Gurugram">Gurugram</option>
+          </select>
+        </div>
+        
+        <!-- Search Trigger -->
+        <button class="top-icon-btn" onclick="focusMainSearch()" aria-label="Search" title="Search doctors and services">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        
+        <!-- Emergency SOS Icon Button -->
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="logo-symbol">
+          <div class="cross-leaf">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">SK Fortis</span>
+          <span class="logo-sub">MULTISPECIALITY HOSPITAL</span>
+        </div>
+      </a>
+
+      <!-- Mobile Location & Quick Action Bar in Header -->
+      <div class="mobile-header-tools">
+        <div class="mobile-loc">
+          <i class="fa-solid fa-location-dot"></i>
+          <select onchange="updateLocation(this.value)">
+            <option>--Select--</option>
+            <option selected>Delhi</option>
+            <option>Mumbai</option>
+            <option>Bengaluru</option>
+          </select>
+        </div>
+        <button class="mobile-search-btn" onclick="focusMainSearch()" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li class="has-dropdown">
+            <a href="#hospitals">Hospitals <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+            <div class="nav-dropdown">
+              <a href="#" onclick="filterByHospital('Fortis Escorts Okhla')">Fortis Escorts Heart Institute, Okhla</a>
+              <a href="#" onclick="filterByHospital('Fortis Memorial Gurugram')">Fortis Memorial Research Institute, Gurugram</a>
+              <a href="#" onclick="filterByHospital('Fortis Hospital Vasant Kunj')">Fortis Hospital, Vasant Kunj</a>
+              <a href="#" onclick="filterByHospital('Fortis Hospital Noida')">Fortis Hospital, Noida</a>
+              <a href="#" onclick="filterByHospital('Fortis Hospital Shalimar Bagh')">Fortis Hospital, Shalimar Bagh</a>
+              <a href="#" onclick="filterByHospital('Fortis Hospital Faridabad')">Fortis Escorts Hospital, Faridabad</a>
+            </div>
+          </li>
+          <li class="has-dropdown">
+            <a href="#specialities">Specialities <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+            <div class="nav-dropdown mega-menu">
+              <div class="mega-column">
+                <h4>Centres of Excellence</h4>
+                <a href="#specialities" onclick="filterSpeciality('Cardiac Sciences')"><i class="fa-solid fa-heart-pulse"></i> Cardiac Sciences</a>
+                <a href="#specialities" onclick="filterSpeciality('Oncology')"><i class="fa-solid fa-ribbon"></i> Oncology / Cancer Care</a>
+                <a href="#specialities" onclick="filterSpeciality('Orthopaedics')"><i class="fa-solid fa-bone"></i> Orthopaedics & Joint Surgery</a>
+                <a href="#specialities" onclick="filterSpeciality('Neuro Sciences')"><i class="fa-solid fa-brain"></i> Neuro Sciences & Spine</a>
+              </div>
+              <div class="mega-column">
+                <h4>Specialized Care</h4>
+                <a href="#specialities" onclick="filterSpeciality('Nephrology')"><i class="fa-solid fa-kidneys"></i> Nephrology & Urology</a>
+                <a href="#specialities" onclick="filterSpeciality('Gastroenterology')"><i class="fa-solid fa-stethoscope"></i> Gastroenterology & Liver</a>
+                <a href="#specialities" onclick="filterSpeciality('Pulmonology')"><i class="fa-solid fa-lungs"></i> Pulmonology & Sleep Care</a>
+                <a href="#specialities" onclick="filterSpeciality('Robotic Surgery')"><i class="fa-solid fa-robot"></i> Robotic Minimal Surgery</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="#centres-of-excellence">Centres of Excellence</a></li>
+          <li><a href="#media-centre">Media Centre</a></li>
+          <li><a href="#medical-services">Medical Services</a></li>
+          <li><a href="#patients-corner">Patients Corner</a></li>
+          <li><a href="#international-patients"><i class="fa-solid fa-globe text-green"></i> International Services</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Quick Action Bar (Under Header on Desktop) -->
+    <div class="quick-action-strip">
+      <div class="container quick-action-inner">
+        <button class="strip-btn" onclick="openCallbackModal()">
+          <i class="fa-solid fa-phone-volume"></i> Request a Callback
+        </button>
+        <button class="strip-btn primary-pill" onclick="openBookingModal()">
+          <i class="fa-regular fa-calendar-check"></i> Book Appointment
+        </button>
+        <button class="strip-btn" onclick="openHealthCheckModal()">
+          <i class="fa-solid fa-stethoscope"></i> Get Health Checkup
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="drawer-logo">
+        <span class="logo-name">SK Fortis</span>
+      </div>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="drawer-actions">
+        <button class="btn btn-primary btn-block" onclick="openBookingModal(); toggleMobileMenu();">
+          <i class="fa-regular fa-calendar-check"></i> Book Appointment
+        </button>
+        <button class="btn btn-outline btn-block" onclick="openEmergencyModal(); toggleMobileMenu();">
+          <i class="fa-solid fa-phone-volume"></i> 24x7 Emergency: 900 900 1050
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#hospitals" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital"></i> Hospitals</a></li>
+        <li><a href="#specialities" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope"></i> Specialities</a></li>
+        <li><a href="#doctors-section" onclick="toggleMobileMenu()"><i class="fa-solid fa-user-doctor"></i> Find Doctors</a></li>
+        <li><a href="#reports-section" onclick="toggleMobileMenu()"><i class="fa-solid fa-file-medical"></i> Medical Reports</a></li>
+        <li><a href="#patient-stories" onclick="toggleMobileMenu()"><i class="fa-solid fa-comment-medical"></i> Patient Stories</a></li>
+        <li><a href="#blogs" onclick="toggleMobileMenu()"><i class="fa-solid fa-newspaper"></i> Health Blogs</a></li>
+        <li><a href="#videos" onclick="toggleMobileMenu()"><i class="fa-solid fa-video"></i> Health Videos</a></li>
+        <li><a href="#faq" onclick="toggleMobileMenu()"><i class="fa-solid fa-circle-question"></i> Help & FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-background-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-shield-heart"></i> India's Most Trusted Healthcare Network
+        </div>
+        <h1 class="hero-title">
+          Healthcare for Good<br>
+          <span class="hero-title-highlight">Today. Tomorrow. Always</span>
+        </h1>
+        
+        <!-- Large Interactive Search Bar -->
+        <div class="hero-search-wrapper" id="heroSearchWrapper">
+          <div class="hero-search-bar">
+            <div class="search-input-box">
+              <input 
+                type="text" 
+                id="mainSearchInput" 
+                placeholder="Search for Doctors, Specialities, Hospitals, Conditions..." 
+                autocomplete="off"
+                oninput="handleSearchInput(this.value)"
+                onfocus="showSearchSuggestions()"
+              >
+              <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" style="display:none;">&times;</button>
+            </div>
+            <button class="hero-search-btn" onclick="executeSearch()" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+
+          <!-- Autocomplete / Search Results Dropdown -->
+          <div class="search-dropdown-results" id="searchResultsDropdown">
+            <div class="search-category-pills">
+              <span class="cat-pill active" onclick="filterSearchCategory('all')">All</span>
+              <span class="cat-pill" onclick="filterSearchCategory('doctor')">Doctors</span>
+              <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
+              <span class="cat-pill" onclick="filterSearchCategory('hospital')">Hospitals</span>
+              <span class="cat-pill" onclick="filterSearchCategory('treatment')">Treatments</span>
+            </div>
+            <div class="search-results-list" id="searchResultsList">
+              <!-- Dynamically populated via script -->
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">4,500+</span>
+            <span class="stat-lbl">Expert Doctors</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">28+</span>
+            <span class="stat-lbl">Hospitals Across India</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">99.4%</span>
+            <span class="stat-lbl">Patient Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Service & Booking Hub Grid -->
+    <section class="services-hub-section" id="servicesHub">
+      <div class="container">
+        <div class="services-hub-layout">
+          <!-- Primary 4 Action Cards -->
+          <div class="primary-cards-grid">
+            <!-- Book an Appointment Card (Light green) -->
+            <div class="service-card card-appointment" onclick="openBookingModal()">
+              <div class="card-info">
+                <h3>Book an Appointment</h3>
+                <p>With country's leading experts</p>
+              </div>
+              <div class="card-icon-bubble bg-green-light">
+                <i class="fa-regular fa-calendar-check text-green"></i>
+              </div>
+            </div>
+
+            <!-- Hospitals Card (Light cyan/blue) -->
+            <div class="service-card card-hospitals" onclick="scrollToSection('hospitals')">
+              <div class="card-info">
+                <h3>Hospitals</h3>
+                <p>Health needs under one roof</p>
+              </div>
+              <div class="card-icon-bubble bg-cyan-light">
+                <i class="fa-solid fa-hospital-user text-cyan"></i>
+              </div>
+            </div>
+
+            <!-- Specialities Card (Light purple/lavender) -->
+            <div class="service-card card-specialities" onclick="scrollToSection('specialities')">
+              <div class="card-info">
+                <h3>Specialities</h3>
+                <p>Our expertise in Healthcare</p>
+              </div>
+              <div class="card-icon-bubble bg-purple-light">
+                <i class="fa-solid fa-heart-pulse text-purple"></i>
+              </div>
+            </div>
+
+            <!-- Doctors Card (Light peach/pink) -->
+            <div class="service-card card-doctors" onclick="openDoctorSearch()">
+              <div class="card-info">
+                <h3>Doctors</h3>
+                <p>Top experts for your health</p>
+              </div>
+              <div class="card-icon-bubble bg-peach-light">
+                <i class="fa-solid fa-user-doctor text-peach"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- "We can help you book" Secondary Box -->
+          <div class="side-booking-box">
+            <h4 class="side-booking-title">We can help you book</h4>
+            <div class="side-booking-cards">
+              <div class="side-card" onclick="openHealthCheckModal()">
+                <div class="side-card-icon bg-emerald">
+                  <i class="fa-solid fa-user-nurse"></i>
+                </div>
+                <div class="side-card-text">
+                  <span class="side-card-main">Health Checkups</span>
+                  <span class="side-card-sub">Preventive packages</span>
+                </div>
+              </div>
+              
+              <div class="side-card" onclick="openTestBookingModal()">
+                <div class="side-card-icon bg-teal">
+                  <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div class="side-card-text">
+                  <span class="side-card-main">Tests & Services</span>
+                  <span class="side-card-sub">Diagnostics & Scans</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotional Emergency & Speciality Carousel -->
+    <section class="promo-carousel-section">
+      <div class="container">
+        <div class="carousel-container" id="promoCarousel">
+          <div class="carousel-track" id="promoTrack">
+            
+            <!-- Banner 1: Lung Failure Clinic -->
+            <div class="carousel-slide promo-slide slide-lung">
+              <div class="slide-content">
+                <div class="slide-tag"><i class="fa-solid fa-lungs"></i> SPECIALISED CLINIC</div>
+                <h2 class="slide-title">DON'T WAIT UNTIL<br><span>BREATHING BECOMES A STRUGGLE</span></h2>
+                <p class="slide-sub">Specialised Lung Failure Clinic | For Respiratory & Sleep Disorders</p>
+                <div class="slide-cta">
+                  <a href="tel:9205018108" class="slide-btn btn-white">
+                    <i class="fa-solid fa-phone"></i> For Appointments: 92050 18108
+                  </a>
+                  <button class="slide-btn btn-transp" onclick="openBookingModal('Pulmonology')">
+                    Book Consultation <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="slide-visual lung-visual">
+                <div class="visual-badge"><i class="fa-solid fa-shield-virus"></i> Advanced ECMO & BiPAP</div>
+              </div>
+            </div>
+
+            <!-- Banner 2: 24x7 Emergency Care -->
+            <div class="carousel-slide promo-slide slide-emergency">
+              <div class="slide-content">
+                <div class="slide-tag emergency-tag"><i class="fa-solid fa-bell"></i> 24X7 EMERGENCY TRAUMA</div>
+                <h2 class="slide-title">EMERGENCY<br><span>CARE 24X7</span></h2>
+                <p class="slide-sub">Golden Hour Trauma Response | Advanced Cardiac & Stroke Life Support</p>
+                <div class="slide-cta">
+                  <a href="tel:9009001050" class="slide-btn btn-red-emergency">
+                    <i class="fa-solid fa-phone-volume"></i> Emergency Helpline: 900 900 1050
+                  </a>
+                  <button class="slide-btn btn-white" onclick="openEmergencyModal()">
+                    Request Ambulance Now <i class="fa-solid fa-truck-medical"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="slide-visual emergency-visual">
+                <div class="ambulance-badge"><i class="fa-solid fa-clock"></i> &lt; 15 Mins Response Time</div>
+              </div>
+            </div>
+
+            <!-- Banner 3: Orthopaedic Care -->
+            <div class="carousel-slide promo-slide slide-ortho">
+              <div class="slide-content">
+                <div class="slide-tag"><i class="fa-solid fa-bone"></i> ROBOTIC EXCELLENCE</div>
+                <h2 class="slide-title">ADVANCED<br><span>ORTHOPAEDIC CARE</span></h2>
+                <p class="slide-sub">Sub-millimetre Precision Joint Replacement & Sports Injury Rehab</p>
+                <div class="slide-cta">
+                  <button class="slide-btn btn-white" onclick="openBookingModal('Orthopaedics')">
+                    Consult Joint Specialist
+                  </button>
+                  <a href="tel:9009001050" class="slide-btn btn-transp">
+                    <i class="fa-solid fa-phone"></i> Call 900 900 1050
+                  </a>
+                </div>
+              </div>
+              <div class="slide-visual ortho-visual">
+                <div class="visual-badge"><i class="fa-solid fa-robot"></i> Mako Robotic Surgery</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-nav-buttons">
+            <button class="c-prev" onclick="prevSlide('promoTrack')" aria-label="Previous banner"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="c-dots" id="promoDots"></div>
+            <button class="c-next" onclick="nextSlide('promoTrack')" aria-label="Next banner"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Medical Reports Access Banner -->
+    <section class="medical-reports-section" id="reports-section">
+      <div class="container">
+        <div class="reports-banner-card">
+          <div class="reports-content">
+            <div class="reports-header-text">
+              <h2>All medical records, reports & prescriptions in one place</h2>
+              <p>Access your lab test results, radiology reports, discharge summaries and doctor notes securely from any device.</p>
+            </div>
+            <button class="btn btn-white-pill" onclick="openReportPortalModal()">
+              <i class="fa-solid fa-file-lines"></i> View Reports
+            </button>
+          </div>
+          <div class="reports-graphic">
+            <div class="report-icon-group">
+              <i class="fa-solid fa-clipboard-user main-rep-icon"></i>
+              <div class="floating-badge badge-pdf"><i class="fa-solid fa-file-pdf"></i> Lab PDF</div>
+              <div class="floating-badge badge-secure"><i class="fa-solid fa-lock"></i> 100% Secure</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breakthrough Cases Section -->
+    <section class="breakthrough-section" id="breakthrough-cases">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <h2 class="section-title">Breakthrough Cases</h2>
+            <p class="section-subtitle">Pioneering complex surgeries and saving lives with clinical excellence</p>
+          </div>
+          <button class="btn-outline-pill" onclick="viewAllCases()">View all <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="cards-carousel-wrap">
+          <div class="cards-grid cases-grid" id="casesGrid">
+            
+            <!-- Case 1 -->
+            <div class="story-card case-card">
+              <div class="case-img-wrap">
+                <div class="case-tag-badge">Rare Surgery</div>
+                <div class="case-news-badge"><i class="fa-solid fa-newspaper"></i> Featured News</div>
+                <div class="case-overlay-title">After 6 Surgeries Delhi Man Recovers From Rare Skull Bone TB After 2 and a half Years</div>
+              </div>
+              <div class="case-body">
+                <h3 class="case-title">After 6 Surgeries Delhi Man Recovers From Rare Skull Bone TB After 2 and a half Years</h3>
+                <p class="case-snippet">Complex neurosurgical skull base debridement and reconstructive cranioplasty performed by multidisciplinary surgical team led to complete remission.</p>
+                <div class="case-footer">
+                  <div class="doc-badge">
+                    <div class="doc-avatar bg-green-light"><i class="fa-solid fa-user-doctor text-green"></i></div>
+                    <div class="doc-meta">
+                      <span class="hosp-name">Fortis Hospital</span>
+                      <span class="doc-name">Shalimar Bagh</span>
+                    </div>
+                  </div>
+                  <button class="case-read-btn" onclick="openCaseModal(1)">Read Story <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Case 2 -->
+            <div class="story-card case-card">
+              <div class="case-img-wrap">
+                <div class="case-tag-badge bg-blue-badge">Clinical First</div>
+                <div class="case-news-badge"><i class="fa-solid fa-star"></i> Milestone</div>
+                <div class="case-overlay-title">Fortis Escorts Hospital Faridabad Launches City's First Dedicated Parkinson's & Movement Clinic</div>
+              </div>
+              <div class="case-body">
+                <h3 class="case-title">Fortis Escorts Hospital Faridabad Launches City's First Dedicated Parkinson's and Movement Disorder Clinic</h3>
+                <p class="case-snippet">Offering Deep Brain Stimulation (DBS), advanced neuro-rehabilitation, and multidisciplinary movement care for Parkinson's disease patients.</p>
+                <div class="case-footer">
+                  <div class="doc-badge">
+                    <div class="doc-avatar bg-cyan-light"><i class="fa-solid fa-hospital text-cyan"></i></div>
+                    <div class="doc-meta">
+                      <span class="hosp-name">Fortis Escorts Hospital</span>
+                      <span class="doc-name">Faridabad</span>
+                    </div>
+                  </div>
+                  <button class="case-read-btn" onclick="openCaseModal(2)">Read Story <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Case 3 -->
+            <div class="story-card case-card">
+              <div class="case-img-wrap">
+                <div class="case-tag-badge bg-purple-badge">Cardiac Breakthrough</div>
+                <div class="case-news-badge"><i class="fa-solid fa-heart-pulse"></i> High-Risk Heart</div>
+                <div class="case-overlay-title">Complex TAVI Saves 84-Year-Old Patient with Critical Aortic Stenosis</div>
+              </div>
+              <div class="case-body">
+                <h3 class="case-title">Complex TAVI Saves 84-Year-Old Patient with Critical Aortic Stenosis and Kidney Dysfunction</h3>
+                <p class="case-snippet">Minimally invasive Transcatheter Aortic Valve Implantation executed without general anaesthesia, patient discharged in 48 hours.</p>
+                <div class="case-footer">
+                  <div class="doc-badge">
+                    <div class="doc-avatar bg-purple-light"><i class="fa-solid fa-user-doctor text-purple"></i></div>
+                    <div class="doc-meta">
+                      <span class="hosp-name">Fortis Escorts Heart Inst.</span>
+                      <span class="doc-name">Okhla, New Delhi</span>
+                    </div>
+                  </div>
+                  <button class="case-read-btn" onclick="openCaseModal(3)">Read Story <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="carousel-nav-arrows">
+            <button class="c-arrow-btn" onclick="scrollGridLeft('casesGrid')" aria-label="Previous cases"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="c-arrow-btn" onclick="scrollGridRight('casesGrid')" aria-label="Next cases"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patient's Stories Section -->
+    <section class="patient-stories-section" id="patient-stories">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <h2 class="section-title">Our Patient's Stories</h2>
+            <p class="section-subtitle">Real recovery journeys and heartfelt words of gratitude from patients across the world</p>
+          </div>
+          <button class="btn-outline-pill" onclick="viewAllStories()">View all <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="cards-carousel-wrap">
+          <div class="cards-grid stories-grid" id="storiesGrid">
+            
+            <!-- Story 1 -->
+            <div class="testimonial-card">
+              <div class="quote-watermark top-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <div class="testimonial-video-box" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Mrs. Israa Khaled - Cancer Recovery Journey')">
+                <div class="play-circle-btn">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="video-duration"><i class="fa-solid fa-clock"></i> 3:45 mins</div>
+              </div>
+              <div class="testimonial-body">
+                <p class="patient-quote">
+                  "This video shares the inspiring recovery journey of Ms. Israa Khaled, a radiographer and cancer patient from Iraq. Under the care of Dr. Vinay and Dr. Pooja Babbar at Fortis Hospital Manesar, she successfully underwent surgery followed by comprehensive post-operative treatments, achieving excellent results."
+                </p>
+                <div class="testimonial-footer">
+                  <div class="hosp-tag"><i class="fa-solid fa-location-dot"></i> Fortis Hospital Manesar, Gurugram</div>
+                  <div class="quote-watermark bottom-quote"><i class="fa-solid fa-quote-right"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="testimonial-card">
+              <div class="quote-watermark top-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <div class="testimonial-video-box bg-warm" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Mr. David Miller - Robotic Knee Replacement')">
+                <div class="play-circle-btn">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="video-duration"><i class="fa-solid fa-clock"></i> 2:18 mins</div>
+              </div>
+              <div class="testimonial-body">
+                <p class="patient-quote">
+                  "I was unable to walk without severe pain for 5 years. Travelling from Kenya to Fortis Hospital for robotic knee replacement was the best decision of my life. I was walking on my own on the second day itself. The nursing care and doctors were like family."
+                </p>
+                <div class="testimonial-footer">
+                  <div class="hosp-tag"><i class="fa-solid fa-location-dot"></i> Fortis Memorial Research Institute, Gurugram</div>
+                  <div class="quote-watermark bottom-quote"><i class="fa-solid fa-quote-right"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="testimonial-card">
+              <div class="quote-watermark top-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <div class="testimonial-video-box bg-purple-tint" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Baby Aarav - Paediatric Cardiac Miracle')">
+                <div class="play-circle-btn">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="video-duration"><i class="fa-solid fa-clock"></i> 4:10 mins</div>
+              </div>
+              <div class="testimonial-body">
+                <p class="patient-quote">
+                  "Our 8-month-old baby was diagnosed with severe congenital heart defect. The paediatric cardiac team at Fortis Escorts performed a complex corrective surgery. Today, Aarav is active, smiling, and living a completely healthy life. We are forever thankful."
+                </p>
+                <div class="testimonial-footer">
+                  <div class="hosp-tag"><i class="fa-solid fa-location-dot"></i> Fortis Escorts Heart Institute, Okhla</div>
+                  <div class="quote-watermark bottom-quote"><i class="fa-solid fa-quote-right"></i></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-nav-arrows">
+            <button class="c-arrow-btn" onclick="scrollGridLeft('storiesGrid')" aria-label="Previous stories"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="c-arrow-btn" onclick="scrollGridRight('storiesGrid')" aria-label="Next stories"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile App Download Banner -->
+    <section class="app-download-section">
+      <div class="container">
+        <div class="app-banner-card">
+          <div class="app-qr-box">
+            <div class="qr-frame">
+              <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <span class="qr-label">Scan to Download</span>
+          </div>
+          <div class="app-info-text">
+            <h3>Keep track of your appointments, get updates & more!</h3>
+            <p>Download the Fortis Health App for one-tap teleconsultations, instant lab reports, medicine reminders and 24x7 doctor support.</p>
+          </div>
+          <div class="app-store-badges">
+            <a href="#" class="store-badge-btn" title="Download on Apple App Store">
+              <i class="fa-brands fa-apple"></i>
+              <div>
+                <span class="store-small">Download on the</span>
+                <span class="store-big">App Store</span>
+              </div>
+            </a>
+            <a href="#" class="store-badge-btn" title="Get it on Google Play">
+              <i class="fa-brands fa-google-play"></i>
+              <div>
+                <span class="store-small">GET IT ON</span>
+                <span class="store-big">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Our Blogs Section -->
+    <section class="blogs-section" id="blogs">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <h2 class="section-title">Explore our blogs</h2>
+            <p class="section-subtitle">Doctor-approved healthcare guides, wellness tips and medical advancements</p>
+          </div>
+          <button class="btn-outline-pill" onclick="viewAllBlogs()">View all <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="cards-carousel-wrap">
+          <div class="cards-grid blogs-grid" id="blogsGrid">
+            
+            <!-- Blog 1 -->
+            <article class="blog-card" onclick="openBlogModal(1)">
+              <div class="blog-thumbnail blog-thumb-nephro">
+                <span class="blog-category-tag cat-nephro">Nephrology</span>
+              </div>
+              <div class="blog-card-body">
+                <h3 class="blog-title">Keeping Your Kidneys Healthy: When to See a Kidney Specialist</h3>
+                <p class="blog-excerpt">Understanding early symptoms of renal strain, protein in urine, and lifestyle modifications to preserve kidney filtration rate.</p>
+                <div class="blog-meta">
+                  <span><i class="fa-regular fa-user"></i> Dr. Sanjeev Gulati</span>
+                  <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Blog 2 -->
+            <article class="blog-card" onclick="openBlogModal(2)">
+              <div class="blog-thumbnail blog-thumb-liver">
+                <span class="blog-category-tag cat-liver">Liver Transplant & Hepatobiliary</span>
+              </div>
+              <div class="blog-card-body">
+                <h3 class="blog-title">A Brighter Future: Improved Survival Rates in Liver Transplants</h3>
+                <p class="blog-excerpt">How laparoscopic donor hepatectomy and advanced immunosuppression have elevated long-term graft survival past 90%.</p>
+                <div class="blog-meta">
+                  <span><i class="fa-regular fa-user"></i> Dr. Vivek Vij</span>
+                  <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Blog 3 -->
+            <article class="blog-card" onclick="openBlogModal(3)">
+              <div class="blog-thumbnail blog-thumb-surge">
+                <span class="blog-category-tag cat-liver">Liver Transplant & Hepatobiliary</span>
+              </div>
+              <div class="blog-card-body">
+                <h3 class="blog-title">Precision Cuts for Complex Cases: When to See a Liver Surgeon</h3>
+                <p class="blog-excerpt">Navigating bile duct strictures, benign hepatic adenomas, and minimally invasive robotic liver resections.</p>
+                <div class="blog-meta">
+                  <span><i class="fa-regular fa-user"></i> Dr. Gourdas Choudhuri</span>
+                  <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Blog 4 -->
+            <article class="blog-card" onclick="openBlogModal(4)">
+              <div class="blog-thumbnail blog-thumb-onco">
+                <span class="blog-category-tag cat-onco">Oncology</span>
+              </div>
+              <div class="blog-card-body">
+                <h3 class="blog-title">The Power of Your Body's Defense: Exploring Immunotherapy in Oncology</h3>
+                <p class="blog-excerpt">Checkpoint inhibitors and targeted therapies transforming outcomes in solid tumors and haematological cancers.</p>
+                <div class="blog-meta">
+                  <span><i class="fa-regular fa-user"></i> Dr. Vinod Raina</span>
+                  <span><i class="fa-regular fa-calendar"></i> Sep 14, 2026</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="carousel-nav-arrows">
+            <button class="c-arrow-btn" onclick="scrollGridLeft('blogsGrid')" aria-label="Previous blogs"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="c-arrow-btn" onclick="scrollGridRight('blogsGrid')" aria-label="Next blogs"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Videos Section -->
+    <section class="videos-section" id="videos">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <h2 class="section-title">Our Videos</h2>
+            <p class="section-subtitle">Doctor talks, surgical explanations and patient education</p>
+          </div>
+          <button class="btn-outline-pill" onclick="viewAllVideos()">View all <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="cards-carousel-wrap">
+          <div class="cards-grid videos-grid" id="videosGrid">
+            
+            <!-- Video 1 -->
+            <div class="video-card" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'TAVI for Elderly Heart Patients | Dr. Shuvanan Ray')">
+              <div class="video-thumb-container vid-1">
+                <div class="vid-play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="vid-hospital-badge">Fortis Hospital, Kolkata</div>
+              </div>
+              <div class="video-info">
+                <h4>TAVI for Elderly Heart Patients | Dr. Shuvanan Ray | Fortis Hospital, Kolkata</h4>
+              </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Scarless Robotic Surgery for Tongue Cancer | Mehak Narang Recovery')">
+              <div class="video-thumb-container vid-2">
+                <div class="vid-play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="vid-hospital-badge">Fortis Shalimar Bagh</div>
+              </div>
+              <div class="video-info">
+                <h4>Scarless Robotic Surgery for Tongue Cancer | Mehak Narang's Recovery Journey</h4>
+              </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Plan for a Healthier Tomorrow | Ms. Janvi, Fit Caregiver')">
+              <div class="video-thumb-container vid-3">
+                <div class="vid-play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="vid-hospital-badge">Health & Wellness</div>
+              </div>
+              <div class="video-info">
+                <h4>Plan for a Healthier Tomorrow | Ms Janvi, Nurse, Invites You to FIT Caregiver Movement</h4>
+              </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card" onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ', 'Bentall Procedure for Complex Heart Condition | Swarn Klein Journey')">
+              <div class="video-thumb-container vid-4">
+                <div class="vid-play-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="vid-hospital-badge">Fortis Escorts Heart Inst.</div>
+              </div>
+              <div class="video-info">
+                <h4>Bentall Procedure for a Complex Heart Condition | Swarn Klein's Journey</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-nav-arrows">
+            <button class="c-arrow-btn" onclick="scrollGridLeft('videosGrid')" aria-label="Previous videos"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="c-arrow-btn" onclick="scrollGridRight('videosGrid')" aria-label="Next videos"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feel Free to Ask Us (FAQ & Query Interactive Section) -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <h2 class="section-title text-center-mobile">Feel Free to ask us</h2>
+        
+        <div class="faq-layout">
+          <!-- Left Query / Image Column -->
+          <div class="faq-query-card">
+            <div class="faq-hero-img-box">
+              <div class="faq-character-graphic">
+                <i class="fa-solid fa-user-doctor-hair"></i>
+                <div class="floating-thought-bubble">
+                  <i class="fa-solid fa-comment-dots"></i> How can we assist you today?
+                </div>
+              </div>
+            </div>
+            <div class="faq-search-box">
+              <input type="text" id="faqInput" placeholder="Ask your question..." onkeyup="handleFaqSearch(event)">
+              <button class="faq-submit-btn" onclick="submitFaqQuery()" aria-label="Submit question">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Accordion Group -->
+          <div class="faq-accordion-group" id="faqAccordion">
+            
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item" id="acc-about">
+              <button class="accordion-header" onclick="toggleAccordion('acc-about')">
+                <span>About Us</span>
+                <i class="fa-solid fa-chevron-down acc-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <p>SK Fortis Healthcare is one of India's leading integrated healthcare delivery service providers. The healthcare verticals of the company primarily comprise hospitals, diagnostics, and day care specialty facilities with over 28 healthcare facilities, 4,500+ operational beds, and a team of globally acclaimed clinicians.</p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item" id="acc-services">
+              <button class="accordion-header" onclick="toggleAccordion('acc-services')">
+                <span>Patient Care and Services</span>
+                <i class="fa-solid fa-chevron-down acc-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <p>We provide comprehensive patient services including 24x7 Emergency Trauma & Ambulance assistance, OPD Consultations, In-patient admissions, Critical Care (ICU/CCU/NICU), Robotic Surgery, Advanced Radiotherapy, Teleconsultations, and dedicated International Patient Services desks with multilingual translation support.</p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item" id="acc-compliance">
+              <button class="accordion-header" onclick="toggleAccordion('acc-compliance')">
+                <span>Statutory Compliances</span>
+                <i class="fa-solid fa-chevron-down acc-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <p>All hospitals under our network operate in strict compliance with NABH (National Accreditation Board for Hospitals & Healthcare Providers), JCI (Joint Commission International), NABL accredited laboratories, AERB radiation safety guidelines, and clinical biomedical waste management protocols.</p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item" id="acc-outcomes">
+              <button class="accordion-header" onclick="toggleAccordion('acc-outcomes')">
+                <span>Clinical Outcomes</span>
+                <i class="fa-solid fa-chevron-down acc-icon"></i>
+              </button>
+              <div class="accordion-content">
+                <p>Our clinical outcomes are audited quarterly and benchmarked against top global medical institutions: >99.2% surgical success rate in adult cardiac bypass surgeries, >92% 5-year survival in liver transplants, and zero-infection protocols in modular ultra-clean laminar flow operating theaters.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Directory / Specialities Section Anchor -->
+    <section class="specialities-overview-section" id="specialities">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <h2 class="section-title">Our Centres of Clinical Excellence</h2>
+            <p class="section-subtitle">World-class multidisciplinary institutes equipped with cutting-edge medical technologies</p>
+          </div>
+        </div>
+        <div class="centres-grid">
+          <div class="centre-card" onclick="openBookingModal('Cardiac Sciences')">
+            <div class="centre-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Institute of Cardiac Sciences</h3>
+            <p>TAVI, Robotic CABG, Paediatric Heart Surgery & Heart Transplants.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="centre-card" onclick="openBookingModal('Oncology')">
+            <div class="centre-icon"><i class="fa-solid fa-ribbon"></i></div>
+            <h3>Cancer Care / Oncology</h3>
+            <p>CAR-T Cell Therapy, TrueBeam Radiotherapy & Precision Chemotherapy.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="centre-card" onclick="openBookingModal('Neuro Sciences')">
+            <div class="centre-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>Neuro Sciences & Spine</h3>
+            <p>Deep Brain Stimulation, Stroke Thrombectomy, Skull-base Craniotomy.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="centre-card" onclick="openBookingModal('Orthopaedics')">
+            <div class="centre-icon"><i class="fa-solid fa-bone"></i></div>
+            <h3>Orthopaedics & Joint Surgery</h3>
+            <p>Mako Robotic Joint Replacement, Arthroscopy & Complex Trauma Care.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="centre-card" onclick="openBookingModal('Gastroenterology')">
+            <div class="centre-icon"><i class="fa-solid fa-stethoscope"></i></div>
+            <h3>Liver & Digestive Diseases</h3>
+            <p>Living Donor Liver Transplants, Endoscopic Ultrasound & GI Oncology.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="centre-card" onclick="openBookingModal('Nephrology')">
+            <div class="centre-icon"><i class="fa-solid fa-kidneys"></i></div>
+            <h3>Nephrology & Urology</h3>
+            <p>Kidney Transplants, Haemodialysis, Robotic Prostate & Renal Surgeries.</p>
+            <span class="learn-link">Explore Speciality <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Comprehensive Multi-Column Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-grid">
+        <!-- Col 1: For Patients -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">For Patients</h4>
+          <ul class="footer-links">
+            <li><a href="#find-doctor" onclick="openDoctorSearch()">Find a Doctor</a></li>
+            <li><a href="#health-checks" onclick="openHealthCheckModal()">Health Check Packages</a></li>
+            <li><a href="#patient-stories">Patient Testimonials</a></li>
+            <li><a href="#international-services">International Services</a></li>
+            <li><a href="#partnerships">Partnerships</a></li>
+            <li><a href="#sustainability">Sustainability</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Centres of Excellence -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Centres of Excellence</h4>
+          <ul class="footer-links">
+            <li><a href="#specialities" onclick="filterSpeciality('Cardiac')">Fortis Institute of Cardiac Sciences</a></li>
+            <li><a href="#specialities" onclick="filterSpeciality('Cancer')">Fortis Cancer Institute</a></li>
+            <li><a href="#specialities" onclick="filterSpeciality('Robotics')">Fortis Institute of Robotic Surgery</a></li>
+            <li><a href="#specialities" onclick="filterSpeciality('Gynae')">Centre for Gynae-Oncology</a></li>
+            <li><a href="#specialities" onclick="filterSpeciality('Bone')">Bone Marrow Transplant Unit</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Policies -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Policies</h4>
+          <ul class="footer-links">
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#refund">Online Payment & Refund Policy</a></li>
+            <li><a href="#terms">Terms & Conditions</a></li>
+            <li><a href="#anti-bribery">Anti-Bribery And Anti-Corruption Policy</a></li>
+            <li><a href="#gifting">Gifting Policy</a></li>
+            <li><a href="#teleconsult">Teleconsultation Guidelines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Medical Procedures -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Medical Procedures</h4>
+          <ul class="footer-links">
+            <li><a href="#proc">Car-T Cell Therapy</a></li>
+            <li><a href="#proc">Gamma Knife Radiosurgery</a></li>
+            <li><a href="#proc">HIPEC Surgery</a></li>
+            <li><a href="#proc">ECMO & Advanced Life Support</a></li>
+            <li><a href="#proc">TAVI (Aortic Valve Implantation)</a></li>
+            <li><a href="#proc">Deep Brain Stimulation (DBS)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Specialities & Hospitals -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Specialities</h4>
+          <ul class="footer-links">
+            <li><a href="#specialities">Bone Marrow Transplant</a></li>
+            <li><a href="#specialities">Paediatric Cardiology</a></li>
+            <li><a href="#specialities">Endocrinology & Diabetes</a></li>
+          </ul>
+          
+          <h4 class="footer-col-title mt-footer-sub">Our Hospitals</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="filterByHospital('Delhi NCR')">Hospitals in Delhi NCR</a></li>
+            <li><a href="#" onclick="filterByHospital('Maharashtra')">Hospitals in Maharashtra</a></li>
+            <li><a href="#" onclick="filterByHospital('Karnataka')">Hospitals in Karnataka</a></li>
+            <li><a href="#" onclick="filterByHospital('Punjab')">Hospitals in Punjab</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-logo-wrap">
+          <div class="logo-symbol small">
+            <i class="fa-solid fa-hands-holding-child"></i>
+          </div>
+          <span class="footer-brand-title">SK Fortis</span>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-social-box">
+          <span class="social-label">STAY CONNECTED</span>
+          <div class="social-icons-list">
+            <a href="https://instagram.com" target="_blank" class="soc-icon instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" class="soc-icon facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="soc-icon twitter" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" class="soc-icon youtube" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Mini App Store Links -->
+        <div class="footer-app-badges">
+          <a href="#" class="mini-store-badge"><i class="fa-brands fa-apple"></i> App Store</a>
+          <a href="#" class="mini-store-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 Fortis Healthcare Ltd. All Rights Reserved. SK Multispeciality Hospital Network.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Chat Widget -->
+  <a href="https://wa.me/919009001050?text=Hello%20SK%20Fortis%20Hospital,%20I%20would%20like%20to%20inquire%20about%20medical%20services." target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp" title="Chat with Medical Coordinator">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us</span>
+  </a>
+
+  <!-- Mobile Bottom Sticky Navigation (Matches Mobile Reference) -->
+  <div class="mobile-bottom-nav">
+    <button class="mobile-bottom-item" onclick="openCallbackModal()">
+      <i class="fa-solid fa-phone-volume"></i>
+      <span>Request a Callback</span>
+    </button>
+    
+    <!-- Central Floating Action Button -->
+    <div class="mobile-fab-wrap">
+      <button class="mobile-fab-btn" onclick="openBookingModal()" aria-label="Book Appointment">
+        <i class="fa-regular fa-calendar-days"></i>
+      </button>
+      <span class="fab-label">Book Appointment</span>
+    </div>
+
+    <button class="mobile-bottom-item" onclick="openHealthCheckModal()">
+      <i class="fa-solid fa-stethoscope"></i>
+      <span>Get Health Checkup</span>
+    </button>
+  </div>
+
+  <!-- ==================== INTERACTIVE MODALS ==================== -->
+
+  <!-- 1. Appointment Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-regular fa-calendar-check text-green modal-head-icon"></i>
+          <div>
+            <h3>Book Doctor Appointment</h3>
+            <p>Consult with India's leading medical specialists</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="appointmentForm" onsubmit="submitAppointment(event)">
+          <div class="form-step active" id="bookingStep1">
+            <h4 class="form-section-title">1. Select Hospital & Speciality</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalHospital"><i class="fa-solid fa-hospital"></i> Hospital Branch</label>
+                <select id="modalHospital" required onchange="filterDoctorsByHospital(this.value)">
+                  <option value="">-- Choose Hospital --</option>
+                  <option value="Fortis Escorts Okhla">Fortis Escorts Heart Institute, Okhla, New Delhi</option>
+                  <option value="Fortis Memorial Gurugram">Fortis Memorial Research Institute, Gurugram</option>
+                  <option value="Fortis Shalimar Bagh">Fortis Hospital, Shalimar Bagh, Delhi</option>
+                  <option value="Fortis Vasant Kunj">Fortis Hospital, Vasant Kunj, New Delhi</option>
+                  <option value="Fortis Noida">Fortis Hospital, Sector 62, Noida</option>
+                  <option value="Fortis Faridabad">Fortis Escorts Hospital, Faridabad</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="modalSpeciality"><i class="fa-solid fa-stethoscope"></i> Medical Speciality</label>
+                <select id="modalSpeciality" required onchange="filterDoctorsBySpeciality(this.value)">
+                  <option value="">-- Select Speciality --</option>
+                  <option value="Cardiac Sciences">Cardiac Sciences & Cardiology</option>
+                  <option value="Oncology">Oncology & Cancer Care</option>
+                  <option value="Orthopaedics">Orthopaedics & Joint Replacement</option>
+                  <option value="Neuro Sciences">Neuro Sciences & Spine Surgery</option>
+                  <option value="Nephrology">Nephrology & Kidney Transplant</option>
+                  <option value="Gastroenterology">Gastroenterology & Hepatology</option>
+                  <option value="Pulmonology">Pulmonology & Respiratory Medicine</option>
+                  <option value="General Medicine">Internal / General Medicine</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modalDoctor"><i class="fa-solid fa-user-doctor"></i> Select Specialist Doctor</label>
+              <select id="modalDoctor" required>
+                <option value="">-- Choose Specialist --</option>
+                <option value="Dr. Ashok Seth (Chairman - Cardiology)">Dr. Ashok Seth (Chairman - Interventional Cardiology, 38+ Yrs Exp)</option>
+                <option value="Dr. Vinod Raina (Executive Director - Oncology)">Dr. Vinod Raina (Executive Director - Medical Oncology, 40+ Yrs Exp)</option>
+                <option value="Dr. Subhash Chandra (Chairman - Cardiology)">Dr. Subhash Chandra (Chairman - Cardiology, 34+ Yrs Exp)</option>
+                <option value="Dr. Vivek Vij (Director - Liver Transplant)">Dr. Vivek Vij (Director - Liver Transplant & GI Surgery, 25+ Yrs Exp)</option>
+                <option value="Dr. Sanjeev Gulati (Executive Director - Nephrology)">Dr. Sanjeev Gulati (Executive Director - Nephrology & Kidney, 32+ Yrs Exp)</option>
+                <option value="Dr. Atul Mishra (Director - Orthopaedics)">Dr. Atul Mishra (Director - Orthopaedics & Robotic Knee, 24+ Yrs Exp)</option>
+              </select>
+            </div>
+
+            <h4 class="form-section-title mt-form">2. Preferred Date & Time Slot</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalDate"><i class="fa-regular fa-calendar"></i> Appointment Date</label>
+                <input type="date" id="modalDate" required min="2026-09-16">
+              </div>
+              <div class="form-group">
+                <label for="modalSlot"><i class="fa-regular fa-clock"></i> Preferred Slot</label>
+                <select id="modalSlot" required>
+                  <option value="09:00 AM - 10:00 AM">Morning: 09:00 AM - 10:00 AM</option>
+                  <option value="10:00 AM - 11:30 AM" selected>Morning: 10:00 AM - 11:30 AM</option>
+                  <option value="11:30 AM - 01:00 PM">Noon: 11:30 AM - 01:00 PM</option>
+                  <option value="02:00 PM - 04:00 PM">Afternoon: 02:00 PM - 04:00 PM</option>
+                  <option value="04:00 PM - 06:00 PM">Evening: 04:00 PM - 06:00 PM</option>
+                  <option value="06:00 PM - 08:00 PM">Evening: 06:00 PM - 08:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <h4 class="form-section-title mt-form">3. Patient Contact Information</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patientName"><i class="fa-regular fa-user"></i> Full Name *</label>
+                <input type="text" id="patientName" placeholder="e.g. Rajesh Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="patientPhone"><i class="fa-solid fa-phone"></i> Mobile Phone *</label>
+                <input type="tel" id="patientPhone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patientEmail"><i class="fa-regular fa-envelope"></i> Email (Optional)</label>
+                <input type="email" id="patientEmail" placeholder="e.g. rajesh@example.com">
+              </div>
+              <div class="form-group">
+                <label for="consultType"><i class="fa-solid fa-video"></i> Consultation Type</label>
+                <select id="consultType">
+                  <option value="In-Hospital OPD Visit">In-Hospital OPD Visit</option>
+                  <option value="Video Teleconsultation">Online Video Teleconsultation</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="modal-footer-btns">
+              <button type="button" class="btn btn-outline" onclick="closeModal('bookingModal')">Cancel</button>
+              <button type="submit" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Confirm Appointment</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Booking Confirmation Success Card (Hidden by default) -->
+        <div class="booking-success-view" id="bookingSuccessView" style="display:none;">
+          <div class="success-icon-badge">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3>Appointment Confirmed Successfully!</h3>
+          <p>Your appointment reference number is <strong class="app-ref" id="confirmedAppId">FTH-2026-8941</strong></p>
+          
+          <div class="confirmation-ticket">
+            <div class="ticket-row">
+              <span class="t-lbl">Patient:</span>
+              <span class="t-val" id="confPatientName">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Doctor:</span>
+              <span class="t-val" id="confDoctor">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Hospital:</span>
+              <span class="t-val" id="confHospital">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Date & Time:</span>
+              <span class="t-val" id="confDateTime">-</span>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn btn-primary" onclick="printAppointmentTicket()"><i class="fa-solid fa-print"></i> Download Slip</button>
+            <button class="btn btn-outline" onclick="closeModal('bookingModal')">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Emergency 24x7 SOS Modal -->
+  <div class="modal-overlay" id="emergencyModal">
+    <div class="modal-box modal-emergency">
+      <div class="modal-header bg-emergency-red">
+        <div class="modal-title-group text-white">
+          <i class="fa-solid fa-truck-medical modal-head-icon"></i>
+          <div>
+            <h3>24x7 Emergency & Ambulance Service</h3>
+            <p>Immediate critical trauma & cardiac emergency dispatch</p>
+          </div>
+        </div>
+        <button class="close-modal-btn text-white" onclick="closeModal('emergencyModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="emergency-hotline-banner">
+          <div class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <span class="hotline-sub">NATIONAL EMERGENCY HELPLINE (TOLL-FREE)</span>
+            <a href="tel:9009001050" class="hotline-number">900 900 1050</a>
+          </div>
+        </div>
+
+        <div class="emergency-quick-actions">
+          <div class="em-action-box" onclick="triggerAmbulanceSimulation()">
+            <div class="em-box-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="em-box-info">
+              <h4>Dispatch Ambulance to My GPS Location</h4>
+              <p>GPS tracking & equipped with ALS ventilator</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </div>
+
+          <div class="em-action-box" onclick="alert('Connecting directly to Golden Hour Cardiac Care desk...')">
+            <div class="em-box-icon"><i class="fa-solid fa-heart-crack text-red"></i></div>
+            <div class="em-box-info">
+              <h4>Acute Heart Attack / Chest Pain Hotline</h4>
+              <p>Immediate Catheterization Lab mobilization</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </div>
+
+          <div class="em-action-box" onclick="alert('Connecting to 24x7 Stroke Rapid Assessment Team...')">
+            <div class="em-box-icon"><i class="fa-solid fa-brain text-purple"></i></div>
+            <div class="em-box-info">
+              <h4>Brain Stroke Emergency Hotline</h4>
+              <p>Thrombolysis & Neuro-intervention protocol</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </div>
+        </div>
+
+        <div class="emergency-status-bar" id="ambulanceStatusBar" style="display:none;">
+          <div class="spinner-loader"></div>
+          <span id="ambulanceStatusText">Locating nearest available ALS Ambulance...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Medical Reports Access Modal -->
+  <div class="modal-overlay" id="reportPortalModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-medical text-cyan modal-head-icon"></i>
+          <div>
+            <h3>Access Medical Reports & Records</h3>
+            <p>Download your lab tests, imaging & prescriptions</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('reportPortalModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="report-lookup-box">
+          <div class="form-group">
+            <label for="reportUHID"><i class="fa-solid fa-id-card"></i> Patient UHID / Registered Mobile No.</label>
+            <input type="text" id="reportUHID" placeholder="e.g. 9876543210 or UHID-90812">
+          </div>
+          <button class="btn btn-primary btn-block" onclick="fetchSampleReports()">
+            <i class="fa-solid fa-magnifying-glass"></i> Fetch My Reports
+          </button>
+        </div>
+
+        <div class="reports-results-view" id="reportsResultView" style="display:none; margin-top:20px;">
+          <h4 class="results-title"><i class="fa-solid fa-folder-open"></i> Available Reports for Rajesh Sharma (UHID: FTH-89104)</h4>
+          <div class="report-items-list">
+            <div class="report-item">
+              <div class="rep-icon"><i class="fa-solid fa-file-pdf text-red"></i></div>
+              <div class="rep-meta">
+                <span class="rep-title">Comprehensive Lipid & Cardiac Profile</span>
+                <span class="rep-date">12 Sep 2026 | Dr. Ashok Seth</span>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="downloadSampleReport('Lipid_Profile_Report.pdf')"><i class="fa-solid fa-download"></i> PDF</button>
+            </div>
+            <div class="report-item">
+              <div class="rep-icon"><i class="fa-solid fa-file-pdf text-red"></i></div>
+              <div class="rep-meta">
+                <span class="rep-title">Whole Body High-Resolution CT Chest</span>
+                <span class="rep-date">08 Aug 2026 | Radiology Dept</span>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="downloadSampleReport('CT_Chest_Radiology.pdf')"><i class="fa-solid fa-download"></i> PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Video Player Modal -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-box modal-video">
+      <div class="modal-header">
+        <h4 id="videoModalTitle">Video Presentation</h4>
+        <button class="close-modal-btn" onclick="closeVideoModal()">&times;</button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="video-responsive-wrapper">
+          <iframe id="videoIframe" src="" title="Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Request a Callback Modal -->
+  <div class="modal-overlay" id="callbackModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-headset text-green modal-head-icon"></i>
+          <div>
+            <h3>Request a Callback</h3>
+            <p>Our medical counselors will call you within 15 minutes</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('callbackModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitCallback(event)">
+          <div class="form-group">
+            <label for="cbName">Your Full Name *</label>
+            <input type="text" id="cbName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cbPhone">Phone Number *</label>
+            <input type="tel" id="cbPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <label for="cbDept">Department / Concern</label>
+            <select id="cbDept">
+              <option value="Doctor Appointment Inquiry">Doctor Appointment Inquiry</option>
+              <option value="Second Medical Opinion">Second Medical Opinion</option>
+              <option value="Surgery & Treatment Cost Estimation">Surgery & Treatment Cost Estimation</option>
+              <option value="Health Checkup Package Inquiry">Health Checkup Package Inquiry</option>
+              <option value="International Patient Inquiry">International Patient Inquiry</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Request Call Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
