@@ -3481,17 +3481,17 @@ button, input, select, textarea {
 @media (max-width: 768px) {
   .homepage {
     --homepage-mobile-header-height: 62px;
-    padding-top: calc(var(--homepage-mobile-header-height) + env(safe-area-inset-top, 0px));
+    padding-top: 0;
   }
 
   .homepage .main-header {
-    position: fixed !important;
+    position: sticky !important;
     top: env(safe-area-inset-top, 0px);
     right: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transform: translate3d(0, 0, 0);
+    transform: none;
   }
 
   body {
