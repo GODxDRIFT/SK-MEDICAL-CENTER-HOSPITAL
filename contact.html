@@ -369,62 +369,118 @@
               </div>
             </div>
           </div>
-        <!-- Interactive Quick Inquiry Form Section -->
+        <!-- Interactive Quick Inquiry Form Section (2-Column Balanced Layout) -->
         <div class="inquiry-form-section" style="margin-top: 50px;">
-          <div class="inquiry-form-card">
-            <div class="inquiry-header">
-              <div class="inquiry-icon"><i class="fa-solid fa-paper-plane text-red"></i></div>
-              <div>
-                <h2>Send an Online Inquiry / Message</h2>
-                <p>Have a question about doctor OPD schedules, surgery packages, or medical tests? Fill the form below.</p>
+          <div class="inquiry-form-grid-2col">
+            
+            <!-- Left: Online Form -->
+            <div class="inquiry-form-card">
+              <div class="inquiry-header">
+                <div class="inquiry-icon"><i class="fa-solid fa-paper-plane text-red"></i></div>
+                <div>
+                  <h2>Send an Online Inquiry / Message</h2>
+                  <p>Have a question about doctor OPD schedules, surgery packages, or medical tests? Fill the form below.</p>
+                </div>
+              </div>
+
+              <form id="mainContactForm" class="inquiry-main-form" onsubmit="submitContactMessage(event)">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="contactName"><i class="fa-regular fa-user text-navy"></i> Full Name *</label>
+                    <input type="text" id="contactName" placeholder="e.g. Ramesh Chandra" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone"><i class="fa-solid fa-phone text-red"></i> Mobile Number *</label>
+                    <input type="tel" id="contactPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="contactEmail"><i class="fa-regular fa-envelope text-navy"></i> Email Address (Optional)</label>
+                    <input type="email" id="contactEmail" placeholder="e.g. patient@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="contactDept"><i class="fa-solid fa-stethoscope text-teal"></i> Department of Interest</label>
+                    <select id="contactDept">
+                      <option value="General & Internal Medicine">General & Internal Medicine</option>
+                      <option value="General & Laparoscopic Surgery">General & Laparoscopic Surgery</option>
+                      <option value="Orthopaedics & Joint Care">Orthopaedics & Joint Care</option>
+                      <option value="Gynaecology & Delivery">Gynaecology & Maternity Delivery</option>
+                      <option value="Paediatrics & Child Health">Paediatrics & Child Health</option>
+                      <option value="Pathology & Lab Tests">Pathology & Diagnostic Lab</option>
+                      <option value="Insurance / TPA Helpdesk">Insurance / TPA Helpdesk</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage"><i class="fa-regular fa-comment-dots text-navy"></i> Your Message or Medical Query *</label>
+                  <textarea id="contactMessage" rows="4" placeholder="Briefly describe your medical inquiry or requirement..." required></textarea>
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-paper-plane"></i> Send Inquiry Message
+                  </button>
+                  <button type="button" class="btn btn-outline" onclick="openBookingModal()">
+                    <i class="fa-regular fa-calendar-check"></i> Book OPD
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right: Hospital Helpdesk & Timings Sidebar -->
+            <div class="inquiry-sidebar-card">
+              <div class="sidebar-help-card-block">
+                <div class="sidebar-help-title">
+                  <i class="fa-solid fa-truck-medical text-red"></i> 24x7 Emergency & Ambulance
+                </div>
+                <p style="font-size:0.85rem; color:#64748b; margin-bottom:12px;">Immediate casualty triage, doctor admission & oxygen support at Shiv Vihar Road.</p>
+                <a href="tel:07703964716" class="btn btn-emergency-red btn-block">
+                  <i class="fa-solid fa-phone-volume"></i> 077039 64716
+                </a>
+              </div>
+
+              <div class="sidebar-help-card-block">
+                <div class="sidebar-help-title">
+                  <i class="fa-regular fa-clock text-teal"></i> Hospital Working Hours
+                </div>
+                <table class="sidebar-timings-table">
+                  <tr>
+                    <td>Emergency & Casualty</td>
+                    <td>24 Hours (Open)</td>
+                  </tr>
+                  <tr>
+                    <td>Doctor OPD Consultations</td>
+                    <td>09:00 AM – 09:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td>Diagnostic Pathology Lab</td>
+                    <td>24 Hours Daily</td>
+                  </tr>
+                  <tr>
+                    <td>In-House Pharmacy</td>
+                    <td>24 Hours Daily</td>
+                  </tr>
+                  <tr>
+                    <td>Cashless Insurance / TPA</td>
+                    <td>08:00 AM – 10:00 PM</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="sidebar-help-card-block">
+                <div class="sidebar-help-title">
+                  <i class="fa-brands fa-whatsapp text-teal"></i> WhatsApp Medical Desk
+                </div>
+                <p style="font-size:0.84rem; color:#64748b; margin-bottom:10px;">Quick assistance for OPD fees, lab reports, doctor schedules & directions.</p>
+                <a href="https://wa.me/917703964716?text=Hello%20SK%20Hospital,%20I%20have%20an%20inquiry." target="_blank" class="btn btn-outline btn-block" style="border-color:#25d366; color:#128c7e;">
+                  <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
               </div>
             </div>
 
-            <form id="mainContactForm" class="inquiry-main-form" onsubmit="submitContactMessage(event)">
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="contactName"><i class="fa-regular fa-user text-navy"></i> Full Name *</label>
-                  <input type="text" id="contactName" placeholder="e.g. Ramesh Chandra" required>
-                </div>
-                <div class="form-group">
-                  <label for="contactPhone"><i class="fa-solid fa-phone text-red"></i> Mobile Number *</label>
-                  <input type="tel" id="contactPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                </div>
-              </div>
-
-              <div class="form-grid">
-                <div class="form-group">
-                  <label for="contactEmail"><i class="fa-regular fa-envelope text-navy"></i> Email Address (Optional)</label>
-                  <input type="email" id="contactEmail" placeholder="e.g. patient@example.com">
-                </div>
-                <div class="form-group">
-                  <label for="contactDept"><i class="fa-solid fa-stethoscope text-teal"></i> Department of Interest</label>
-                  <select id="contactDept">
-                    <option value="General & Internal Medicine">General & Internal Medicine</option>
-                    <option value="General & Laparoscopic Surgery">General & Laparoscopic Surgery</option>
-                    <option value="Orthopaedics & Joint Care">Orthopaedics & Joint Care</option>
-                    <option value="Gynaecology & Delivery">Gynaecology & Maternity Delivery</option>
-                    <option value="Paediatrics & Child Health">Paediatrics & Child Health</option>
-                    <option value="Pathology & Lab Tests">Pathology & Diagnostic Lab</option>
-                    <option value="Insurance / TPA Helpdesk">Insurance / TPA Helpdesk</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="contactMessage"><i class="fa-regular fa-comment-dots text-navy"></i> Your Message or Medical Query *</label>
-                <textarea id="contactMessage" rows="4" placeholder="Briefly describe your medical inquiry or requirement..." required></textarea>
-              </div>
-
-              <div class="form-submit-row">
-                <button type="submit" class="btn btn-primary btn-lg">
-                  <i class="fa-solid fa-paper-plane"></i> Send Inquiry Message
-                </button>
-                <button type="button" class="btn btn-outline" onclick="openBookingModal()">
-                  <i class="fa-regular fa-calendar-check"></i> Book OPD Appointment Instead
-                </button>
-              </div>
-            </form>
           </div>
         </div>
 

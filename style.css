@@ -4614,11 +4614,29 @@ button, input, select, textarea {
   margin-top: 3px;
 }
 
+.facility-showcase-row.full-width-row,
+#beds.facility-showcase-row {
+  display: block;
+  width: 100%;
+}
+
 .bed-categories-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 24px;
+}
+
+@media (max-width: 1100px) {
+  .bed-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bed-categories-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bed-card {
@@ -4969,12 +4987,78 @@ button, input, select, textarea {
   width: 100%;
 }
 
+.inquiry-form-grid-2col {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
 .inquiry-form-card {
   background: #ffffff;
   border: 1.5px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
   box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.inquiry-sidebar-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sidebar-help-card-block {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sidebar-help-card-block:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sidebar-help-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-timings-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  margin-top: 10px;
+}
+
+.sidebar-timings-table td {
+  padding: 7px 0;
+  border-bottom: 1px dashed #e2e8f0;
+  color: var(--text-muted);
+}
+
+.sidebar-timings-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--navy-primary);
+}
+
+@media (max-width: 992px) {
+  .inquiry-form-grid-2col {
+    grid-template-columns: 1fr;
+  }
 }
 
 .inquiry-header {
