@@ -3479,22 +3479,6 @@ button, input, select, textarea {
 
 /* Tablets (<= 768px) */
 @media (max-width: 768px) {
-  .homepage {
-    --homepage-mobile-header-height: 62px;
-    padding-top: 0;
-  }
-
-  .homepage .main-header {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transform: none;
-  }
-
   body {
     padding-bottom: 70px;
   }
