@@ -88,7 +88,7 @@ body {
   color: var(--text-main);
   background-color: var(--bg-page);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -3480,7 +3480,8 @@ button, input, select, textarea {
 /* Tablets (<= 768px) */
 @media (max-width: 768px) {
   .homepage {
-    padding-top: calc(62px + env(safe-area-inset-top, 0px));
+    --homepage-mobile-header-height: 62px;
+    padding-top: calc(var(--homepage-mobile-header-height) + env(safe-area-inset-top, 0px));
   }
 
   .homepage .main-header {
@@ -3488,6 +3489,7 @@ button, input, select, textarea {
     top: env(safe-area-inset-top, 0px);
     right: 0;
     left: 0;
+    width: 100%;
     z-index: 1000;
   }
 
