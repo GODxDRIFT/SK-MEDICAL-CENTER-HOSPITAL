@@ -114,24 +114,18 @@
       </nav>
     </div>
 
-    <!-- Quick Action Bar (Desktop) -->
-    <div class="quick-action-strip">
-      <div class="container quick-action-inner">
-        <div class="location-strip-text">
-          <i class="fa-solid fa-location-dot text-red"></i> 
-          <span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Hastsal, Delhi – 110059</span>
-        </div>
-        <div class="strip-buttons-group">
-          <button class="strip-btn" onclick="openCallbackModal()">
-            <i class="fa-solid fa-phone-volume"></i> Request Callback
-          </button>
-          <button class="strip-btn primary-pill" onclick="openBookingModal()">
-            <i class="fa-regular fa-calendar-check"></i> Book OPD / Consultation
-          </button>
-          <a href="tel:07703964716" class="strip-btn emergency-pill">
-            <i class="fa-solid fa-phone"></i> 24x7 Call: 077039 64716
-          </a>
-        </div>
+    <!-- Fortis-style Clean Header Action Sub-Strip -->
+    <div class="fortis-action-substrip">
+      <div class="container fortis-substrip-inner">
+        <button class="substrip-action-link" onclick="openCallbackModal()">
+          <i class="fa-solid fa-phone-volume"></i> Request a Callback
+        </button>
+        <button class="substrip-pill-btn" onclick="openBookingModal()">
+          <i class="fa-regular fa-calendar-days"></i> Book Appointment
+        </button>
+        <button class="substrip-action-link" onclick="openHealthCheckModal()">
+          <i class="fa-solid fa-stethoscope"></i> Get Health Checkup
+        </button>
       </div>
     </div>
   </header>
@@ -175,175 +169,129 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-background-overlay"></div>
-      <div class="container hero-content">
-        
-        <!-- Trust Badges Bar -->
-        <div class="hero-trust-badges">
-          <div class="hero-badge google-badge">
-            <i class="fa-brands fa-google text-red"></i>
-            <span class="star-rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half-stroke"></i>
-            </span>
-            <strong>4.3 / 5</strong> (13 Google Reviews)
-          </div>
-          <div class="hero-badge magicpin-badge">
-            <i class="fa-solid fa-circle-check"></i> Magicpin Verified Listing
-          </div>
-          <div class="hero-badge round-clock-badge">
-            <span class="pulse-dot"></span> Open 24 Hours / 24×7
-          </div>
-        </div>
+    <!-- Fortis-style Clean Hero Section -->
+    <section class="fortis-clean-hero">
+      <div class="fortis-hero-bg-media"></div>
+      <div class="container fortis-hero-wrapper">
+        <div class="fortis-hero-box">
+          <h1 class="fortis-hero-title">
+            Healthcare for Good<br>Today. Tomorrow. Always
+          </h1>
 
-        <h1 class="hero-title">
-          S.K MULTI-SPECIALITY HOSPITAL 24×7<br>
-          <span class="hero-title-highlight">Trusted Healthcare in Hastsal & Vikas Nagar, Delhi</span>
-        </h1>
-        
-        <p class="hero-description-lead">
-          Providing 24-hour emergency trauma care, multi-speciality consultations, ICU support, diagnostics, and patient-centric healthcare located conveniently near Bikaner Sweets on Shiv Vihar Road.
-        </p>
-
-        <!-- Large Interactive Search Bar -->
-        <div class="hero-search-wrapper" id="heroSearchWrapper">
-          <div class="hero-search-bar">
-            <div class="search-input-box">
+          <!-- Clean Rounded Search Bar -->
+          <div class="fortis-search-container" id="heroSearchWrapper">
+            <div class="fortis-search-bar">
               <input 
                 type="text" 
                 id="mainSearchInput" 
-                placeholder="Search Specialities (Medicine, Orthopaedics, Surgery, ICU, Paediatrics...)" 
+                placeholder="Search for Doctors, Specialities and Hospitals" 
                 autocomplete="off"
                 oninput="handleSearchInput(this.value)"
                 onfocus="showSearchSuggestions()"
               >
               <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" style="display:none;">&times;</button>
+              <button class="fortis-search-icon-btn" onclick="executeSearch()" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </div>
-            <button class="hero-search-btn" onclick="executeSearch()" aria-label="Search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
 
-          <!-- Autocomplete / Search Results Dropdown -->
-          <div class="search-dropdown-results" id="searchResultsDropdown">
-            <div class="search-category-pills">
-              <span class="cat-pill active" onclick="filterSearchCategory('all')">All</span>
-              <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
-              <span class="cat-pill" onclick="filterSearchCategory('doctor')">Doctors</span>
-              <span class="cat-pill" onclick="filterSearchCategory('service')">24x7 Services</span>
+            <!-- Autocomplete / Search Results Dropdown -->
+            <div class="search-dropdown-results" id="searchResultsDropdown">
+              <div class="search-category-pills">
+                <span class="cat-pill active" onclick="filterSearchCategory('all')">All</span>
+                <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
+                <span class="cat-pill" onclick="filterSearchCategory('doctor')">Doctors</span>
+                <span class="cat-pill" onclick="filterSearchCategory('service')">24x7 Services</span>
+              </div>
+              <div class="search-results-list" id="searchResultsList"></div>
             </div>
-            <div class="search-results-list" id="searchResultsList">
-              <!-- Dynamically populated via script -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Hero Stats (Frosted Glass Floating Bar) -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num">24×7</span>
-            <span class="stat-lbl">Open Hours / Emergency</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-num">4.3 ★</span>
-            <span class="stat-lbl">13 Google Reviews</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-lbl">Dedicated Patient Care</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-num">Hastsal / Vikas Nagar</span>
-            <span class="stat-lbl">Uttam Nagar, West Delhi</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Core Service & Booking Hub Grid -->
-    <section class="services-hub-section" id="servicesHub">
+    <!-- Fortis-style Quick Service Cards Hub -->
+    <section class="fortis-services-hub" id="servicesHub">
       <div class="container">
-        <div class="services-hub-layout">
-          <!-- Primary 4 Action Cards -->
-          <div class="primary-cards-grid">
-            <!-- Book an Appointment Card -->
-            <div class="service-card card-appointment" onclick="openBookingModal()">
-              <div class="card-info">
-                <h3>Book Doctor OPD</h3>
-                <p>Consult with multi-specialist doctors</p>
+        <div class="fortis-hub-main-grid">
+          
+          <!-- Left: 4 Pastel Colored Cards (2x2 Grid) -->
+          <div class="fortis-pastel-cards-grid">
+            
+            <!-- 1. Book an Appointment (Lime/Green Pastel) -->
+            <div class="f-pastel-card card-pastel-green" onclick="openBookingModal()">
+              <div class="f-card-content">
+                <h3>Book an Appointment</h3>
+                <p>With country's leading experts</p>
               </div>
-              <div class="card-icon-bubble bg-green-light">
-                <i class="fa-regular fa-calendar-check text-green"></i>
-              </div>
-            </div>
-
-            <!-- 24x7 Emergency Card -->
-            <div class="service-card card-hospitals" onclick="openEmergencyModal()">
-              <div class="card-info">
-                <h3>24x7 Emergency & Trauma</h3>
-                <p>Immediate 24-hour critical care</p>
-              </div>
-              <div class="card-icon-bubble bg-cyan-light">
-                <i class="fa-solid fa-truck-medical text-cyan"></i>
+              <div class="f-card-icon-badge badge-lime">
+                <i class="fa-regular fa-calendar-days"></i>
               </div>
             </div>
 
-            <!-- Specialities Card -->
-            <div class="service-card card-specialities" onclick="scrollToSection('specialities')">
-              <div class="card-info">
-                <h3>Multi-Specialities</h3>
-                <p>Medicine, Surgery, Ortho, Gynae</p>
+            <!-- 2. Hospitals (Soft Blue Pastel) -->
+            <div class="f-pastel-card card-pastel-blue" onclick="scrollToSection('location-section')">
+              <div class="f-card-content">
+                <h3>Hospitals</h3>
+                <p>Health needs under one roof</p>
               </div>
-              <div class="card-icon-bubble bg-purple-light">
-                <i class="fa-solid fa-heart-pulse text-purple"></i>
+              <div class="f-card-icon-badge badge-blue">
+                <i class="fa-solid fa-hospital"></i>
               </div>
             </div>
 
-            <!-- Location & Directions Card -->
-            <div class="service-card card-doctors" onclick="scrollToSection('location-section')">
-              <div class="card-info">
-                <h3>Location & Directions</h3>
-                <p>Shiv Vihar Road, Vikas Nagar</p>
+            <!-- 3. Specialities (Lavender Pastel) -->
+            <div class="f-pastel-card card-pastel-purple" onclick="scrollToSection('specialities')">
+              <div class="f-card-content">
+                <h3>Specialities</h3>
+                <p>Our expertise in Healthcare</p>
               </div>
-              <div class="card-icon-bubble bg-peach-light">
-                <i class="fa-solid fa-map-location-dot text-peach"></i>
+              <div class="f-card-icon-badge badge-purple">
+                <i class="fa-solid fa-heart-pulse"></i>
               </div>
             </div>
+
+            <!-- 4. Doctors (Soft Peach Pastel) -->
+            <div class="f-pastel-card card-pastel-peach" onclick="window.location.href='doctors.html'">
+              <div class="f-card-content">
+                <h3>Doctors</h3>
+                <p>Top experts for your health</p>
+              </div>
+              <div class="f-card-icon-badge badge-peach">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+            </div>
+
           </div>
 
-          <!-- "We can help you" Secondary Box -->
-          <div class="side-booking-box">
-            <h4 class="side-booking-title">Hospital Services</h4>
-            <div class="side-booking-cards">
-              <div class="side-card" onclick="openHealthCheckModal()">
-                <div class="side-card-icon bg-emerald">
-                  <i class="fa-solid fa-user-nurse"></i>
-                </div>
-                <div class="side-card-text">
-                  <span class="side-card-main">Preventive Checkups</span>
-                  <span class="side-card-sub">Full Body & Diagnostic Tests</span>
-                </div>
-              </div>
+          <!-- Right: "We can help you book" Box -->
+          <div class="fortis-help-book-container">
+            <h3 class="help-book-heading">We can help you book</h3>
+            <div class="help-book-cards-grid">
               
-              <div class="side-card side-lab-card" onclick="openTestBookingModal()">
-                <div class="side-card-thumb">
-                  <img src="images/diagnostics_lab.jpg" alt="Advanced Pathology & Diagnostic Lab S.K Hospital" class="lab-thumb-img" loading="lazy">
+              <!-- Card 1: Health Checkups -->
+              <div class="white-action-card" onclick="openHealthCheckModal()">
+                <div class="w-card-illus-box">
+                  <div class="illus-icon-round doc-illus-icon">
+                    <i class="fa-solid fa-user-doctor"></i>
+                  </div>
                 </div>
-                <div class="side-card-text">
-                  <span class="side-card-main">Diagnostic Lab & Pathology</span>
-                  <span class="side-card-sub">Blood Tests, ECG & Accurate Reports</span>
-                </div>
+                <h4>Health Checkups</h4>
               </div>
+
+              <!-- Card 2: Tests & Services -->
+              <div class="white-action-card" onclick="openTestBookingModal()">
+                <div class="w-card-illus-box">
+                  <div class="illus-icon-round lab-illus-icon">
+                    <i class="fa-solid fa-flask-vial"></i>
+                  </div>
+                </div>
+                <h4>Tests & Services</h4>
+              </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -1040,22 +988,22 @@
 
   <!-- Mobile Bottom Sticky Navigation -->
   <div class="mobile-bottom-nav">
-    <a href="tel:07703964716" class="mobile-bottom-item">
-      <i class="fa-solid fa-phone-volume text-red"></i>
-      <span>Call 24×7</span>
-    </a>
+    <button class="mobile-bottom-item" onclick="openCallbackModal()">
+      <i class="fa-solid fa-phone-volume text-navy"></i>
+      <span>Request a Callback</span>
+    </button>
     
     <!-- Central Floating Action Button -->
     <div class="mobile-fab-wrap">
       <button class="mobile-fab-btn" onclick="openBookingModal()" aria-label="Book Appointment">
         <i class="fa-regular fa-calendar-days"></i>
       </button>
-      <span class="fab-label">Book OPD</span>
+      <span class="fab-label">Book Appointment</span>
     </div>
 
-    <button class="mobile-bottom-item" onclick="openEmergencyModal()">
-      <i class="fa-solid fa-truck-medical text-red"></i>
-      <span>Emergency</span>
+    <button class="mobile-bottom-item" onclick="openHealthCheckModal()">
+      <i class="fa-solid fa-stethoscope text-navy"></i>
+      <span>Get Health Checkup</span>
     </button>
   </div>
 

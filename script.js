@@ -303,6 +303,40 @@ function closeModal(modalId) {
   }
 }
 
+// Doctor & Speciality Auto-Filter Mapping
+function filterDoctorsBySpeciality(specialityValue) {
+  const docSelect = document.getElementById('modalDoctor');
+  if (!docSelect || !specialityValue) return;
+
+  const val = specialityValue.toLowerCase();
+  for (let i = 0; i < docSelect.options.length; i++) {
+    const optText = docSelect.options[i].text.toLowerCase();
+    const optVal = docSelect.options[i].value.toLowerCase();
+    
+    if (val.includes('medicine') && (optText.includes('medicine') || optVal.includes('medicine'))) {
+      docSelect.selectedIndex = i;
+      break;
+    } else if (val.includes('surgery') && (optText.includes('surgery') || optVal.includes('surgery') || optText.includes('surgeon'))) {
+      docSelect.selectedIndex = i;
+      break;
+    } else if ((val.includes('ortho') || val.includes('joint') || val.includes('bone')) && (optText.includes('ortho') || optVal.includes('ortho'))) {
+      docSelect.selectedIndex = i;
+      break;
+    } else if ((val.includes('gynae') || val.includes('women') || val.includes('maternity')) && (optText.includes('gynae') || optVal.includes('gynae'))) {
+      docSelect.selectedIndex = i;
+      break;
+    } else if ((val.includes('paed') || val.includes('child') || val.includes('baby')) && (optText.includes('paed') || optVal.includes('paed'))) {
+      docSelect.selectedIndex = i;
+      break;
+    } else if (val.includes('emergency') || val.includes('cardio') || val.includes('critical')) {
+      if (optText.includes('emergency') || optVal.includes('emergency') || optText.includes('duty')) {
+        docSelect.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}
+
 // Open Booking Modal with Preselected options
 function openBookingModal(speciality = '', doctor = '') {
   openModal('bookingModal');
@@ -313,6 +347,17 @@ function openBookingModal(speciality = '', doctor = '') {
   if (formStep) formStep.style.display = 'block';
   if (successView) successView.style.display = 'none';
 
+  // Handle doctor parameter passed as first argument
+  if (speciality && (speciality.includes('Dr.') || speciality.includes('Doctor') || speciality.includes('Dr '))) {
+    doctor = speciality;
+    if (doctor.toLowerCase().includes('medicine')) speciality = 'General Medicine';
+    else if (doctor.toLowerCase().includes('gynaecology') || doctor.toLowerCase().includes('gynae')) speciality = 'Gynaecology';
+    else if (doctor.toLowerCase().includes('ortho')) speciality = 'Orthopaedics';
+    else if (doctor.toLowerCase().includes('surgery') || doctor.toLowerCase().includes('surgeon')) speciality = 'General Surgery';
+    else if (doctor.toLowerCase().includes('paed')) speciality = 'Paediatrics';
+    else speciality = '';
+  }
+
   if (speciality) {
     const specSelect = document.getElementById('modalSpeciality');
     if (specSelect) {
@@ -320,6 +365,7 @@ function openBookingModal(speciality = '', doctor = '') {
         if (specSelect.options[i].text.toLowerCase().includes(speciality.toLowerCase()) || 
             specSelect.options[i].value.toLowerCase().includes(speciality.toLowerCase())) {
           specSelect.selectedIndex = i;
+          filterDoctorsBySpeciality(specSelect.options[i].value);
           break;
         }
       }
@@ -330,7 +376,13 @@ function openBookingModal(speciality = '', doctor = '') {
     const docSelect = document.getElementById('modalDoctor');
     if (docSelect) {
       for (let i = 0; i < docSelect.options.length; i++) {
-        if (docSelect.options[i].text.toLowerCase().includes(doctor.toLowerCase())) {
+        const optText = docSelect.options[i].text.toLowerCase();
+        const d = doctor.toLowerCase();
+        if ((d.includes('medicine') && optText.includes('medicine')) ||
+            (d.includes('gynae') && optText.includes('gynae')) ||
+            (d.includes('ortho') && optText.includes('ortho')) ||
+            (d.includes('surgery') && optText.includes('surgeon')) ||
+            (d.includes('paed') && optText.includes('paediatrician'))) {
           docSelect.selectedIndex = i;
           break;
         }
@@ -338,6 +390,7 @@ function openBookingModal(speciality = '', doctor = '') {
     }
   }
 }
+
 
 function openEmergencyModal() {
   openModal('emergencyModal');
@@ -447,6 +500,21 @@ function submitCallback(e) {
   closeModal('callbackModal');
   showToast(`Thank you, ${name}! S.K Hospital staff will call you on 077039 64716 shortly.`, 'success');
 }
+
+// Contact Page Message Form Submission
+function submitContactMessage(e) {
+  e.preventDefault();
+  const name = document.getElementById('contactName')?.value || 'Patient';
+  const phone = document.getElementById('contactPhone')?.value || '';
+  const message = document.getElementById('contactMessage')?.value || '';
+  
+  // Reset form
+  const form = document.getElementById('mainContactForm');
+  if (form) form.reset();
+
+  showToast(`Thank you ${name}! Your inquiry has been received. Our team will contact you at ${phone}.`, 'success');
+}
+
 
 // ==========================================================================
 // FAQ ACCORDIONS & SEARCH

@@ -325,6 +325,328 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Chat Widget -->
+  <a href="https://wa.me/917703964716?text=Hello%20SK%20Multi-Speciality%20Hospital,%20I%20would%20like%20to%20inquire%20about%20medical%20services." target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp" title="Chat with S.K Hospital on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">WhatsApp Us (24x7)</span>
+  </a>
+
+  <!-- Mobile Bottom Sticky Navigation -->
+  <div class="mobile-bottom-nav">
+    <button class="mobile-bottom-item" onclick="openCallbackModal()">
+      <i class="fa-solid fa-phone-volume text-navy"></i>
+      <span>Request a Callback</span>
+    </button>
+    
+    <!-- Central Floating Action Button -->
+    <div class="mobile-fab-wrap">
+      <button class="mobile-fab-btn" onclick="openBookingModal()" aria-label="Book Appointment">
+        <i class="fa-regular fa-calendar-days"></i>
+      </button>
+      <span class="fab-label">Book Appointment</span>
+    </div>
+
+    <button class="mobile-bottom-item" onclick="openHealthCheckModal()">
+      <i class="fa-solid fa-stethoscope text-navy"></i>
+      <span>Get Health Checkup</span>
+    </button>
+  </div>
+
+  <!-- ==================== INTERACTIVE MODALS ==================== -->
+
+  <!-- 1. Appointment Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-regular fa-calendar-check text-red modal-head-icon"></i>
+          <div>
+            <h3>Book Doctor Appointment</h3>
+            <p>S.K MULTI-SPECIALITY HOSPITAL 24×7 (Vikas Nagar, Uttam Nagar)</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="appointmentForm" onsubmit="submitAppointment(event)">
+          <div class="form-step active" id="bookingStep1">
+            <h4 class="form-section-title">1. Hospital Details & Speciality</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalHospital"><i class="fa-solid fa-hospital text-navy"></i> Hospital Facility</label>
+                <select id="modalHospital" required>
+                  <option value="S.K Multi-Speciality Hospital (Shiv Vihar Road, Vikas Nagar)" selected>S.K Multi-Speciality Hospital (Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Delhi)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="modalSpeciality"><i class="fa-solid fa-stethoscope text-red"></i> Medical Department</label>
+                <select id="modalSpeciality" required onchange="filterDoctorsBySpeciality(this.value)">
+                  <option value="">-- Select Department --</option>
+                  <option value="General Medicine">General & Internal Medicine</option>
+                  <option value="General Surgery">General & Laparoscopic Surgery</option>
+                  <option value="Orthopaedics">Orthopaedics & Joint Care</option>
+                  <option value="Gynaecology">Gynaecology & Obstetrics</option>
+                  <option value="Paediatrics">Paediatrics & Child Health</option>
+                  <option value="Cardiology">Cardiology / Heart Check</option>
+                  <option value="Emergency Care">24x7 Emergency & Critical Care</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modalDoctor"><i class="fa-solid fa-user-doctor text-navy"></i> Select Specialist Doctor</label>
+              <select id="modalDoctor" required>
+                <option value="">-- Choose Specialist / Consultant --</option>
+                <option value="Senior Consultant - General Medicine">Senior Consultant (General & Internal Medicine)</option>
+                <option value="Consultant Surgeon - Laparoscopic & General Surgery">Consultant General & Laparoscopic Surgeon</option>
+                <option value="Consultant Orthopaedic Surgeon">Consultant Orthopaedic & Fracture Specialist</option>
+                <option value="Consultant Gynaecologist & Obstetrician">Consultant Gynaecologist & Obstetrician</option>
+                <option value="Senior Paediatrician">Senior Paediatrician & Child Specialist</option>
+                <option value="Duty Medical Officer (24x7 Emergency)">Duty Medical Officer (24×7 Emergency & Trauma Care)</option>
+              </select>
+            </div>
+
+            <h4 class="form-section-title mt-form">2. Preferred Date & Time Slot</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalDate"><i class="fa-regular fa-calendar text-navy"></i> Appointment Date</label>
+                <input type="date" id="modalDate" required>
+              </div>
+              <div class="form-group">
+                <label for="modalSlot"><i class="fa-regular fa-clock text-red"></i> Preferred Slot</label>
+                <select id="modalSlot" required>
+                  <option value="09:00 AM - 11:00 AM">Morning: 09:00 AM - 11:00 AM</option>
+                  <option value="11:00 AM - 01:00 PM" selected>Morning: 11:00 AM - 01:00 PM</option>
+                  <option value="02:00 PM - 04:00 PM">Afternoon: 02:00 PM - 04:00 PM</option>
+                  <option value="05:00 PM - 07:00 PM">Evening: 05:00 PM - 07:00 PM</option>
+                  <option value="07:00 PM - 09:00 PM">Evening: 07:00 PM - 09:00 PM</option>
+                  <option value="24x7 Emergency Walk-in">24x7 Emergency / Immediate Walk-in</option>
+                </select>
+              </div>
+            </div>
+
+            <h4 class="form-section-title mt-form">3. Patient Contact Information</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patientName"><i class="fa-regular fa-user text-navy"></i> Full Name *</label>
+                <input type="text" id="patientName" placeholder="e.g. Rajesh Kumar" required>
+              </div>
+              <div class="form-group">
+                <label for="patientPhone"><i class="fa-solid fa-phone text-red"></i> Mobile Phone *</label>
+                <input type="tel" id="patientPhone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patientEmail"><i class="fa-regular fa-envelope text-navy"></i> Email (Optional)</label>
+                <input type="email" id="patientEmail" placeholder="e.g. patient@example.com">
+              </div>
+              <div class="form-group">
+                <label for="consultType"><i class="fa-solid fa-hospital-user text-red"></i> Consultation Type</label>
+                <select id="consultType">
+                  <option value="In-Hospital OPD Visit">In-Hospital OPD Visit</option>
+                  <option value="24x7 Emergency Admission">24x7 Emergency Admission</option>
+                  <option value="Phone / WhatsApp Consultation">Phone / WhatsApp Assistance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="modal-footer-btns">
+              <button type="button" class="btn btn-outline" onclick="closeModal('bookingModal')">Cancel</button>
+              <button type="submit" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Confirm Appointment</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Booking Confirmation Success Card -->
+        <div class="booking-success-view" id="bookingSuccessView" style="display:none;">
+          <div class="success-icon-badge">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3>Appointment Confirmed Successfully!</h3>
+          <p>Your appointment reference number is <strong class="app-ref" id="confirmedAppId">SKH-2026-8941</strong></p>
+          
+          <div class="confirmation-ticket">
+            <div class="ticket-row">
+              <span class="t-lbl">Patient:</span>
+              <span class="t-val" id="confPatientName">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Doctor/Dept:</span>
+              <span class="t-val" id="confDoctor">-</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Hospital:</span>
+              <span class="t-val" id="confHospital">S.K Multi-Speciality Hospital, Shiv Vihar Road, Vikas Nagar</span>
+            </div>
+            <div class="ticket-row">
+              <span class="t-lbl">Date & Time:</span>
+              <span class="t-val" id="confDateTime">-</span>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn btn-navy" onclick="printAppointmentTicket()"><i class="fa-solid fa-print"></i> Download Slip</button>
+            <a href="tel:07703964716" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call Hospital (077039 64716)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Emergency 24x7 SOS Modal -->
+  <div class="modal-overlay" id="emergencyModal">
+    <div class="modal-box modal-emergency">
+      <div class="modal-header bg-emergency-red">
+        <div class="modal-title-group text-white">
+          <i class="fa-solid fa-truck-medical modal-head-icon text-white"></i>
+          <div>
+            <h3>24x7 Emergency & Critical Trauma Care</h3>
+            <p>S.K MULTI-SPECIALITY HOSPITAL 24×7 • West Delhi</p>
+          </div>
+        </div>
+        <button class="close-modal-btn text-white" onclick="closeModal('emergencyModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="emergency-hotline-banner">
+          <div class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <span class="hotline-sub">24X7 EMERGENCY HELPLINE</span>
+            <a href="tel:07703964716" class="hotline-number">077039 64716</a>
+          </div>
+        </div>
+
+        <div class="emergency-quick-actions">
+          <div class="em-action-box" onclick="triggerAmbulanceSimulation()">
+            <div class="em-box-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="em-box-info">
+              <h4>Request Emergency Support / Ambulance</h4>
+              <p>Hastsal, Vikas Nagar, Uttam Nagar & nearby West Delhi</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </div>
+
+          <a href="tel:07703964716" class="em-action-box">
+            <div class="em-box-icon"><i class="fa-solid fa-heart-crack text-red"></i></div>
+            <div class="em-box-info">
+              <h4>Direct Call to Emergency Duty Doctor</h4>
+              <p>Immediate 24-hour medical consultation</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </a>
+
+          <a href="https://wa.me/917703964716?text=EMERGENCY:%20I%20need%20immediate%20medical%20help%20at%20SK%20Hospital." target="_blank" class="em-action-box">
+            <div class="em-box-icon"><i class="fa-brands fa-whatsapp text-red"></i></div>
+            <div class="em-box-info">
+              <h4>WhatsApp Emergency Alert</h4>
+              <p>Share live location or patient condition immediately</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </a>
+        </div>
+
+        <div class="emergency-status-bar" id="ambulanceStatusBar" style="display:none;">
+          <div class="spinner-loader"></div>
+          <span id="ambulanceStatusText">Locating nearest available medical team...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Medical Reports & Diagnostics Modal -->
+  <div class="modal-overlay" id="reportPortalModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-medical text-red modal-head-icon"></i>
+          <div>
+            <h3>Diagnostic Reports & Test Records</h3>
+            <p>S.K MULTI-SPECIALITY HOSPITAL 24×7</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('reportPortalModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="report-lookup-box">
+          <div class="form-group">
+            <label for="reportUHID"><i class="fa-solid fa-id-card text-navy"></i> Patient Mobile No. or Patient ID</label>
+            <input type="text" id="reportUHID" placeholder="e.g. 9876543210 or SKH-1049">
+          </div>
+          <button class="btn btn-navy btn-block" onclick="fetchSampleReports()">
+            <i class="fa-solid fa-magnifying-glass"></i> Fetch My Lab Reports
+          </button>
+        </div>
+
+        <div class="reports-results-view" id="reportsResultView" style="display:none; margin-top:20px;">
+          <h4 class="results-title"><i class="fa-solid fa-folder-open text-navy"></i> Available Reports for Patient (ID: SKH-1049)</h4>
+          <div class="report-items-list">
+            <div class="report-item">
+              <div class="rep-icon"><i class="fa-solid fa-file-pdf text-red"></i></div>
+              <div class="rep-meta">
+                <span class="rep-title">Complete Blood Count (CBC) & Blood Sugar</span>
+                <span class="rep-date">S.K Hospital Diagnostic Lab</span>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="downloadSampleReport('CBC_Blood_Sugar_Report.pdf')"><i class="fa-solid fa-download"></i> PDF</button>
+            </div>
+            <div class="report-item">
+              <div class="rep-icon"><i class="fa-solid fa-file-pdf text-red"></i></div>
+              <div class="rep-meta">
+                <span class="rep-title">Routine Lipid Profile & Liver Function Test</span>
+                <span class="rep-date">Pathology Department</span>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="downloadSampleReport('Lipid_LFT_Report.pdf')"><i class="fa-solid fa-download"></i> PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Request a Callback Modal -->
+  <div class="modal-overlay" id="callbackModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-headset text-navy modal-head-icon"></i>
+          <div>
+            <h3>Request a Callback</h3>
+            <p>Our hospital staff will call you shortly</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('callbackModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitCallback(event)">
+          <div class="form-group">
+            <label for="cbName">Your Full Name *</label>
+            <input type="text" id="cbName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cbPhone">Phone Number *</label>
+            <input type="tel" id="cbPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <label for="cbDept">Department / Concern</label>
+            <select id="cbDept">
+              <option value="Doctor Appointment Inquiry">Doctor Appointment Inquiry</option>
+              <option value="24x7 Emergency / Admission Inquiry">24x7 Emergency / Admission Inquiry</option>
+              <option value="Diagnostic Lab & Blood Test">Diagnostic Lab & Blood Test</option>
+              <option value="Surgery / Treatment Cost Inquiry">Surgery / Treatment Cost Inquiry</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Request Call Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
