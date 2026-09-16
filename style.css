@@ -3485,12 +3485,13 @@ button, input, select, textarea {
   }
 
   .homepage .main-header {
-    position: fixed;
+    position: fixed !important;
     top: env(safe-area-inset-top, 0px);
     right: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    transform: translate3d(0, 0, 0);
   }
 
   body {
