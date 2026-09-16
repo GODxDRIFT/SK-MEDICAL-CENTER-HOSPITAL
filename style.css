@@ -3485,8 +3485,9 @@ button, input, select, textarea {
   }
 
   .homepage .main-header {
+    position: -webkit-sticky !important;
     position: sticky !important;
-    top: env(safe-area-inset-top, 0px);
+    top: 0;
     right: 0;
     left: 0;
     width: 100%;
