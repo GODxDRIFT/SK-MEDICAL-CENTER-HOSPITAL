@@ -22,12 +22,12 @@
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-nav-links">
-        <a href="#specialities" onclick="openDoctorSearch()"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
-        <a href="#about-us"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
-        <a href="#specialities"><i class="fa-solid fa-stethoscope"></i> Departments</a>
-        <a href="#google-reviews"><i class="fa-brands fa-google text-red"></i> Reviews (4.3★)</a>
-        <a href="#location-section"><i class="fa-solid fa-map-location-dot"></i> Directions</a>
-        <a href="#contact-us"><i class="fa-solid fa-phone"></i> Contact Us</a>
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
       </div>
       <div class="top-right-actions">
         <!-- 24x7 Status Indicator -->
@@ -86,30 +86,30 @@
       <!-- Desktop Nav Menu -->
       <nav class="desktop-nav" id="desktopNav">
         <ul class="nav-list">
-          <li><a href="#about-us">About Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
           <li class="has-dropdown">
-            <a href="#specialities">Specialities <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+            <a href="departments.html">Specialities <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
             <div class="nav-dropdown mega-menu">
               <div class="mega-column">
                 <h4>Core Medical Specialities</h4>
-                <a href="#specialities" onclick="filterSpeciality('General Medicine')"><i class="fa-solid fa-user-doctor text-navy"></i> General & Internal Medicine</a>
-                <a href="#specialities" onclick="filterSpeciality('General Surgery')"><i class="fa-solid fa-scalpel text-red"></i> General & Laparoscopic Surgery</a>
-                <a href="#specialities" onclick="filterSpeciality('Orthopaedics')"><i class="fa-solid fa-bone text-navy"></i> Orthopaedics & Trauma Care</a>
-                <a href="#specialities" onclick="filterSpeciality('Gynaecology')"><i class="fa-solid fa-person-pregnant text-red"></i> Gynaecology & Obstetrics</a>
+                <a href="departments.html#general-medicine"><i class="fa-solid fa-user-doctor text-navy"></i> General & Internal Medicine</a>
+                <a href="departments.html#surgery"><i class="fa-solid fa-scalpel text-red"></i> General & Laparoscopic Surgery</a>
+                <a href="departments.html#ortho"><i class="fa-solid fa-bone text-navy"></i> Orthopaedics & Trauma Care</a>
+                <a href="departments.html#gynae"><i class="fa-solid fa-person-pregnant text-red"></i> Gynaecology & Obstetrics</a>
               </div>
               <div class="mega-column">
-                <h4>Emergency & Specialized Care</h4>
-                <a href="#specialities" onclick="filterSpeciality('Emergency & ICU')"><i class="fa-solid fa-truck-medical text-red"></i> 24x7 Emergency & ICU Care</a>
-                <a href="#specialities" onclick="filterSpeciality('Paediatrics')"><i class="fa-solid fa-baby text-navy"></i> Paediatrics & Child Care</a>
-                <a href="#specialities" onclick="filterSpeciality('Cardiology')"><i class="fa-solid fa-heart-pulse text-red"></i> Cardiology & Heart Care</a>
-                <a href="#specialities" onclick="filterSpeciality('Diagnostics')"><i class="fa-solid fa-microscope text-navy"></i> Pathology & Diagnostics</a>
+                <h4>Emergency & Hospital Care</h4>
+                <a href="departments.html#emergency-icu"><i class="fa-solid fa-truck-medical text-red"></i> 24x7 Emergency & ICU Care</a>
+                <a href="departments.html#paediatrics"><i class="fa-solid fa-baby text-navy"></i> Paediatrics & Child Care</a>
+                <a href="facilities.html#diagnostics"><i class="fa-solid fa-microscope text-teal"></i> Pathology & Diagnostics</a>
+                <a href="facilities.html#beds"><i class="fa-solid fa-hospital text-navy"></i> 35+ Inpatient Beds & OT</a>
               </div>
             </div>
           </li>
-          <li><a href="#specialities">Facilities & ICU</a></li>
-          <li><a href="#google-reviews">Patient Reviews (4.3★)</a></li>
-          <li><a href="#location-section">Location & Maps</a></li>
-          <li><a href="#contact-us">Contact Us</a></li>
+          <li><a href="facilities.html">Facilities & Beds</a></li>
+          <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+          <li><a href="contact.html">Contact & Location</a></li>
         </ul>
       </nav>
     </div>
@@ -161,11 +161,12 @@
       </div>
 
       <ul class="mobile-nav-list">
-        <li><a href="#about-us" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital text-navy"></i> About S.K Hospital</a></li>
-        <li><a href="#specialities" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope text-red"></i> Specialities & Treatments</a></li>
-        <li><a href="#google-reviews" onclick="toggleMobileMenu()"><i class="fa-solid fa-star text-gold"></i> Patient Reviews (Google 4.3★)</a></li>
-        <li><a href="#location-section" onclick="toggleMobileMenu()"><i class="fa-solid fa-map-location-dot text-navy"></i> Location & Directions</a></li>
-        <li><a href="#contact-us" onclick="toggleMobileMenu()"><i class="fa-solid fa-address-book text-red"></i> Contact Us</a></li>
+        <li><a href="about.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital text-navy"></i> About S.K Hospital</a></li>
+        <li><a href="doctors.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-user-doctor text-teal"></i> Specialist Doctors</a></li>
+        <li><a href="departments.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope text-red"></i> Specialities & Treatments</a></li>
+        <li><a href="facilities.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital-user text-navy"></i> Facilities, ICU & Beds</a></li>
+        <li><a href="insurance-packages.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-halved text-teal"></i> Insurance & TPA</a></li>
+        <li><a href="contact.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-location-dot text-red"></i> Contact & Location</a></li>
       </ul>
       <div class="drawer-address-footer">
         <p><i class="fa-solid fa-location-dot text-red"></i> Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Hastsal, Delhi – 110059</p>
@@ -242,22 +243,7 @@
           </div>
         </div>
 
-        <!-- Hero Image Showcase Banner -->
-        <div class="hero-image-showcase">
-          <div class="hero-image-card">
-            <img src="images/hero_hospital.jpg" alt="S.K MULTI-SPECIALITY HOSPITAL 24×7 Building - Shiv Vihar Road, Vikas Nagar, Uttam Nagar, Delhi" class="hero-showcase-img" loading="eager">
-            <div class="hero-img-badge hero-badge-top">
-              <span class="pulse-dot"></span>
-              <span>24×7 EMERGENCY & ADMISSIONS OPEN</span>
-            </div>
-            <div class="hero-img-badge hero-badge-bottom">
-              <i class="fa-solid fa-location-dot text-red"></i>
-              <span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Hero Stats -->
+        <!-- Quick Hero Stats (Frosted Glass Floating Bar) -->
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-num">24×7</span>
@@ -454,6 +440,17 @@
             <p class="about-desc">
               We provide round-the-clock emergency care, inpatient treatment, outpatient doctor consultations, advanced diagnostic pathology, day-care surgeries, and post-operative monitoring. Our compassionate team of qualified medical officers, visiting senior consultants, and trained nursing staff ensure high-quality patient care in a comfortable, sterile, and supportive environment.
             </p>
+
+            <!-- Building Infrastructure Card -->
+            <div class="about-infrastructure-card">
+              <div class="about-building-img-wrap">
+                <img src="images/hero_hospital.jpg" alt="S.K Multi-Speciality Hospital Infrastructure & Emergency Bay" class="about-building-img" loading="lazy">
+                <div class="infrastructure-badge">
+                  <i class="fa-solid fa-hospital text-teal"></i>
+                  <span>Modern Hospital Infrastructure & 24x7 Ambulance Bay • Shiv Vihar Road</span>
+                </div>
+              </div>
+            </div>
 
             <div class="about-highlights-grid">
               <div class="highlight-item">
@@ -805,7 +802,7 @@
 
               <!-- Verified Listings Card -->
               <div class="online-presence-box">
-                <h4><i class="fa-solid fa-circle-check text-red"></i> Verified Online Presence:</h4>
+                <h4><i class="fa-solid fa-circle-check text-teal"></i> Verified Online Presence:</h4>
                 <div class="presence-badges">
                   <div class="p-badge">
                     <i class="fa-brands fa-google text-red"></i> Google Business Listing (4.3 ★)
@@ -988,12 +985,12 @@
         <div class="footer-col">
           <h4 class="footer-col-title">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="#about-us">About Hospital</a></li>
-            <li><a href="#google-reviews">Patient Reviews</a></li>
-            <li><a href="#location-section">Location & Map</a></li>
-            <li><a href="#faq">FAQs</a></li>
-            <li><a href="#bookingModal" onclick="openBookingModal()">Book Appointment</a></li>
-            <li><a href="#emergencyModal" onclick="openEmergencyModal()">24x7 Emergency</a></li>
+            <li><a href="doctors.html">Find a Doctor</a></li>
+            <li><a href="departments.html">Departments & Specialities</a></li>
+            <li><a href="facilities.html">Facilities & 35+ Beds</a></li>
+            <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+            <li><a href="about.html">About Hospital</a></li>
+            <li><a href="contact.html">Contact & Emergency</a></li>
           </ul>
         </div>
 

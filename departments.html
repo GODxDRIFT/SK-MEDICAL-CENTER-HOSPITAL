@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Departments & Treatments | S.K MULTI-SPECIALITY HOSPITAL 24×7</title>
+  <meta name="description" content="Comprehensive clinical departments & surgical treatments at S.K Multi-Speciality Hospital, Vikas Nagar, Delhi. General Surgery, Orthopaedics, Gynaecology, Medicine, ICU, Paediatrics.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="departments.html" class="active"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247">
+          <span class="pulse-dot"></span> Open 24 Hours / 24×7
+        </div>
+        <a href="tel:07703964716" class="top-phone-link">
+          <i class="fa-solid fa-phone-volume"></i> 077039 64716
+        </a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn" aria-label="Call Hospital">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="departments.html" style="color: var(--teal-primary); font-weight:700;">Specialities</a></li>
+          <li><a href="facilities.html">Facilities & Beds</a></li>
+          <li><a href="insurance-packages.html">Insurance & Packages</a></li>
+          <li><a href="contact.html">Contact & Directions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-title-banner">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span>Departments & Treatments</span>
+        </div>
+        <h1 class="page-main-heading">Clinical Specialities & Surgical Services</h1>
+        <p class="page-lead-text">
+          Explore our wide range of multi-speciality departments, day-care procedures, surgical capabilities, and 24x7 trauma care.
+        </p>
+      </div>
+    </section>
+
+    <!-- Departments Detailed Section -->
+    <section class="departments-detail-section">
+      <div class="container">
+        
+        <div class="dept-list-wrapper">
+          
+          <!-- 1. General & Internal Medicine -->
+          <div class="dept-detail-card" id="general-medicine">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-navy-grad"><i class="fa-solid fa-stethoscope"></i></div>
+              <div>
+                <h2>General & Internal Medicine</h2>
+                <span class="dept-subtitle">Comprehensive Adult Healthcare, Chronic Disease & Fever Clinic</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>Our Internal Medicine department provides diagnosis and non-surgical management of complex diseases, lifestyle disorders, infectious diseases, and multi-system conditions.</p>
+              
+              <h4>Exact Treatments & Scope:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Diabetes Mellitus (Type 1 & 2)</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Hypertension & Blood Pressure Control</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Dengue, Typhoid, Malaria & Viral Fevers</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Thyroid, Hormone & Lipid Disorders</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Bronchitis, Asthma & Chest Infections</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Gastritis, Acidity & Liver Management</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <button class="btn btn-primary" onclick="openBookingModal('General Medicine')">Book Physician OPD</button>
+                <a href="tel:07703964716" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Inquire 077039 64716</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. General & Laparoscopic Surgery -->
+          <div class="dept-detail-card" id="surgery">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-red-grad"><i class="fa-solid fa-scalpel"></i></div>
+              <div>
+                <h2>General & Laparoscopic Surgery</h2>
+                <span class="dept-subtitle">Minimally Invasive Keyhole Procedures & Day-Care Surgeries</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>Performed in high-sterility Modular Operation Theatres equipped with advanced laparoscopic towers and C-Arm imaging for faster recovery and minimal pain.</p>
+              
+              <h4>Surgical Scope & Procedures:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-red"></i> Laparoscopic Cholecystectomy (Gallbladder Stone)</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Laparoscopic Appendicectomy (Appendix)</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Inguinal & Umbilical Hernia Mesh Repair</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Piles, Fissure & Fistula Laser Surgery</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Abscess Drainage & Cyst Excision</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Diabetic Foot Ulcer & Wound Debridement</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <button class="btn btn-primary" onclick="openBookingModal('General Surgery')">Consult General Surgeon</button>
+                <a href="insurance-packages.html" class="btn btn-outline">View Surgery Packages</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Orthopaedics & Trauma Care -->
+          <div class="dept-detail-card" id="ortho">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-navy-grad"><i class="fa-solid fa-bone"></i></div>
+              <div>
+                <h2>Orthopaedics, Joint Care & Trauma</h2>
+                <span class="dept-subtitle">Bone Fractures, Joint Arthroscopy & Spine Management</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>24x7 emergency fracture reduction, plaster casting, trauma surgical stabilization, and non-surgical arthritis management.</p>
+              
+              <h4>Orthopaedic Treatments:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Emergency Fracture Plaster & Casting</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Fracture Surgery (Plating, Nailing, Screws)</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Knee & Hip Osteoarthritis Management</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Sciatica, Slip Disc & Chronic Back Pain</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Ligament Sprain, Tendon & Sports Injury</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Osteoporosis Bone Density & Vitamin D Therapy</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <button class="btn btn-primary" onclick="openBookingModal('Orthopaedics')">Book Ortho OPD</button>
+                <a href="tel:07703964716" class="btn btn-emergency-red"><i class="fa-solid fa-phone"></i> 24x7 Trauma Call</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Gynaecology & Obstetrics -->
+          <div class="dept-detail-card" id="gynae">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-teal-grad"><i class="fa-solid fa-person-pregnant"></i></div>
+              <div>
+                <h2>Gynaecology & Obstetrics</h2>
+                <span class="dept-subtitle">Complete Maternal Antenatal Care, Normal Delivery & Women's Health</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>Dedicated labour room, fetal monitoring, post-natal care, and advanced gynaecological treatment for women of all age groups.</p>
+              
+              <h4>Maternal & Gynae Services:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Antenatal Mother & Fetal Checkups (ANC)</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Painless Normal Delivery & Caesarean (LSCS)</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> PCOD/PCOS & Irregular Periods Management</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Uterine Fibroid & Ovarian Cyst Treatment</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Infertility Counseling & Primary Workup</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Menopause & Pap Smear Cervical Screening</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <button class="btn btn-primary" onclick="openBookingModal('Gynaecology')">Book Gynaecologist OPD</button>
+                <a href="insurance-packages.html" class="btn btn-outline">Maternity Packages</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Paediatrics & Child Health -->
+          <div class="dept-detail-card" id="paediatrics">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-navy-grad"><i class="fa-solid fa-baby"></i></div>
+              <div>
+                <h2>Paediatrics & Neonatal Care</h2>
+                <span class="dept-subtitle">Newborn Care, Child Vaccinations & Seasonal Illnesses</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>Comprehensive healthcare for infants, children, and adolescents delivered by experienced child specialists.</p>
+              
+              <h4>Paediatric Services:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Complete National Immunization / Vaccination</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Paediatric Fever, Pneumonia & Chest Infection</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Newborn Jaundice (Phototherapy)</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Childhood Asthma & Allergies</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Growth, Height, Weight & Nutrition Assessment</li>
+                <li><i class="fa-solid fa-circle-check text-teal"></i> Diarrhea, Vomiting & Dehydration Care</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <button class="btn btn-primary" onclick="openBookingModal('Paediatrics')">Book Paediatric OPD</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. 24x7 Emergency & Critical Care ICU -->
+          <div class="dept-detail-card" id="emergency-icu">
+            <div class="dept-card-header">
+              <div class="dept-icon-circle bg-red-grad"><i class="fa-solid fa-truck-medical"></i></div>
+              <div>
+                <h2>24×7 Emergency, Trauma & ICU Care</h2>
+                <span class="dept-subtitle">Immediate Life-Saving Critical Care & Resuscitation</span>
+              </div>
+            </div>
+            <div class="dept-card-body">
+              <p>Round-the-clock emergency medical officers, trained critical care nursing staff, high-dependency ICU beds with continuous vital monitoring and oxygen backup.</p>
+              
+              <h4>Emergency Scope & Scope of Care:</h4>
+              <ul class="treatment-pill-list">
+                <li><i class="fa-solid fa-circle-check text-red"></i> Acute Road Accident & Trauma Stabilization</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Severe Chest Pain & Cardiac Emergency Triage</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Respiratory Distress & Oxygen/Ventilator Support</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Acute Poisoning, Drug Overdose & Bites</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> Diabetic Ketoacidosis & Shock Management</li>
+                <li><i class="fa-solid fa-circle-check text-red"></i> 24x7 Ambulance Dispatch with Oxygen</li>
+              </ul>
+              
+              <div class="dept-action-bar">
+                <a href="tel:07703964716" class="btn btn-emergency-red">
+                  <i class="fa-solid fa-phone-volume"></i> 24x7 Emergency Hotline: 077039 64716
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-wrap">
+            <div class="logo-symbol small"><i class="fa-solid fa-hospital"></i></div>
+            <span class="footer-brand-title">S.K MULTI-SPECIALITY</span>
+          </div>
+          <p class="footer-about-text">24×7 Multi-Speciality Hospital on Shiv Vihar Road, Vikas Nagar, Uttam Nagar, Delhi – 110059.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="doctors.html">Our Doctors</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="facilities.html">Facilities & ICU</a></li>
+            <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact & Location</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:07703964716">077039 64716 (24 Hours)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+          <p>&copy; 2026 S.K MULTI-SPECIALITY HOSPITAL 24×7. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-badges">
+          <span class="f-badge"><i class="fa-brands fa-google text-red"></i> Google 4.3★</span>
+          <span class="f-badge"><i class="fa-solid fa-tag text-red"></i> Magicpin Verified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

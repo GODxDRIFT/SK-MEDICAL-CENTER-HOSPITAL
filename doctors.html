@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Doctors & Specialists | S.K MULTI-SPECIALITY HOSPITAL 24×7</title>
+  <meta name="description" content="Meet expert doctors & specialists at S.K Multi-Speciality Hospital 24×7, Vikas Nagar, Uttam Nagar, Delhi. General Medicine, Surgery, Ortho, Gynae, Paediatrics, ICU. Call 077039 64716.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="doctors.html" class="active"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247">
+          <span class="pulse-dot"></span> Open 24 Hours / 24×7
+        </div>
+        <a href="tel:07703964716" class="top-phone-link">
+          <i class="fa-solid fa-phone-volume"></i> 077039 64716
+        </a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn" aria-label="Call Hospital">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html" style="color: var(--teal-primary); font-weight:700;">Doctors</a></li>
+          <li class="has-dropdown">
+            <a href="departments.html">Specialities <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+            <div class="nav-dropdown mega-menu">
+              <div class="mega-column">
+                <h4>Core Medical Specialities</h4>
+                <a href="departments.html#general-medicine"><i class="fa-solid fa-user-doctor text-navy"></i> General Medicine</a>
+                <a href="departments.html#surgery"><i class="fa-solid fa-scalpel text-red"></i> General & Laparoscopic Surgery</a>
+                <a href="departments.html#ortho"><i class="fa-solid fa-bone text-navy"></i> Orthopaedics & Fracture Care</a>
+                <a href="departments.html#gynae"><i class="fa-solid fa-person-pregnant text-red"></i> Gynaecology & Obstetrics</a>
+              </div>
+              <div class="mega-column">
+                <h4>Emergency & Critical Care</h4>
+                <a href="departments.html#emergency-icu"><i class="fa-solid fa-truck-medical text-red"></i> 24x7 Emergency & ICU</a>
+                <a href="departments.html#paediatrics"><i class="fa-solid fa-baby text-navy"></i> Paediatrics & Child Health</a>
+                <a href="facilities.html#diagnostics"><i class="fa-solid fa-microscope text-teal"></i> Pathology & Radiology</a>
+                <a href="facilities.html#ot"><i class="fa-solid fa-hospital text-navy"></i> Modular OT & Bed Facilities</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="facilities.html">Facilities & Beds</a></li>
+          <li><a href="insurance-packages.html">Insurance & Packages</a></li>
+          <li><a href="contact.html">Contact & Directions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="drawer-logo">
+        <span class="logo-name">S.K MULTI-SPECIALITY</span>
+        <span class="badge-247-inline">24×7</span>
+      </div>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()">&times;</button>
+    </div>
+    <div class="mobile-drawer-body">
+      <div class="drawer-actions">
+        <a href="tel:07703964716" class="btn btn-emergency-red btn-block">
+          <i class="fa-solid fa-phone-volume"></i> Emergency: 077039 64716
+        </a>
+        <button class="btn btn-navy btn-block" onclick="openBookingModal(); toggleMobileMenu();">
+          <i class="fa-regular fa-calendar-check"></i> Book Doctor Appointment
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-house text-navy"></i> Home</a></li>
+        <li><a href="doctors.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-user-doctor text-teal"></i> Specialist Doctors</a></li>
+        <li><a href="departments.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope text-red"></i> Departments & Treatments</a></li>
+        <li><a href="facilities.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital-user text-navy"></i> Facilities & ICU/OT</a></li>
+        <li><a href="insurance-packages.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-halved text-teal"></i> Insurance & TPA</a></li>
+        <li><a href="about.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital text-navy"></i> About Hospital</a></li>
+        <li><a href="contact.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-location-dot text-red"></i> Contact & Map</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-title-banner">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span>Our Specialist Doctors</span>
+        </div>
+        <h1 class="page-main-heading">Expert Doctors & Clinical Specialists</h1>
+        <p class="page-lead-text">
+          Consult with highly qualified physicians, visiting senior surgeons, gynaecologists, orthopaedic specialists, and 24x7 emergency medical officers at S.K Multi-Speciality Hospital.
+        </p>
+      </div>
+    </section>
+
+    <!-- Doctors Listing Section -->
+    <section class="doctors-listing-section">
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="doctor-filter-tabs">
+          <button class="doc-tab-btn active" onclick="filterDoctorCards('all', this)">All Specialists</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('medicine', this)">General Medicine</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('surgery', this)">General Surgery</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('ortho', this)">Orthopaedics</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('gynae', this)">Gynaecology</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('paediatrics', this)">Paediatrics</button>
+          <button class="doc-tab-btn" onclick="filterDoctorCards('emergency', this)">Emergency & ICU</button>
+        </div>
+
+        <!-- Doctors Grid -->
+        <div class="doctors-cards-grid">
+          
+          <!-- Doctor 1: Medicine -->
+          <div class="doctor-profile-card" data-dept="medicine">
+            <div class="doc-card-badge">Senior Consultant</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-navy-grad"><i class="fa-solid fa-user-doctor"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. S. K. Sharma</h3>
+              <span class="doc-degree">MBBS, MD (Internal Medicine)</span>
+              <span class="doc-speciality"><i class="fa-solid fa-stethoscope text-teal"></i> Senior Physician & Diabetologist</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 18+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-teal"></i> Mon - Sat: 10 AM - 2 PM, 6 PM - 8 PM</span>
+              </div>
+              <p class="doc-bio">
+                Expertise in chronic diabetes management, hypertension, infectious fevers, thyroid disorders, and preventive cardiac wellness.
+              </p>
+              <div class="doc-card-actions">
+                <button class="btn btn-primary btn-sm btn-block" onclick="openBookingModal('Dr. S. K. Sharma (Medicine)')">
+                  <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 2: Gynaecology -->
+          <div class="doctor-profile-card" data-dept="gynae">
+            <div class="doc-card-badge badge-red">Senior Consultant</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-teal-grad"><i class="fa-solid fa-person-pregnant"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. Ananya Verma</h3>
+              <span class="doc-degree">MBBS, MS (Obstetrics & Gynaecology), DNB</span>
+              <span class="doc-speciality"><i class="fa-solid fa-person-pregnant text-red"></i> Senior Obstetrician & Gynaecologist</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 14+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-teal"></i> Mon - Sat: 11 AM - 3 PM, 5 PM - 7 PM</span>
+              </div>
+              <p class="doc-bio">
+                Specialized in high-risk pregnancies, normal & caesarean deliveries, PCOD/PCOS management, laparoscopic hysterectomy, and women's wellness.
+              </p>
+              <div class="doc-card-actions">
+                <button class="btn btn-primary btn-sm btn-block" onclick="openBookingModal('Dr. Ananya Verma (Gynaecology)')">
+                  <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 3: Orthopaedics -->
+          <div class="doctor-profile-card" data-dept="ortho">
+            <div class="doc-card-badge">Visiting Surgeon</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-navy-grad"><i class="fa-solid fa-bone"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. Rajesh Aggarwal</h3>
+              <span class="doc-degree">MBBS, MS (Orthopaedics), M.Ch (Ortho)</span>
+              <span class="doc-speciality"><i class="fa-solid fa-bone text-teal"></i> Orthopaedic, Joint & Fracture Surgeon</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 16+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-teal"></i> Mon, Wed, Fri: 4 PM - 7 PM</span>
+              </div>
+              <p class="doc-bio">
+                Expert in trauma fracture surgeries, joint pain, knee and hip arthritis, spine disorders, sports injuries, and plaster/casting.
+              </p>
+              <div class="doc-card-actions">
+                <button class="btn btn-primary btn-sm btn-block" onclick="openBookingModal('Dr. Rajesh Aggarwal (Orthopaedics)')">
+                  <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 4: General & Laparoscopic Surgery -->
+          <div class="doctor-profile-card" data-dept="surgery">
+            <div class="doc-card-badge badge-red">Senior Surgeon</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-teal-grad"><i class="fa-solid fa-scalpel"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. Amit Malhotra</h3>
+              <span class="doc-degree">MBBS, MS (General Surgery), FMAS</span>
+              <span class="doc-speciality"><i class="fa-solid fa-scalpel text-red"></i> General & Laparoscopic Surgeon</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 15+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-teal"></i> Daily: 5 PM - 8 PM & On-Call Emergency</span>
+              </div>
+              <p class="doc-bio">
+                Specialist in keyhole laparoscopic surgeries for gallbladder stones, hernia, appendix, piles/fistula laser, and wound debridement.
+              </p>
+              <div class="doc-card-actions">
+                <button class="btn btn-primary btn-sm btn-block" onclick="openBookingModal('Dr. Amit Malhotra (Surgery)')">
+                  <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 5: Paediatrics -->
+          <div class="doctor-profile-card" data-dept="paediatrics">
+            <div class="doc-card-badge">Senior Consultant</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-navy-grad"><i class="fa-solid fa-baby"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. Neha Gupta</h3>
+              <span class="doc-degree">MBBS, MD (Paediatrics), DCH</span>
+              <span class="doc-speciality"><i class="fa-solid fa-baby text-teal"></i> Paediatrician & Neonatal Specialist</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 12+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-teal"></i> Daily: 10 AM - 1 PM, 5 PM - 7:30 PM</span>
+              </div>
+              <p class="doc-bio">
+                Expert care for newborn babies, vaccination schedule, child growth & development, seasonal viral infections, and paediatric nutrition.
+              </p>
+              <div class="doc-card-actions">
+                <button class="btn btn-primary btn-sm btn-block" onclick="openBookingModal('Dr. Neha Gupta (Paediatrics)')">
+                  <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Doctor 6: Emergency & Critical Care -->
+          <div class="doctor-profile-card" data-dept="emergency">
+            <div class="doc-card-badge badge-red">24×7 Emergency Head</div>
+            <div class="doc-avatar-wrap">
+              <div class="doc-icon-avatar bg-red-grad"><i class="fa-solid fa-truck-medical"></i></div>
+            </div>
+            <div class="doc-card-details">
+              <h3 class="doc-name">Dr. R. K. Yadav & Duty RMOs</h3>
+              <span class="doc-degree">MBBS, FEM (Emergency Medicine & ICU)</span>
+              <span class="doc-speciality"><i class="fa-solid fa-truck-medical text-red"></i> Emergency Medicine & Critical Care</span>
+              <div class="doc-meta-pills">
+                <span><i class="fa-solid fa-briefcase text-navy"></i> 10+ Years Exp.</span>
+                <span><i class="fa-solid fa-clock text-red font-bold"></i> Available 24×7 Round the Clock</span>
+              </div>
+              <p class="doc-bio">
+                Immediate acute trauma triage, cardiac resuscitation, poisoning management, oxygen therapy, and continuous ICU patient monitoring.
+              </p>
+              <div class="doc-card-actions">
+                <a href="tel:07703964716" class="btn btn-emergency-red btn-sm btn-block">
+                  <i class="fa-solid fa-phone-volume"></i> 24x7 Emergency: 077039 64716
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-wrap">
+            <div class="logo-symbol small"><i class="fa-solid fa-hospital"></i></div>
+            <span class="footer-brand-title">S.K MULTI-SPECIALITY</span>
+          </div>
+          <p class="footer-about-text">24×7 Multi-Speciality Hospital providing trusted healthcare, emergency trauma care, and inpatient facilities in West Delhi.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="doctors.html">Find a Doctor</a></li>
+            <li><a href="departments.html">Specialities & OPD</a></li>
+            <li><a href="facilities.html">ICU, OT & Beds</a></li>
+            <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+            <li><a href="contact.html">Contact & Emergency</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact & Location</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:07703964716">077039 64716 (24 Hours)</a></li>
+            <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/917703964716">+91 77039 64716</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+          <p>&copy; 2026 S.K MULTI-SPECIALITY HOSPITAL 24×7. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-badges">
+          <span class="f-badge"><i class="fa-brands fa-google text-red"></i> Google 4.3★</span>
+          <span class="f-badge"><i class="fa-solid fa-tag text-red"></i> Magicpin Verified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

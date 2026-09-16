@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us, Leadership & History | S.K MULTI-SPECIALITY HOSPITAL 24×7</title>
+  <meta name="description" content="Learn about S.K Multi-Speciality Hospital 24×7, our leadership, medical founder, vision, patient safety standards, and round-the-clock emergency healthcare in West Delhi.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="about.html" class="active"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247">
+          <span class="pulse-dot"></span> Open 24 Hours / 24×7
+        </div>
+        <a href="tel:07703964716" class="top-phone-link">
+          <i class="fa-solid fa-phone-volume"></i> 077039 64716
+        </a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn" aria-label="Call Hospital">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" style="color: var(--teal-primary); font-weight:700;">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="departments.html">Specialities</a></li>
+          <li><a href="facilities.html">Facilities & Beds</a></li>
+          <li><a href="insurance-packages.html">Insurance & Packages</a></li>
+          <li><a href="contact.html">Contact & Directions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-title-banner">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span>About Hospital & Leadership</span>
+        </div>
+        <h1 class="page-main-heading">Serving Humanity with Quality Healthcare 24×7</h1>
+        <p class="page-lead-text">
+          Established to bring advanced, compassionate, and affordable multi-speciality medical care to the families of Vikas Nagar, Hastsal, and Uttam Nagar, Delhi.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Hospital Main Content -->
+    <section class="about-page-content-section">
+      <div class="container">
+        
+        <div class="about-grid">
+          <div class="about-text-col">
+            <div class="section-tag"><i class="fa-solid fa-hospital text-teal"></i> Our Mission & Heritage</div>
+            <h2 class="about-heading">Compassionate Care with Advanced Medical Standards</h2>
+            <p class="about-lead">
+              <strong>S.K MULTI-SPECIALITY HOSPITAL 24×7</strong> was founded with a dedicated vision to deliver prompt emergency trauma support and multi-disciplinary medical treatment in West Delhi.
+            </p>
+            <p class="about-desc">
+              Located on the prominent Shiv Vihar Road near Bikaner Sweets, the hospital has grown into a trusted community healthcare hub. We are committed to ethical medical practices, transparent clinical charges, sterile hospital environments, and 24-hour doctor accessibility.
+            </p>
+
+            <div class="about-infrastructure-card">
+              <div class="about-building-img-wrap">
+                <img src="images/hero_hospital.jpg" alt="S.K Multi-Speciality Hospital Building" class="about-building-img" loading="lazy">
+                <div class="infrastructure-badge">
+                  <i class="fa-solid fa-hospital text-teal"></i>
+                  <span>Modern Healthcare Centre with 24x7 Ambulance & Emergency Facility</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <i class="fa-solid fa-heart-circle-check text-red"></i>
+                <div>
+                  <h4>Patient-First Philosophy</h4>
+                  <p>Compassionate care and gentle, attentive nursing support appreciated by patients.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-shield-virus text-teal"></i>
+                <div>
+                  <h4>Highest Sterility & Safety</h4>
+                  <p>Strict infection control protocols across OT, ICU, and inpatient rooms.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-clock text-red"></i>
+                <div>
+                  <h4>24×7 Emergency Readiness</h4>
+                  <p>Doctors, casualty trauma officers, and oxygen supply available round-the-clock.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-hand-holding-dollar text-teal"></i>
+                <div>
+                  <h4>Honest & Affordable Pricing</h4>
+                  <p>Transparent bills, cashless insurance support, and no surprise charges.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-sidebar-card">
+            <div class="about-doctor-card">
+              <div class="about-doctor-img-wrap">
+                <img src="images/doctor_team.jpg" alt="Experienced Medical Officers & Doctors S.K Hospital" class="about-team-photo" loading="lazy">
+                <div class="doctor-photo-badge">
+                  <i class="fa-solid fa-user-doctor text-teal"></i>
+                  <span>Qualified Clinical Specialists & Nursing Team</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-overview-box">
+              <h3><i class="fa-solid fa-circle-info text-teal"></i> Hospital Official Overview</h3>
+              <ul class="fact-list">
+                <li><span class="fact-label">Hospital Name:</span><span class="fact-value">S.K MULTI-SPECIALITY HOSPITAL 24×7</span></li>
+                <li><span class="fact-label">Category:</span><span class="fact-value">Multi-Speciality Hospital</span></li>
+                <li><span class="fact-label">Location:</span><span class="fact-value">Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</span></li>
+                <li><span class="fact-label">Area / City:</span><span class="fact-value">Hastsal, Vikas Nagar, West Delhi</span></li>
+                <li><span class="fact-label">24x7 Helpline:</span><span class="fact-value"><a href="tel:07703964716">077039 64716</a></span></li>
+                <li><span class="fact-label">Official Email:</span><span class="fact-value">info@skmultispecialityhospital.com</span></li>
+                <li><span class="fact-label">Availability:</span><span class="fact-value text-red font-bold">Open 24 Hours / 24×7</span></li>
+                <li><span class="fact-label">Inpatient Beds:</span><span class="fact-value font-bold">35+ Beds (ICU, Private, Gen)</span></li>
+                <li><span class="fact-label">Google Rating:</span><span class="fact-value"><span class="star-gold">★ 4.3</span> (13 Reviews)</span></li>
+                <li><span class="fact-label">Listings:</span><span class="fact-value">Google Maps + Magicpin Verified</span></li>
+              </ul>
+              <div class="card-action-btn-wrap">
+                <a href="tel:07703964716" class="btn btn-primary btn-block"><i class="fa-solid fa-phone"></i> Call 077039 64716</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-wrap">
+            <div class="logo-symbol small"><i class="fa-solid fa-hospital"></i></div>
+            <span class="footer-brand-title">S.K MULTI-SPECIALITY</span>
+          </div>
+          <p class="footer-about-text">24×7 Multi-Speciality Hospital on Shiv Vihar Road, Vikas Nagar, Uttam Nagar, Delhi – 110059.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="doctors.html">Our Doctors</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="facilities.html">Facilities & Beds</a></li>
+            <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact & Location</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:07703964716">077039 64716 (24 Hours)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+          <p>&copy; 2026 S.K MULTI-SPECIALITY HOSPITAL 24×7. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-badges">
+          <span class="f-badge"><i class="fa-brands fa-google text-red"></i> Google 4.3★</span>
+          <span class="f-badge"><i class="fa-solid fa-tag text-red"></i> Magicpin Verified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

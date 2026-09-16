@@ -537,3 +537,23 @@ function showToast(message, type = 'info') {
     setTimeout(() => toast.remove(), 300);
   }, 4000);
 }
+
+// ==========================================================================
+// DOCTOR FILTER ON DOCTORS.HTML
+// ==========================================================================
+function filterDoctorCards(category, clickedBtn) {
+  const tabs = document.querySelectorAll('.doc-tab-btn');
+  tabs.forEach(t => t.classList.remove('active'));
+  if (clickedBtn) clickedBtn.classList.add('active');
+
+  const cards = document.querySelectorAll('.doctor-profile-card');
+  cards.forEach(card => {
+    const dept = card.getAttribute('data-dept');
+    if (category === 'all' || dept === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+

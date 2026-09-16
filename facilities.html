@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Facilities, ICU, OT & Beds | S.K MULTI-SPECIALITY HOSPITAL 24×7</title>
+  <meta name="description" content="Explore state-of-the-art facilities at S.K Multi-Speciality Hospital: 35+ Inpatient Beds, Critical Care ICU/HDU, Modular OT, 24x7 Pathology Lab, Digital X-Ray, 24x7 Pharmacy & Ambulance.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Find a Doctor</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html" class="active"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247">
+          <span class="pulse-dot"></span> Open 24 Hours / 24×7
+        </div>
+        <a href="tel:07703964716" class="top-phone-link">
+          <i class="fa-solid fa-phone-volume"></i> 077039 64716
+        </a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn" aria-label="Call Hospital">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="departments.html">Specialities</a></li>
+          <li><a href="facilities.html" style="color: var(--teal-primary); font-weight:700;">Facilities & Beds</a></li>
+          <li><a href="insurance-packages.html">Insurance & Packages</a></li>
+          <li><a href="contact.html">Contact & Directions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-title-banner">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span>Hospital Facilities & Infrastructure</span>
+        </div>
+        <h1 class="page-main-heading">Modern Infrastructure, ICU, OT & 24×7 Services</h1>
+        <p class="page-lead-text">
+          Designed to provide safe, sterile, patient-centered care equipped with 35+ inpatient beds, intensive care units, modular operation theatre, diagnostics, and in-house pharmacy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Facilities Overview Highlights -->
+    <section class="facility-metrics-strip">
+      <div class="container">
+        <div class="metrics-four-grid">
+          <div class="f-metric-card">
+            <i class="fa-solid fa-bed-pulse text-teal"></i>
+            <div class="f-metric-val">35+</div>
+            <div class="f-metric-lbl">Inpatient Beds</div>
+            <p>General, Semi-Private & Deluxe AC Rooms</p>
+          </div>
+          <div class="f-metric-card">
+            <i class="fa-solid fa-heart-pulse text-red"></i>
+            <div class="f-metric-val">24×7</div>
+            <div class="f-metric-lbl">ICU & Emergency</div>
+            <p>Ventilators, Multipara Vital Monitors</p>
+          </div>
+          <div class="f-metric-card">
+            <i class="fa-solid fa-flask-vial text-teal"></i>
+            <div class="f-metric-val">100%</div>
+            <div class="f-metric-lbl">In-House Pathology</div>
+            <p>Automated Blood Analyzers & Fast Reports</p>
+          </div>
+          <div class="f-metric-card">
+            <i class="fa-solid fa-truck-medical text-red"></i>
+            <div class="f-metric-val">24 Hours</div>
+            <div class="f-metric-lbl">Ambulance Support</div>
+            <p>Oxygen & Emergency Life Support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Facility Sections -->
+    <section class="facilities-detail-section">
+      <div class="container">
+        
+        <!-- 1. ICU & Critical Care Unit -->
+        <div class="facility-showcase-row" id="icu">
+          <div class="f-image-col">
+            <img src="images/emergency_icu.jpg" alt="Critical Care ICU & HDU S.K Hospital" class="f-showcase-img" loading="lazy">
+          </div>
+          <div class="f-content-col">
+            <div class="f-tag"><i class="fa-solid fa-heart-pulse text-red"></i> Intensive Care Unit (ICU & HDU)</div>
+            <h2>24×7 Critical Care, Ventilator & HDU Beds</h2>
+            <p>Our Intensive Care Unit is designed for critically ill patients requiring continuous medical intervention, cardiac stabilization, post-operative monitoring, and mechanical ventilation.</p>
+            
+            <ul class="f-feature-checklist">
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Advanced invasive & non-invasive mechanical ventilators</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Multi-parameter vital monitors (ECG, SpO2, NIBP, EtCO2)</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Central continuous oxygen & medical suction pipelines</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> 1:1 dedicated trained critical care nursing staff</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Crash carts with defibrillator & emergency resuscitation drugs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Modular Operation Theatre (OT) -->
+        <div class="facility-showcase-row reverse-row" id="ot">
+          <div class="f-image-col">
+            <img src="images/hero_hospital.jpg" alt="Modular Operation Theatre S.K Hospital" class="f-showcase-img" loading="lazy">
+          </div>
+          <div class="f-content-col">
+            <div class="f-tag"><i class="fa-solid fa-scalpel text-teal"></i> Advanced Surgical Facility</div>
+            <h2>Ultra-Clean Modular Operation Theatre (OT)</h2>
+            <p>Equipped to perform laparoscopic, general surgical, orthopaedic trauma, and gynaecological procedures adhering to strict infection control and sterile protocols.</p>
+            
+            <ul class="f-feature-checklist">
+              <li><i class="fa-solid fa-circle-check text-teal"></i> High-definition HD Laparoscopic Surgical Tower</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> C-Arm Digital Fluoroscopy for Orthopaedic Fracture fixation</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Advanced Anaesthesia Workstation & recovery bay</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Electro-surgical cautery and vessel sealers</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> Autoclave & sterile processing department (CSSD)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Inpatient Bed Categories -->
+        <div class="facility-showcase-row" id="beds">
+          <div class="f-content-col full-width-content">
+            <div class="f-tag"><i class="fa-solid fa-bed text-teal"></i> Inpatient Accommodation</div>
+            <h2>Comfortable & Sterile 35+ Inpatient Beds</h2>
+            <p>We provide a choice of comfortable inpatient room categories designed to suit every patient's preference and budget, with 24-hour nursing assistance and daily doctor rounds.</p>
+            
+            <div class="bed-categories-grid">
+              <div class="bed-card">
+                <h3>General Inpatient Ward</h3>
+                <span class="bed-sub">Economical & Well-Ventilated</span>
+                <ul>
+                  <li>Semi-fowler hospital beds with partition curtains</li>
+                  <li>Central oxygen & nurse call bells</li>
+                  <li>Shared clean washrooms & attendant seating</li>
+                </ul>
+              </div>
+              <div class="bed-card">
+                <h3>Semi-Private Rooms</h3>
+                <span class="bed-sub">Twin Sharing (2 Patients)</span>
+                <ul>
+                  <li>Air-conditioned sharing room with TV</li>
+                  <li>Dedicated sofa/couch for attendant</li>
+                  <li>Attached hygienic bathroom & wardrobe</li>
+                </ul>
+              </div>
+              <div class="bed-card featured-bed">
+                <div class="bed-highlight-tag">Popular</div>
+                <h3>Deluxe Private AC Room</h3>
+                <span class="bed-sub">Individual Executive Suite</span>
+                <ul>
+                  <li>Fully automated motorized hospital bed</li>
+                  <li>Individual AC, Smart TV & High-speed WiFi</li>
+                  <li>Private attendant bed/couch & attached bathroom</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Diagnostics, Pathology Lab & Imaging -->
+        <div class="facility-showcase-row" id="diagnostics">
+          <div class="f-image-col">
+            <img src="images/diagnostics_lab.jpg" alt="Pathology & Diagnostic Laboratory S.K Hospital" class="f-showcase-img" loading="lazy">
+          </div>
+          <div class="f-content-col">
+            <div class="f-tag"><i class="fa-solid fa-microscope text-teal"></i> In-House Diagnostic Centre</div>
+            <h2>24×7 Pathology Lab, Digital X-Ray & Ultrasound</h2>
+            <p>Accurate, rapid laboratory tests and diagnostic imaging facilities available round-the-clock for routine and emergency patients.</p>
+            
+            <ul class="f-feature-checklist">
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>Complete Pathology:</strong> CBC, Blood Sugar, HbA1c, LFT, KFT, Lipid Profile, Thyroid, Dengue/Malaria NS1, Urine Analysis</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>Diagnostic Radiology:</strong> High-frequency Digital X-Ray (Chest, Bones, Abdomen)</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>Ultrasound (USG):</strong> Abdominal, Pelvic, Obstetric (Pregnancy scans) & KUB</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>Cardiac Diagnostics:</strong> 12-Lead Computerized ECG & Cardiac Enzymes (Troponin-I)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. 24x7 Pharmacy & Ambulance -->
+        <div class="facility-showcase-row reverse-row" id="pharmacy-ambulance">
+          <div class="f-content-col">
+            <div class="f-tag"><i class="fa-solid fa-pills text-teal"></i> Essential Support Services</div>
+            <h2>24×7 In-House Pharmacy & Ambulance Service</h2>
+            <p>Patients and attendants do not need to hunt for medicines late at night. Our fully stocked pharmacy is located on the ground floor with immediate access.</p>
+            
+            <ul class="f-feature-checklist">
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>24×7 Pharmacy:</strong> Complete range of emergency injectables, surgical consumables, antibiotics, and regular prescription medicines.</li>
+              <li><i class="fa-solid fa-circle-check text-teal"></i> <strong>24×7 Ambulance Fleet:</strong> Rapid emergency transport equipped with oxygen cylinders, stretcher trolley, first-aid trauma kit, and emergency attendant.</li>
+            </ul>
+
+            <div class="ambulance-direct-box">
+              <a href="tel:07703964716" class="btn btn-emergency-red">
+                <i class="fa-solid fa-phone-volume"></i> Call Ambulance: 077039 64716
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-wrap">
+            <div class="logo-symbol small"><i class="fa-solid fa-hospital"></i></div>
+            <span class="footer-brand-title">S.K MULTI-SPECIALITY</span>
+          </div>
+          <p class="footer-about-text">24×7 Hospital offering 35+ beds, ICU, modular OT, pathology, digital X-Ray and emergency care in Vikas Nagar, West Delhi.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="doctors.html">Find Doctors</a></li>
+            <li><a href="departments.html">Departments</a></li>
+            <li><a href="facilities.html">Facilities & Beds</a></li>
+            <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact & Location</h4>
+          <ul class="footer-contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:07703964716">077039 64716 (24 Hours)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-left">
+          <p>&copy; 2026 S.K MULTI-SPECIALITY HOSPITAL 24×7. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom-badges">
+          <span class="f-badge"><i class="fa-brands fa-google text-red"></i> Google 4.3★</span>
+          <span class="f-badge"><i class="fa-solid fa-tag text-red"></i> Magicpin Verified</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
