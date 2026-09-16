@@ -277,11 +277,11 @@
               <input 
                 type="text" 
                 id="mainSearchInput" 
-                placeholder="Search for Doctors, Specialities and Hospitals" 
+                placeholder="Search for Doctors, Specialities, Illnesses or Services..." 
                 autocomplete="off"
                 oninput="handleSearchInput(this.value)"
                 onfocus="showSearchSuggestions()"
-                onkeydown="if(event.key === 'Enter') executeSearch()"
+                onkeydown="if(event.key === 'Enter') { event.preventDefault(); executeSearch(); }"
               >
               <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" style="display:none;" title="Clear Search">&times;</button>
               <button class="fortis-search-icon-btn" onclick="executeSearch()" aria-label="Search" title="Search">
@@ -296,16 +296,17 @@
                 <span class="cat-pill" onclick="filterSearchCategory('doctor')">Doctors</span>
                 <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
                 <span class="cat-pill" onclick="filterSearchCategory('service')">24x7 Services</span>
+                <span class="cat-pill" onclick="filterSearchCategory('blog')">Health Blogs</span>
               </div>
               <div class="search-results-list" id="searchResultsList"></div>
               
               <div class="search-popular-tags">
-                <span class="tag-lbl"><i class="fa-solid fa-fire text-red"></i> Popular:</span>
+                <span class="tag-lbl"><i class="fa-solid fa-fire text-red"></i> Trending:</span>
                 <span class="search-tag-chip" onclick="quickSearchTag('General Medicine')">General Physician</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Dengue')">Dengue & Fever</span>
                 <span class="search-tag-chip" onclick="quickSearchTag('Orthopaedics')">Fracture & Ortho</span>
-                <span class="search-tag-chip" onclick="quickSearchTag('Gynaecology')">Gynaecologist</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Gynaecology')">Maternity & Delivery</span>
                 <span class="search-tag-chip" onclick="quickSearchTag('Laparoscopic Surgery')">Surgery</span>
-                <span class="search-tag-chip" onclick="quickSearchTag('Emergency')">24x7 Emergency</span>
                 <span class="search-tag-chip" onclick="quickSearchTag('Ayushman')">Ayushman Card</span>
               </div>
             </div>
@@ -814,8 +815,8 @@
           
           <!-- Blog 1: Dengue & Fever -->
           <article class="blog-card">
-            <div class="b-card-media media-red">
-              <i class="fa-solid fa-virus-covid b-card-icon"></i>
+            <div class="b-card-media">
+              <img src="images/blog_fever_dengue.jpg" alt="Viral Fever & Dengue Care">
             </div>
             <div class="b-card-body">
               <span class="blog-tag-badge tag-red"><i class="fa-solid fa-stethoscope"></i> General Medicine</span>
@@ -834,8 +835,8 @@
 
           <!-- Blog 2: Maternity & Normal Delivery -->
           <article class="blog-card">
-            <div class="b-card-media media-red">
-              <i class="fa-solid fa-person-pregnant b-card-icon"></i>
+            <div class="b-card-media">
+              <img src="images/blog_maternity_delivery.jpg" alt="Normal Delivery & Maternity Guide">
             </div>
             <div class="b-card-body">
               <span class="blog-tag-badge tag-peach"><i class="fa-solid fa-heart"></i> Maternity Care</span>
@@ -854,8 +855,8 @@
 
           <!-- Blog 3: Laparoscopic Surgery -->
           <article class="blog-card">
-            <div class="b-card-media media-teal">
-              <i class="fa-solid fa-scissors b-card-icon"></i>
+            <div class="b-card-media">
+              <img src="images/emergency_icu.jpg" alt="Laparoscopic Surgery Benefits">
             </div>
             <div class="b-card-body">
               <span class="blog-tag-badge tag-teal"><i class="fa-solid fa-scalpel"></i> Laparoscopy</span>
