@@ -254,15 +254,17 @@ button, input, select, textarea {
   background-color: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   box-shadow: var(--shadow-sm);
   border-bottom: 2px solid var(--navy-light);
-}
-
-.homepage .main-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  /* Forces the header onto its own GPU-composited layer so mobile
+     browsers (esp. Android Chrome) don't clip/mis-paint the top edge
+     of the sticky header while the address bar collapses on scroll. */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .header-container {
@@ -1086,7 +1088,6 @@ button, input, select, textarea {
   padding: 55px 0 50px 0;
   background: #f8fafc;
   overflow: visible;
-  isolation: isolate;
 }
 
 .fortis-hero-bg-media {
@@ -3435,6 +3436,21 @@ button, input, select, textarea {
 
   .mobile-header-tools {
     display: flex;
+  }
+
+  /* Switch header from sticky -> fixed on mobile. Chrome/Android has a
+     known glitch where "position: sticky" headers get clipped for a
+     moment while the address bar collapses/expands during scroll.
+     "fixed" is anchored to the visual viewport and does not have this
+     issue. body padding-top below compensates for removing it from flow. */
+  .main-header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+  }
+
+  body {
+    padding-top: 62px; /* = header-container height (60px) + border-bottom (2px) */
   }
 
   .header-container {
