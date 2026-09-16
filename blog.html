@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Blogs & Medical Guidance | S.K MULTI-SPECIALITY HOSPITAL 24×7</title>
+  <meta name="description" content="Read expert health articles, disease prevention guides, maternity tips, orthopedic advice, and wellness blogs by doctors at S.K Multi-Speciality Hospital, Vikas Nagar, West Delhi.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar (Desktop) -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Hospital</a>
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Specialist Doctors</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & Beds</a>
+        <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="blog.html" style="color: var(--teal-primary); font-weight:700;"><i class="fa-solid fa-newspaper"></i> Health Blog</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247">
+          <span class="pulse-dot"></span> Open 24 Hours / 24×7
+        </div>
+        <a href="tel:07703964716" class="top-phone-link">
+          <i class="fa-solid fa-phone-volume"></i> 077039 64716
+        </a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()" title="24x7 Emergency Services">
+          <i class="fa-solid fa-truck-medical"></i>
+          <span class="sos-pulse"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+
+      <!-- Mobile Header Quick Tools -->
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn" aria-label="Call Hospital">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()" aria-label="Emergency">
+          <i class="fa-solid fa-truck-medical"></i>
+        </button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="departments.html">Specialities</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+          <li><a href="blog.html" style="color: var(--teal-primary); font-weight:700;">Health Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Fortis-style Header Action Sub-Strip -->
+    <div class="fortis-action-substrip">
+      <div class="container fortis-substrip-inner">
+        <button class="substrip-action-link" onclick="openCallbackModal()">
+          <i class="fa-solid fa-phone-volume"></i> Request a Callback
+        </button>
+        <button class="substrip-pill-btn" onclick="openBookingModal()">
+          <i class="fa-regular fa-calendar-days"></i> Book Appointment
+        </button>
+        <button class="substrip-action-link" onclick="openHealthCheckModal()">
+          <i class="fa-solid fa-stethoscope"></i> Get Health Checkup
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Mobile Drawer Menu (Fortis Style) -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <!-- Clean White Header with Brand and Close button -->
+    <div class="mobile-drawer-header">
+      <div class="drawer-brand">
+        <div class="drawer-brand-icon"><i class="fa-solid fa-hospital"></i></div>
+        <span class="drawer-brand-name">S.K Hospital</span>
+      </div>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="mobile-drawer-body">
+      
+      <!-- Top Circular Action Grid (Fortis 3 + 2 layout) -->
+      <div class="drawer-quick-circles-grid">
+        <!-- Row 1: 3 Circles -->
+        <div class="drawer-circles-row">
+          <a href="facilities.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-blue">
+              <i class="fa-solid fa-bed-pulse"></i>
+            </div>
+            <span class="circle-label">Hospitals</span>
+          </a>
+
+          <a href="departments.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-purple">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="circle-label">Specialities</span>
+          </a>
+
+          <a href="doctors.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-peach">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <span class="circle-label">Find a Doctor</span>
+          </a>
+        </div>
+
+        <!-- Row 2: 2 Centered Circles -->
+        <div class="drawer-circles-row centered-row">
+          <a href="insurance-packages.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-green">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span class="circle-label">Ayushman & TPA</span>
+          </a>
+
+          <a href="blog.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-amber">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <span class="circle-label">Health Blog</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vertical List with outline colored icons & chevrons (Fortis Style) -->
+      <ul class="drawer-nav-vertical-list">
+        <li class="drawer-nav-item">
+          <a href="departments.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-green"><i class="fa-solid fa-hospital-user"></i></span>
+              <span>Our Centres of Excellence</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="facilities.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-purple"><i class="fa-solid fa-bed"></i></span>
+              <span>Patient Corner & Facilities</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="blog.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-blue"><i class="fa-regular fa-newspaper"></i></span>
+              <span>Health Blog & Media Center</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="about.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-info"><i class="fa-solid fa-circle-info"></i></span>
+              <span>About Us</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="contact.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-mail"><i class="fa-regular fa-envelope"></i></span>
+              <span>Contact Us & Location</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="insurance-packages.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-globe"><i class="fa-solid fa-shield-halved"></i></span>
+              <span>Cashless TPA & Ayushman PM-JAY</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-address-footer">
+        <p><i class="fa-solid fa-location-dot text-red"></i> <strong>S.K Multi-Speciality Hospital</strong><br>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</p>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <main>
+    <!-- Blog Hero Banner -->
+    <section class="blog-hero-banner">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <span>Health Blogs & Articles</span>
+        </div>
+        <h1 class="page-main-heading text-white">S.K Hospital Health & Wellness Hub</h1>
+        <p class="page-lead-text" style="color: rgba(255,255,255,0.9);">
+          Reliable health insights, illness prevention guides, and practical medical advice authored and verified by specialist doctors in West Delhi.
+        </p>
+
+        <!-- Search Bar within Blog -->
+        <div class="blog-search-bar-wrap">
+          <input 
+            type="text" 
+            id="blogSearchInput" 
+            class="blog-search-input" 
+            placeholder="Search health topics (e.g. Dengue, Delivery, Surgery, Knee pain)..."
+            oninput="filterBlogCards(this.value)"
+          >
+          <button class="blog-search-icon-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter Bar -->
+    <section class="blog-filter-section">
+      <div class="container">
+        <div class="blog-filter-pills" id="blogFilterBar">
+          <button class="b-filter-pill active" onclick="filterBlogCategory('all')"><i class="fa-solid fa-border-all"></i> All Articles</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('general')"><i class="fa-solid fa-stethoscope"></i> General Medicine & Fever</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('maternity')"><i class="fa-solid fa-person-pregnant"></i> Gynaecology & Maternity</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('ortho')"><i class="fa-solid fa-bone"></i> Ortho & Joint Care</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('surgery')"><i class="fa-solid fa-scalpel"></i> Laparoscopic Surgery</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('child')"><i class="fa-solid fa-baby"></i> Child Health & Vaccination</button>
+          <button class="b-filter-pill" onclick="filterBlogCategory('insurance')"><i class="fa-solid fa-shield-halved"></i> Ayushman & Insurance</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Articles Directory Section -->
+    <section class="blog-listing-section">
+      <div class="container">
+        
+        <!-- Featured Spotlight Card -->
+        <div class="blog-featured-card" data-category="general">
+          <div class="featured-img-wrap">
+            <div class="featured-art-icon">
+              <i class="fa-solid fa-virus-covid"></i>
+            </div>
+          </div>
+          <div class="featured-content-col">
+            <span class="blog-tag-badge tag-red"><i class="fa-solid fa-fire"></i> Featured Medical Guide</span>
+            <h2 class="featured-title">
+              <a href="blog-fever-dengue-prevention.html">Understanding Viral Fever, Dengue & Monsoon Illnesses: When to Visit OPD vs 24x7 Emergency</a>
+            </h2>
+            <p class="featured-excerpt">
+              High fever, severe body aches, drop in platelet counts, and dehydration are common during seasonal transitions. Learn vital red-flag symptoms that demand immediate hospital care.
+            </p>
+            <div class="blog-meta-footer">
+              <div class="author-info">
+                <div class="author-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+                <div>
+                  <div class="author-name">Dr. S.K. Sharma & Team</div>
+                  <small>MD (Medicine) • General Medicine</small>
+                </div>
+              </div>
+              <div class="read-time"><i class="fa-regular fa-clock"></i> 5 min read</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Cards 3-Column Grid -->
+        <div class="blogs-cards-grid" id="blogsGrid">
+          
+          <!-- Card 1: Maternity & Delivery -->
+          <article class="blog-card" data-category="maternity">
+            <div class="b-card-media media-red">
+              <i class="fa-solid fa-person-pregnant b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-peach"><i class="fa-solid fa-heart"></i> Maternity Care</span>
+              <h3 class="b-card-title">
+                <a href="blog-normal-delivery-maternity-guide.html">Normal Delivery vs C-Section: Essential Antenatal Care & Nutrition Guide</a>
+              </h3>
+              <p class="b-card-desc">
+                Everything expectant mothers need to know about preparing for safe normal delivery, pregnancy nutrition, fetal monitoring, and postpartum recovery.
+              </p>
+              <div class="b-card-footer">
+                <span>By Consultant Gynaecologist</span>
+                <a href="blog-normal-delivery-maternity-guide.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Joint Pain & Ortho -->
+          <article class="blog-card" data-category="ortho">
+            <div class="b-card-media media-blue">
+              <i class="fa-solid fa-bone b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-blue"><i class="fa-solid fa-bone"></i> Orthopaedics</span>
+              <h3 class="b-card-title">
+                <a href="blog-joint-pain-arthritis-ortho.html">Managing Knee Pain, Arthritis & Bone Health: Early Signs You Shouldn't Ignore</a>
+              </h3>
+              <p class="b-card-desc">
+                Understand the causes of stiffness, cartilage wear, calcium deficiency, and modern non-surgical vs surgical treatments for long-term mobility.
+              </p>
+              <div class="b-card-footer">
+                <span>By Consultant Orthopaedic Surgeon</span>
+                <a href="blog-joint-pain-arthritis-ortho.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Laparoscopic Surgery -->
+          <article class="blog-card" data-category="surgery">
+            <div class="b-card-media media-teal">
+              <i class="fa-solid fa-scissors b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-teal"><i class="fa-solid fa-scalpel"></i> Laparoscopy</span>
+              <h3 class="b-card-title">
+                <a href="blog-laparoscopic-surgery-benefits.html">Why Laparoscopic Keyhole Surgery is Safer & Faster: Gallstones, Appendix & Hernia</a>
+              </h3>
+              <p class="b-card-desc">
+                Discover why minimal access laser surgery ensures minimal blood loss, minimal scarring, same-day discharge, and fast return to normal routine.
+              </p>
+              <div class="b-card-footer">
+                <span>By Laparoscopic Surgeon</span>
+                <a href="blog-laparoscopic-surgery-benefits.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Ayushman & Cashless Insurance -->
+          <article class="blog-card" data-category="insurance">
+            <div class="b-card-media media-navy">
+              <i class="fa-solid fa-shield-halved b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-purple"><i class="fa-solid fa-id-card"></i> Ayushman & Insurance</span>
+              <h3 class="b-card-title">
+                <a href="blog-ayushman-pmjay-cashless-hospital.html">How to Claim Cashless Treatment Under Ayushman Bharat (PM-JAY) & Private TPAs</a>
+              </h3>
+              <p class="b-card-desc">
+                Step-by-step documentation checklist, e-card verification, pre-authorization approval, and emergency cashless admission workflow at S.K Hospital.
+              </p>
+              <div class="b-card-footer">
+                <span>By Hospital TPA Desk</span>
+                <a href="blog-ayushman-pmjay-cashless-hospital.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Child Vaccination & Paediatrics -->
+          <article class="blog-card" data-category="child">
+            <div class="b-card-media media-purple">
+              <i class="fa-solid fa-baby b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-red"><i class="fa-solid fa-syringe"></i> Child Health</span>
+              <h3 class="b-card-title">
+                <a href="blog-child-vaccination-schedule.html">Complete Child Vaccination Chart (0 to 5 Years) & Newborn Care Tips</a>
+              </h3>
+              <p class="b-card-desc">
+                Important immunization schedule for infants, protecting against polio, hepatitis, MMR, typhoid, pneumococcal disease, and tracking baby growth milestones.
+              </p>
+              <div class="b-card-footer">
+                <span>By Senior Paediatrician</span>
+                <a href="blog-child-vaccination-schedule.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Fever & Dengue (Quick Link) -->
+          <article class="blog-card" data-category="general">
+            <div class="b-card-media media-red">
+              <i class="fa-solid fa-temperature-arrow-up b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-red"><i class="fa-solid fa-microscope"></i> Pathology & Lab</span>
+              <h3 class="b-card-title">
+                <a href="blog-fever-dengue-prevention.html">Complete Blood Count (CBC) & Platelet Monitoring in Dengue Fever</a>
+              </h3>
+              <p class="b-card-desc">
+                Why daily platelet count checks and hydration management are critical during the first 3-7 days of acute high fever and viral infections.
+              </p>
+              <div class="b-card-footer">
+                <span>By Diagnostic Lab Incharge</span>
+                <a href="blog-fever-dengue-prevention.html" class="b-read-more-link">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consultation CTA Strip -->
+    <section class="consult-cta-section" style="background: #ffffff; padding: 40px 0; border-top: 1px solid #e2e8f0;">
+      <div class="container">
+        <div class="article-inline-cta">
+          <div class="inline-cta-text">
+            <h3>Need Personalized Medical Advice or Second Opinion?</h3>
+            <p>Our experienced multi-speciality doctors are available for OPD consultations and 24x7 emergency care.</p>
+          </div>
+          <div class="inline-cta-btns">
+            <button class="btn btn-emergency-red" onclick="openEmergencyModal()"><i class="fa-solid fa-phone"></i> Emergency 077039 64716</button>
+            <button class="btn btn-outline" style="color:#ffffff; border-color:#ffffff;" onclick="openBookingModal()"><i class="fa-regular fa-calendar-check"></i> Book Doctor Visit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <div class="logo-symbol"><i class="fa-solid fa-hospital"></i></div>
+          <span class="logo-name">S.K MULTI-SPECIALITY</span>
+        </div>
+        <p class="footer-about">
+          24×7 Multi-Speciality healthcare hospital serving Vikas Nagar, Hastsal, Uttam Nagar, and West Delhi communities with prompt emergency care, ICU, modular OT, and expert doctors.
+        </p>
+        <div class="footer-badge-item">
+          <i class="fa-solid fa-location-dot text-red"></i> Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Specialities & Care</h4>
+        <ul class="footer-links">
+          <li><a href="departments.html#general-medicine">General & Internal Medicine</a></li>
+          <li><a href="departments.html#surgery">Laparoscopic Surgery</a></li>
+          <li><a href="departments.html#ortho">Orthopaedics & Fracture</a></li>
+          <li><a href="departments.html#gynae">Gynaecology & Obstetrics</a></li>
+          <li><a href="departments.html#emergency-icu">24x7 Emergency & ICU</a></li>
+          <li><a href="facilities.html#diagnostics">Pathology Lab & Tests</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About S.K Hospital</a></li>
+          <li><a href="doctors.html">Doctor Directory & OPD</a></li>
+          <li><a href="facilities.html">35+ Inpatient Beds & ICU</a></li>
+          <li><a href="insurance-packages.html">Insurance & Ayushman PM-JAY</a></li>
+          <li><a href="blog.html">Health Blogs & Guides</a></li>
+          <li><a href="contact.html">Contact & Emergency Map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>24×7 Emergency Desk</h4>
+        <div class="emergency-footer-card">
+          <i class="fa-solid fa-truck-medical text-red"></i>
+          <div>
+            <strong>Hospital Helpline (24 Hours):</strong>
+            <a href="tel:07703964716" class="foot-phone">077039 64716</a>
+          </div>
+        </div>
+        <p class="footer-hours"><i class="fa-solid fa-clock text-teal"></i> Emergency & Inpatient: Open 24/7 Daily</p>
+        <p class="footer-hours"><i class="fa-solid fa-calendar-days text-teal"></i> OPD Consultations: 09:00 AM – 09:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-bar">
+        <p>© 2026 S.K MULTI-SPECIALITY HOSPITAL. All Rights Reserved. Serving West Delhi with Dedication.</p>
+        <div class="footer-bottom-badges">
+          <span><i class="fa-brands fa-google text-red"></i> 4.3 ★ Verified</span>
+          <span><i class="fa-solid fa-shield-check text-teal"></i> Reg. Healthcare Facility</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky Bottom Action Bar (Fortis Style) -->
+  <div class="mobile-sticky-bottom-bar">
+    <div class="bottom-bar-inner">
+      <button class="m-bar-btn-text" onclick="openCallbackModal()">
+        <i class="fa-solid fa-headset"></i>
+        <span>Request Callback</span>
+      </button>
+      <button class="m-bar-btn-pill" onclick="openBookingModal()">
+        <i class="fa-regular fa-calendar-days"></i>
+        <span>Book Appointment</span>
+      </button>
+      <button class="m-bar-btn-text" onclick="openHealthCheckModal()">
+        <i class="fa-solid fa-stethoscope"></i>
+        <span>Health Checkup</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 1. Book Appointment Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-regular fa-calendar-check text-red modal-head-icon"></i>
+          <div>
+            <h3>Book Doctor Appointment</h3>
+            <p>S.K MULTI-SPECIALITY HOSPITAL 24×7 (Vikas Nagar, Uttam Nagar)</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="appointmentForm" onsubmit="submitAppointment(event)">
+          <div class="form-step active" id="bookingStep1">
+            <h4 class="form-section-title">1. Hospital Details & Speciality</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalHospital"><i class="fa-solid fa-hospital text-navy"></i> Hospital Facility</label>
+                <select id="modalHospital" required>
+                  <option value="S.K Multi-Speciality Hospital (Shiv Vihar Road, Vikas Nagar)" selected>S.K Multi-Speciality Hospital (Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Delhi)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="modalSpeciality"><i class="fa-solid fa-stethoscope text-red"></i> Medical Department</label>
+                <select id="modalSpeciality" required onchange="filterDoctorsBySpeciality(this.value)">
+                  <option value="">-- Select Department --</option>
+                  <option value="General Medicine">General & Internal Medicine</option>
+                  <option value="General Surgery">General & Laparoscopic Surgery</option>
+                  <option value="Orthopaedics">Orthopaedics & Joint Care</option>
+                  <option value="Gynaecology">Gynaecology & Obstetrics</option>
+                  <option value="Paediatrics">Paediatrics & Child Health</option>
+                  <option value="Emergency Care">24x7 Emergency & Critical Care</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="modalDoctor"><i class="fa-solid fa-user-doctor text-navy"></i> Select Specialist Doctor</label>
+              <select id="modalDoctor" required>
+                <option value="">-- Choose Specialist / Consultant --</option>
+                <option value="Senior Consultant - General Medicine">Senior Consultant (General & Internal Medicine)</option>
+                <option value="Consultant Surgeon - Laparoscopic & General Surgery">Consultant General & Laparoscopic Surgeon</option>
+                <option value="Consultant Orthopaedic Surgeon">Consultant Orthopaedic & Fracture Specialist</option>
+                <option value="Consultant Gynaecologist & Obstetrician">Consultant Gynaecologist & Obstetrician</option>
+                <option value="Senior Paediatrician">Senior Paediatrician & Child Specialist</option>
+                <option value="Duty Medical Officer (24x7 Emergency)">Duty Medical Officer (24×7 Emergency & Trauma Care)</option>
+              </select>
+            </div>
+
+            <h4 class="form-section-title mt-form">2. Preferred Date & Time Slot</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="modalDate"><i class="fa-regular fa-calendar text-navy"></i> Appointment Date</label>
+                <input type="date" id="modalDate" required>
+              </div>
+              <div class="form-group">
+                <label for="modalSlot"><i class="fa-regular fa-clock text-red"></i> Preferred Slot</label>
+                <select id="modalSlot" required>
+                  <option value="09:00 AM - 11:00 AM">Morning: 09:00 AM - 11:00 AM</option>
+                  <option value="11:00 AM - 01:00 PM" selected>Morning: 11:00 AM - 01:00 PM</option>
+                  <option value="02:00 PM - 04:00 PM">Afternoon: 02:00 PM - 04:00 PM</option>
+                  <option value="05:00 PM - 07:00 PM">Evening: 05:00 PM - 07:00 PM</option>
+                  <option value="07:00 PM - 09:00 PM">Evening: 07:00 PM - 09:00 PM</option>
+                  <option value="24x7 Emergency Walk-in">24x7 Emergency / Immediate Walk-in</option>
+                </select>
+              </div>
+            </div>
+
+            <h4 class="form-section-title mt-form">3. Patient Contact Information</h4>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="patientName"><i class="fa-regular fa-user text-navy"></i> Full Name *</label>
+                <input type="text" id="patientName" placeholder="e.g. Rajesh Kumar" required>
+              </div>
+              <div class="form-group">
+                <label for="patientPhone"><i class="fa-solid fa-phone text-red"></i> Mobile Phone *</label>
+                <input type="tel" id="patientPhone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+              </div>
+            </div>
+
+            <div class="modal-footer-btns">
+              <button type="button" class="btn btn-outline" onclick="closeModal('bookingModal')">Cancel</button>
+              <button type="submit" class="btn btn-primary"><i class="fa-regular fa-calendar-check"></i> Confirm Appointment</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Emergency 24x7 SOS Modal -->
+  <div class="modal-overlay" id="emergencyModal">
+    <div class="modal-box modal-emergency">
+      <div class="modal-header bg-emergency-red">
+        <div class="modal-title-group text-white">
+          <i class="fa-solid fa-truck-medical modal-head-icon text-white"></i>
+          <div>
+            <h3>24x7 Emergency & Critical Trauma Care</h3>
+            <p>S.K MULTI-SPECIALITY HOSPITAL 24×7 • West Delhi</p>
+          </div>
+        </div>
+        <button class="close-modal-btn text-white" onclick="closeModal('emergencyModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="emergency-hotline-banner">
+          <div class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <div>
+            <span class="hotline-sub">24X7 EMERGENCY HELPLINE</span>
+            <a href="tel:07703964716" class="hotline-number">077039 64716</a>
+          </div>
+        </div>
+        <div class="emergency-quick-actions">
+          <a href="tel:07703964716" class="em-action-box">
+            <div class="em-box-icon"><i class="fa-solid fa-phone text-red"></i></div>
+            <div class="em-box-info">
+              <h4>Direct Call to Emergency Duty Doctor</h4>
+              <p>Immediate 24-hour medical consultation & admission</p>
+            </div>
+            <i class="fa-solid fa-chevron-right em-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Callback Modal -->
+  <div class="modal-overlay" id="callbackModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-headset text-navy modal-head-icon"></i>
+          <div>
+            <h3>Request a Callback</h3>
+            <p>Our hospital staff will call you shortly</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('callbackModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitCallback(event)">
+          <div class="form-group">
+            <label for="cbName">Your Full Name *</label>
+            <input type="text" id="cbName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cbPhone">Phone Number *</label>
+            <input type="tel" id="cbPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-paper-plane"></i> Request Call Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Reports Modal -->
+  <div class="modal-overlay" id="reportPortalModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-waveform text-teal modal-head-icon"></i>
+          <div>
+            <h3>Diagnostic & Lab Reports</h3>
+            <p>Access your medical pathology records</p>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal('reportPortalModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="reportUHID">Mobile Number or UHID</label>
+          <input type="text" id="reportUHID" placeholder="Enter 10-digit Mobile Number">
+        </div>
+        <button class="btn btn-teal btn-block" onclick="fetchSampleReports()"><i class="fa-solid fa-magnifying-glass"></i> View Reports</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Blog Category Filter
+    function filterBlogCategory(category) {
+      const pills = document.querySelectorAll('#blogFilterBar .b-filter-pill');
+      pills.forEach(pill => pill.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('#blogsGrid .blog-card');
+      const featured = document.querySelector('.blog-featured-card');
+
+      if (category === 'all') {
+        if (featured) featured.style.display = 'grid';
+        cards.forEach(card => card.style.display = 'flex');
+      } else {
+        if (featured) {
+          featured.style.display = featured.getAttribute('data-category') === category ? 'grid' : 'none';
+        }
+        cards.forEach(card => {
+          card.style.display = card.getAttribute('data-category') === category ? 'flex' : 'none';
+        });
+      }
+    }
+
+    // Blog Search Filter
+    function filterBlogCards(query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('#blogsGrid .blog-card');
+      const featured = document.querySelector('.blog-featured-card');
+
+      if (featured) {
+        const text = featured.innerText.toLowerCase();
+        featured.style.display = text.includes(q) ? 'grid' : 'none';
+      }
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -5,27 +5,28 @@
 // Database for Search and Data Filters
 const HOSPITAL_DATABASE = {
   doctors: [
-    { name: "Senior Consultant - General Medicine", spec: "General & Internal Medicine", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "15+ Years", rating: 4.8 },
-    { name: "Consultant General & Laparoscopic Surgeon", spec: "General & Laparoscopic Surgery", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "14+ Years", rating: 4.9 },
-    { name: "Consultant Orthopaedic Surgeon", spec: "Orthopaedics & Joint Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "12+ Years", rating: 4.8 },
-    { name: "Consultant Gynaecologist & Obstetrician", spec: "Gynaecology & Obstetrics", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "16+ Years", rating: 4.9 },
-    { name: "Senior Paediatrician & Child Specialist", spec: "Paediatrics & Child Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "10+ Years", rating: 4.8 },
-    { name: "Duty Medical Officer (24x7 Emergency)", spec: "24x7 Emergency & Critical Care", hospital: "S.K Multi-Speciality Hospital, Vikas Nagar", exp: "24x7 Available", rating: 4.9 }
+    { name: "Senior Consultant - General Medicine", spec: "General Medicine", role: "MD (Medicine)", hospital: "S.K Multi-Speciality Hospital", exp: "15+ Years", opd: "09:00 AM - 01:00 PM & 05:00 PM - 09:00 PM", icon: "fa-user-doctor", tags: "fever diabetes hypertension bp infection cough chest pain health checkup sugar physician doctor dr" },
+    { name: "Consultant General & Laparoscopic Surgeon", spec: "General Surgery", role: "MS (General Surgery), FMAS", hospital: "S.K Multi-Speciality Hospital", exp: "14+ Years", opd: "10:00 AM - 02:00 PM & On-Call 24x7", icon: "fa-scalpel", tags: "surgery laparoscopic appendix gallbladder stone hernia piles fissure hydrocele trauma surgeon operation" },
+    { name: "Consultant Orthopaedic Surgeon", spec: "Orthopaedics", role: "MS (Ortho), DNB (Ortho)", hospital: "S.K Multi-Speciality Hospital", exp: "12+ Years", opd: "11:00 AM - 03:00 PM & 06:00 PM - 08:30 PM", icon: "fa-bone", tags: "ortho orthopaedics fracture plaster bone joint pain arthritis knee back pain accident spine trauma" },
+    { name: "Consultant Gynaecologist & Obstetrician", spec: "Gynaecology", role: "MD, DGO (Obstetrics & Gynae)", hospital: "S.K Multi-Speciality Hospital", exp: "16+ Years", opd: "10:00 AM - 01:30 PM & 05:30 PM - 08:30 PM", icon: "fa-person-pregnant", tags: "gynae gynaecologist pregnancy normal delivery c-section pcod period female women maternity newborn antenatal" },
+    { name: "Senior Paediatrician & Child Specialist", spec: "Paediatrics", role: "MD (Paediatrics), DCH", hospital: "S.K Multi-Speciality Hospital", exp: "10+ Years", opd: "09:30 AM - 01:00 PM & 06:00 PM - 09:00 PM", icon: "fa-baby", tags: "child paediatric baby newborn infant vaccination child fever growth cold cough children kids" },
+    { name: "Duty Medical Officer (24x7 Emergency)", spec: "Emergency Care", role: "MBBS, Casualty Medical Officer", hospital: "S.K Multi-Speciality Hospital", exp: "24x7 Ready", opd: "24 Hours Daily Walk-in & Casualty", icon: "fa-truck-medical", tags: "emergency 24x7 icu trauma accident chest pain breathing difficulty oxygen dmo casualty casualty walk-in" }
   ],
   specialities: [
-    { name: "General & Internal Medicine", desc: "Fever, Diabetes, Hypertension, Infections, Health Checkups" },
-    { name: "General & Laparoscopic Surgery", desc: "Appendix, Hernia, Gallbladder Stones, Day Care Surgeries" },
-    { name: "Orthopaedics & Joint Care", desc: "Fracture Treatment, Plaster, Joint Pain, Arthritis, Trauma" },
-    { name: "Gynaecology & Obstetrics", desc: "Maternal Care, Normal & C-Section Deliveries, PCOD" },
-    { name: "Paediatrics & Neonatal Care", desc: "Newborn Care, Child Vaccination, Paediatric Emergencies" },
-    { name: "24x7 Emergency & Trauma Care", desc: "Immediate Trauma Care, Oxygen Support, Critical ICU Triage" },
-    { name: "Pathology & Diagnostic Lab", desc: "CBC, Blood Sugar, Lipid, LFT, KFT, Routine Tests & ECG" }
+    { name: "General & Internal Medicine", dept: "General Medicine", desc: "Treatment of viral fever, dengue, diabetes, hypertension, asthma, infectious diseases & preventive checks.", icon: "fa-stethoscope", tags: "medicine viral fever dengue malaria diabetes thyroid bp asthama cough allergy" },
+    { name: "General & Laparoscopic Surgery", dept: "General Surgery", desc: "Modern laser & minimal access keyhole surgery for appendix, gallstones, hernia, piles & cyst removal.", icon: "fa-scissors", tags: "laparoscopy appendix gall bladder stone hernia piles fissure operation" },
+    { name: "Orthopaedics & Trauma Care", dept: "Orthopaedics", desc: "24-hour fracture plaster, joint pain management, accident trauma, arthritis & spine care.", icon: "fa-bone", tags: "ortho fracture bone joint arthritis knee dislocation accident trauma" },
+    { name: "Gynaecology & Obstetrics", dept: "Gynaecology", desc: "Comprehensive maternity care, painless normal delivery, cesarean delivery, PCOD & women wellness.", icon: "fa-person-pregnant", tags: "delivery pregnancy normal cesarean women maternity uterus pcod gynae" },
+    { name: "Paediatrics & Neonatal Care", dept: "Paediatrics", desc: "Compassionate child healthcare, government & optional vaccinations, newborn phototherapy & care.", icon: "fa-baby", tags: "child paediatric baby newborn vaccination infant child disease" },
+    { name: "24x7 Intensive Care (ICU / NICU)", dept: "Emergency Care", desc: "Multipara monitors, ventilators, centralized oxygen line, defibrillators & bedside emergency care.", icon: "fa-heart-pulse", tags: "icu nicu ventilator critical oxygen cardiac stroke serious admission bed" },
+    { name: "Pathology & Diagnostic Laboratory", dept: "General Medicine", desc: "Automated CBC, Lipid Profile, LFT, KFT, Thyroid, Blood Sugar, Urine & 12-Lead ECG testing.", icon: "fa-microscope", tags: "lab blood test cbc pathology ecg diagnostic lft kft sugar urine" },
+    { name: "Insurance, Ayushman & TPA Desk", dept: "General Medicine", desc: "Cashless hospitalization assistance for major TPAs and guidance on Ayushman Bharat PM-JAY scheme.", icon: "fa-shield-halved", tags: "insurance ayushman pmjay cashless tpa claim star health mediclaim bill" }
   ],
   services: [
-    { name: "24x7 Emergency & Trauma Admission", loc: "Open 24 Hours Daily", desc: "Immediate critical response & patient triage" },
-    { name: "Diagnostic Laboratory & ECG", loc: "Ground Floor Diagnostic Wing", desc: "Fast & accurate medical reports" },
-    { name: "Inpatient Bed Admissions & Nursing", loc: "Special & General Wards", desc: "Attentive & friendly nursing care 24x7" },
-    { name: "Outpatient Doctor Consultations", loc: "Morning & Evening OPD", desc: "Experienced multi-speciality physicians" }
+    { name: "24x7 Emergency & Trauma Casualty", actionType: "emergency", desc: "Immediate doctor & nursing response, oxygen cylinder backup, emergency drip & trauma management.", icon: "fa-truck-medical", tags: "emergency casualty trauma 24 hours ambulance oxygen" },
+    { name: "Inpatient Bed Admission (35+ Beds)", actionType: "booking", desc: "Deluxe, Semi-Private, General Wards & ICU beds with 24-hour nursing care & food service.", icon: "fa-bed-pulse", tags: "beds admission ward room stay deluxe general private ipd" },
+    { name: "Diagnostic Lab & Blood Testing", actionType: "portal", desc: "Fast sample collection with same-day printed & digital medical report generation.", icon: "fa-flask-vial", tags: "test blood test sample report pathology lab" },
+    { name: "24-Hour In-House Pharmacy", actionType: "booking", desc: "100% authentic medicines, surgical consumables, IV fluids and emergency injections in hospital premises.", icon: "fa-prescription-bottle-medical", tags: "pharmacy medicine medical store dawai drip injection" }
   ]
 };
 
@@ -163,7 +164,7 @@ function resetPromoAutoplay() {
 }
 
 // ==========================================================================
-// SEARCH & AUTOCOMPLETE ENGINE
+// SEARCH & AUTOCOMPLETE ENGINE (Interactive & Fast)
 // ==========================================================================
 function initSearchAutocomplete() {
   renderSearchResults('');
@@ -172,7 +173,7 @@ function initSearchAutocomplete() {
 function handleSearchInput(query) {
   const clearBtn = document.getElementById('clearSearchBtn');
   if (clearBtn) {
-    clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+    clearBtn.style.display = query.length > 0 ? 'flex' : 'none';
   }
   showSearchSuggestions();
   renderSearchResults(query.trim());
@@ -180,9 +181,11 @@ function handleSearchInput(query) {
 
 function clearSearch() {
   const input = document.getElementById('mainSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
   if (input) {
     input.value = '';
-    handleSearchInput('');
+    if (clearBtn) clearBtn.style.display = 'none';
+    renderSearchResults('');
     input.focus();
   }
 }
@@ -201,15 +204,24 @@ function focusMainSearch() {
   }
 }
 
+function quickSearchTag(tag) {
+  const input = document.getElementById('mainSearchInput');
+  if (input) {
+    input.value = tag;
+    handleSearchInput(tag);
+    input.focus();
+  }
+}
+
 function filterSearchCategory(category) {
   currentSearchCategory = category;
   const pills = document.querySelectorAll('.cat-pill');
   pills.forEach(pill => {
-    pill.classList.toggle('active', pill.textContent.toLowerCase() === category || (category === 'all' && pill.textContent === 'All'));
+    pill.classList.toggle('active', pill.textContent.toLowerCase().includes(category) || (category === 'all' && pill.textContent === 'All'));
   });
 
   const query = document.getElementById('mainSearchInput')?.value || '';
-  renderSearchResults(query);
+  renderSearchResults(query.trim());
 }
 
 function renderSearchResults(query) {
@@ -218,38 +230,53 @@ function renderSearchResults(query) {
 
   const q = query.toLowerCase();
   let resultsHtml = '';
+  let matchCount = 0;
 
-  // 1. Specialities
-  if (currentSearchCategory === 'all' || currentSearchCategory === 'speciality') {
-    const matchedSpecs = HOSPITAL_DATABASE.specialities.filter(s => 
-      !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q)
+  // 1. Doctors
+  if (currentSearchCategory === 'all' || currentSearchCategory === 'doctor') {
+    const matchedDocs = HOSPITAL_DATABASE.doctors.filter(d => 
+      !q || d.name.toLowerCase().includes(q) || d.spec.toLowerCase().includes(q) || d.tags.toLowerCase().includes(q)
     );
-    matchedSpecs.forEach(s => {
+    matchedDocs.forEach(d => {
+      matchCount++;
       resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('speciality', '${s.name}', '')">
-          <div>
-            <div class="res-main-text"><i class="fa-solid fa-stethoscope text-red"></i> ${s.name}</div>
-            <div class="res-sub-text">${s.desc}</div>
+        <div class="search-result-item" onclick="selectSearchResult('doctor', '${d.name}', '${d.spec}')">
+          <div class="search-item-info">
+            <div class="search-item-icon icon-navy"><i class="fa-solid ${d.icon}"></i></div>
+            <div class="search-item-text">
+              <div class="res-main-text">${d.name}</div>
+              <div class="res-sub-text">${d.role} • ${d.spec} (${d.exp})</div>
+            </div>
           </div>
-          <span class="res-type-badge">Speciality</span>
+          <div class="search-item-action">
+            <span class="res-type-badge">Doctor</span>
+            <button class="search-quick-book-btn"><i class="fa-regular fa-calendar-check"></i> Book</button>
+          </div>
         </div>
       `;
     });
   }
 
-  // 2. Doctors
-  if (currentSearchCategory === 'all' || currentSearchCategory === 'doctor') {
-    const matchedDocs = HOSPITAL_DATABASE.doctors.filter(d => 
-      !q || d.name.toLowerCase().includes(q) || d.spec.toLowerCase().includes(q)
+  // 2. Specialities
+  if (currentSearchCategory === 'all' || currentSearchCategory === 'speciality') {
+    const matchedSpecs = HOSPITAL_DATABASE.specialities.filter(s => 
+      !q || s.name.toLowerCase().includes(q) || s.dept.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q) || s.tags.toLowerCase().includes(q)
     );
-    matchedDocs.forEach(d => {
+    matchedSpecs.forEach(s => {
+      matchCount++;
       resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('doctor', '${d.name}', '${d.spec}')">
-          <div>
-            <div class="res-main-text"><i class="fa-solid fa-user-doctor text-navy"></i> ${d.name}</div>
-            <div class="res-sub-text">${d.spec} | S.K Multi-Speciality Hospital</div>
+        <div class="search-result-item" onclick="selectSearchResult('speciality', '${s.dept}', '${s.name}')">
+          <div class="search-item-info">
+            <div class="search-item-icon"><i class="fa-solid ${s.icon}"></i></div>
+            <div class="search-item-text">
+              <div class="res-main-text">${s.name}</div>
+              <div class="res-sub-text">${s.desc}</div>
+            </div>
           </div>
-          <span class="res-type-badge">Doctor</span>
+          <div class="search-item-action">
+            <span class="res-type-badge">Speciality</span>
+            <button class="search-quick-book-btn"><i class="fa-solid fa-arrow-right"></i> Consult</button>
+          </div>
         </div>
       `;
     });
@@ -258,23 +285,41 @@ function renderSearchResults(query) {
   // 3. 24x7 Services
   if (currentSearchCategory === 'all' || currentSearchCategory === 'service') {
     const matchedServ = HOSPITAL_DATABASE.services.filter(srv => 
-      !q || srv.name.toLowerCase().includes(q) || srv.desc.toLowerCase().includes(q)
+      !q || srv.name.toLowerCase().includes(q) || srv.desc.toLowerCase().includes(q) || srv.tags.toLowerCase().includes(q)
     );
     matchedServ.forEach(srv => {
+      matchCount++;
+      const isEm = srv.actionType === 'emergency';
       resultsHtml += `
-        <div class="search-result-item" onclick="selectSearchResult('service', '${srv.name}', '')">
-          <div>
-            <div class="res-main-text"><i class="fa-solid fa-truck-medical text-red"></i> ${srv.name}</div>
-            <div class="res-sub-text">${srv.desc}</div>
+        <div class="search-result-item" onclick="selectSearchResult('${srv.actionType}', '${srv.name}', '')">
+          <div class="search-item-info">
+            <div class="search-item-icon ${isEm ? 'icon-red' : ''}"><i class="fa-solid ${srv.icon}"></i></div>
+            <div class="search-item-text">
+              <div class="res-main-text">${srv.name}</div>
+              <div class="res-sub-text">${srv.desc}</div>
+            </div>
           </div>
-          <span class="res-type-badge">24x7 Service</span>
+          <div class="search-item-action">
+            <span class="res-type-badge">${isEm ? 'Emergency' : '24x7 Service'}</span>
+            <button class="search-quick-book-btn" style="${isEm ? 'background:#e11d48;' : ''}">
+              <i class="fa-solid ${isEm ? 'fa-phone-volume' : 'fa-circle-chevron-right'}"></i> ${isEm ? 'Emergency' : 'Access'}
+            </button>
+          </div>
         </div>
       `;
     });
   }
 
-  if (resultsHtml === '') {
-    resultsHtml = `<div style="padding: 16px; text-align:center; color:#64748b; font-size:0.85rem;">No matching services found for "${query}". Try searching "Medicine", "Orthopaedics", "Emergency", or "Surgery".</div>`;
+  if (matchCount === 0) {
+    resultsHtml = `
+      <div style="padding: 20px; text-align:center; color:#64748b; font-size:0.88rem;">
+        <i class="fa-solid fa-magnifying-glass" style="font-size:1.4rem; color:#94a3b8; margin-bottom:8px; display:block;"></i>
+        No exact service matched for "<strong>${query}</strong>".<br>
+        <button class="btn btn-sm btn-primary" style="margin-top:10px;" onclick="openBookingModal('${query}')">
+          <i class="fa-regular fa-calendar-check"></i> Book Doctor for "${query}"
+        </button>
+      </div>
+    `;
   }
 
   listContainer.innerHTML = resultsHtml;
@@ -285,27 +330,61 @@ function selectSearchResult(type, name, sub) {
   if (dropdown) dropdown.classList.remove('active');
 
   if (type === 'doctor') {
-    openBookingModal('', name);
+    openBookingModal(sub || '', name);
+    showToast(`Selected Dr: ${name} (${sub})`, 'success');
   } else if (type === 'speciality') {
     openBookingModal(name);
-  } else if (type === 'service') {
-    if (name.includes('Emergency')) {
-      openEmergencyModal();
-    } else {
-      openBookingModal();
-    }
+    showToast(`Department Selected: ${name}`, 'success');
+  } else if (type === 'emergency') {
+    openEmergencyModal();
+  } else if (type === 'portal') {
+    openTestBookingModal();
+  } else {
+    openBookingModal(name);
   }
 }
 
 function executeSearch() {
-  const query = document.getElementById('mainSearchInput')?.value || '';
+  const query = document.getElementById('mainSearchInput')?.value.trim() || '';
+  const dropdown = document.getElementById('searchResultsDropdown');
+  
   if (!query) {
-    showToast('Please type a department or medical service', 'info');
+    showToast('Please type a doctor name, ailment or department to search', 'info');
     focusMainSearch();
     return;
   }
-  showToast(`Searching for "${query}" at S.K Multi-Speciality Hospital...`, 'success');
-  openBookingModal(query);
+
+  // Find top matching doctor or speciality
+  const q = query.toLowerCase();
+  const matchedDoc = HOSPITAL_DATABASE.doctors.find(d => 
+    d.name.toLowerCase().includes(q) || d.spec.toLowerCase().includes(q) || d.tags.toLowerCase().includes(q)
+  );
+
+  const matchedSpec = HOSPITAL_DATABASE.specialities.find(s => 
+    s.name.toLowerCase().includes(q) || s.dept.toLowerCase().includes(q) || s.tags.toLowerCase().includes(q)
+  );
+
+  const matchedServ = HOSPITAL_DATABASE.services.find(srv => 
+    srv.name.toLowerCase().includes(q) || srv.tags.toLowerCase().includes(q)
+  );
+
+  if (dropdown) dropdown.classList.remove('active');
+
+  if (matchedDoc) {
+    openBookingModal(matchedDoc.spec, matchedDoc.name);
+    showToast(`Found Doctor: ${matchedDoc.name} (${matchedDoc.spec})`, 'success');
+  } else if (matchedSpec) {
+    openBookingModal(matchedSpec.dept);
+    showToast(`Found Department: ${matchedSpec.name}`, 'success');
+  } else if (matchedServ) {
+    if (matchedServ.actionType === 'emergency') openEmergencyModal();
+    else if (matchedServ.actionType === 'portal') openTestBookingModal();
+    else openBookingModal();
+    showToast(`Found Service: ${matchedServ.name}`, 'success');
+  } else {
+    openBookingModal(query);
+    showToast(`Searching appointment for "${query}" at S.K Hospital...`, 'info');
+  }
 }
 
 // ==========================================================================

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Child Vaccination Chart (0 to 5 Years) & Newborn Care Tips by Senior Paediatricians | S.K Hospital</title>
+  <meta name="description" content="Expert paediatrician guide on child immunization timetable, mandatory vaccines from birth to age 5, baby nutrition, and fever management at S.K Hospital.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-nav-links">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="blog.html"><i class="fa-solid fa-arrow-left"></i> All Health Blogs</a>
+        <a href="doctors.html"><i class="fa-solid fa-user-doctor"></i> Specialist Doctors</a>
+        <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
+        <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
+      </div>
+      <div class="top-right-actions">
+        <div class="top-badge-247"><span class="pulse-dot"></span> Open 24 Hours / 24×7</div>
+        <a href="tel:07703964716" class="top-phone-link"><i class="fa-solid fa-phone-volume"></i> 077039 64716</a>
+        <button class="emergency-sos-btn" onclick="openEmergencyModal()"><i class="fa-solid fa-truck-medical"></i><span class="sos-pulse"></span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-symbol"><i class="fa-solid fa-hospital"></i></div>
+        <div class="logo-text">
+          <span class="logo-name">S.K MULTI-SPECIALITY HOSPITAL</span>
+          <span class="logo-sub"><span class="badge-247-inline">24×7</span> MULTISPECIALITY CARE • WEST DELHI</span>
+        </div>
+      </a>
+      <div class="mobile-header-tools">
+        <a href="tel:07703964716" class="mobile-call-btn"><i class="fa-solid fa-phone"></i></a>
+        <button class="mobile-sos-btn" onclick="openEmergencyModal()"><i class="fa-solid fa-truck-medical"></i></button>
+        <button class="hamburger-menu" id="hamburgerBtn" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+      </div>
+      <nav class="desktop-nav" id="desktopNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="departments.html">Specialities</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+          <li><a href="blog.html" style="color: var(--teal-primary); font-weight:700;">Health Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Mobile Drawer Menu (Fortis Style) -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <!-- Clean White Header with Brand and Close button -->
+    <div class="mobile-drawer-header">
+      <div class="drawer-brand">
+        <div class="drawer-brand-icon"><i class="fa-solid fa-hospital"></i></div>
+        <span class="drawer-brand-name">S.K Hospital</span>
+      </div>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="mobile-drawer-body">
+      
+      <!-- Top Circular Action Grid (Fortis 3 + 2 layout) -->
+      <div class="drawer-quick-circles-grid">
+        <!-- Row 1: 3 Circles -->
+        <div class="drawer-circles-row">
+          <a href="facilities.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-blue">
+              <i class="fa-solid fa-bed-pulse"></i>
+            </div>
+            <span class="circle-label">Hospitals</span>
+          </a>
+
+          <a href="departments.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-purple">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="circle-label">Specialities</span>
+          </a>
+
+          <a href="doctors.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-peach">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <span class="circle-label">Find a Doctor</span>
+          </a>
+        </div>
+
+        <!-- Row 2: 2 Centered Circles -->
+        <div class="drawer-circles-row centered-row">
+          <a href="insurance-packages.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-green">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span class="circle-label">Ayushman & TPA</span>
+          </a>
+
+          <a href="blog.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-amber">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <span class="circle-label">Health Blog</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Vertical List with outline colored icons & chevrons (Fortis Style) -->
+      <ul class="drawer-nav-vertical-list">
+        <li class="drawer-nav-item">
+          <a href="departments.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-green"><i class="fa-solid fa-hospital-user"></i></span>
+              <span>Our Centres of Excellence</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="facilities.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-purple"><i class="fa-solid fa-bed"></i></span>
+              <span>Patient Corner & Facilities</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="blog.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-blue"><i class="fa-regular fa-newspaper"></i></span>
+              <span>Health Blog & Media Center</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="about.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-info"><i class="fa-solid fa-circle-info"></i></span>
+              <span>About Us</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="contact.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-mail"><i class="fa-regular fa-envelope"></i></span>
+              <span>Contact Us & Location</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="insurance-packages.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-globe"><i class="fa-solid fa-shield-halved"></i></span>
+              <span>Cashless TPA & Ayushman PM-JAY</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="drawer-address-footer">
+        <p><i class="fa-solid fa-location-dot text-red"></i> <strong>S.K Multi-Speciality Hospital</strong><br>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</p>
+      </div>
+
+    </div>
+  </div>
+
+  <main>
+    <!-- Article Header Banner -->
+    <section class="article-header-hero" style="background: linear-gradient(135deg, #881337 0%, #be123c 100%);">
+      <div class="container">
+        <div class="banner-breadcrumbs">
+          <a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blogs</a> <span>/</span> <span>Paediatrics & Child Health</span>
+        </div>
+        <span class="blog-tag-badge tag-red" style="margin-top:14px;"><i class="fa-solid fa-baby"></i> Paediatrics & Child Health</span>
+        <h1 class="article-main-title">Complete Child Vaccination Chart (0 to 5 Years) & Newborn Care Tips by Senior Paediatricians</h1>
+        <div class="article-author-bar">
+          <div class="author-badge">
+            <div class="author-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <span><strong>Medical Review:</strong> Senior Paediatrician & Neonatal Specialist</span>
+          </div>
+          <span><i class="fa-regular fa-calendar"></i> Published: 2026</span>
+          <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Body & Sidebar -->
+    <section class="article-content-section">
+      <div class="container article-page-grid">
+        
+        <!-- Left: Main Article Content -->
+        <article class="article-main-body">
+          
+      <div class="verified-doc-callout">
+        <i class="fa-solid fa-baby text-red"></i>
+        <div>
+          <h4>Paediatric Health Advisory</h4>
+          <p>Authored by the Department of Paediatrics & Child Healthcare at S.K Multi-Speciality Hospital to guide parents on timely immunization, growth milestones, and infant health care.</p>
+        </div>
+      </div>
+
+      <h2>1. Why Timely Child Immunization is Critical</h2>
+      <p>
+        Vaccines are the single most effective intervention in modern medicine, safeguarding infants and toddlers from severe infectious diseases including polio, hepatitis B, tuberculosis, measles, mumps, rubella, and bacterial pneumonia. Timely adherence to the vaccination schedule primes the baby's immune defense before exposure to pathogens.
+      </p>
+
+      <h2>2. Standard Immunization Timetable (Birth to 5 Years)</h2>
+      <ul>
+        <li><strong>At Birth:</strong> BCG (Tuberculosis), OPV 0 (Oral Polio), Hepatitis B (Birth Dose).</li>
+        <li><strong>6, 10 & 14 Weeks:</strong> DTPw/DTPa (Diphtheria, Tetanus, Pertussis), IPV (Injectable Polio), Hib, Hepatitis B, Rotavirus (Diarrhea vaccine), Pneumococcal Conjugate Vaccine (PCV).</li>
+        <li><strong>6 to 9 Months:</strong> Influenza (Flu) vaccine and Typhoid Conjugate Vaccine (TCV).</li>
+        <li><strong>9 to 12 Months:</strong> MMR (Measles, Mumps, Rubella) Dose 1 and Japanese Encephalitis.</li>
+        <li><strong>15 to 18 Months:</strong> MMR Dose 2, Varicella (Chickenpox), PCV Booster, and DTP Booster 1.</li>
+        <li><strong>4 to 5 Years:</strong> DTP Booster 2 and OPV Booster.</li>
+      </ul>
+
+      <h2>3. Newborn Care & Post-Vaccination Fever Management</h2>
+      <p>
+        It is normal for babies to develop a mild fever (up to 100.5°F) or slight tenderness at the injection site for 24-48 hours after vaccination.
+      </p>
+      <ol>
+        <li>Apply a cool, clean damp cloth to the injection site if there is swelling (never apply ice directly).</li>
+        <li>Give paediatric Paracetamol drops only in the exact dosage prescribed by your paediatrician.</li>
+        <li>Ensure frequent breastfeeds or formula feeds to prevent dehydration and soothe the baby.</li>
+      </ol>
+
+      <div class="article-inline-cta" style="background: linear-gradient(135deg, #9f1239 0%, #007791 100%);">
+        <div class="inline-cta-text">
+          <h3>Is Your Baby Due for Their Next Vaccine Dose?</h3>
+          <p>Consult senior Paediatricians at S.K Hospital with sterile vaccine cold-chain storage and baby clinic.</p>
+        </div>
+        <div class="inline-cta-btns">
+          <button class="btn btn-emergency-red" onclick="openBookingModal('Paediatrics')"><i class="fa-regular fa-calendar-check"></i> Book Baby Vaccination</button>
+          <a href="tel:07703964716" class="btn btn-outline" style="color:#ffffff; border-color:#ffffff;"><i class="fa-solid fa-phone"></i> 077039 64716</a>
+        </div>
+      </div>
+    
+        </article>
+
+        <!-- Right: Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-consult-card">
+            <div class="sidebar-doc-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <h4>Specialist Consultation</h4>
+            <p class="doc-spec">Paediatrics Care Wing</p>
+            <p style="font-size:0.82rem; color:#64748b; margin-bottom:16px;">Expert multi-speciality diagnosis and treatments at S.K Hospital.</p>
+            <button class="btn btn-primary btn-block" onclick="openBookingModal('Paediatrics')"><i class="fa-regular fa-calendar-check"></i> Book Appointment</button>
+            <a href="tel:07703964716" class="btn btn-outline btn-block" style="margin-top:8px;"><i class="fa-solid fa-phone"></i> 077039 64716</a>
+          </div>
+
+          <div class="sidebar-popular-list">
+            <h4>Popular Health Guides</h4>
+            <div class="pop-article-item">
+              <span class="pop-art-num">01</span>
+              <div class="pop-art-text"><a href="blog-fever-dengue-prevention.html">Viral Fever & Dengue Prevention</a><span>Medicine • 5 min</span></div>
+            </div>
+            <div class="pop-article-item">
+              <span class="pop-art-num">02</span>
+              <div class="pop-art-text"><a href="blog-normal-delivery-maternity-guide.html">Normal Delivery vs C-Section</a><span>Maternity • 5 min</span></div>
+            </div>
+            <div class="pop-article-item">
+              <span class="pop-art-num">03</span>
+              <div class="pop-art-text"><a href="blog-laparoscopic-surgery-benefits.html">Why Laparoscopy is Safer</a><span>Surgery • 4 min</span></div>
+            </div>
+            <div class="pop-article-item">
+              <span class="pop-art-num">04</span>
+              <div class="pop-art-text"><a href="blog-ayushman-pmjay-cashless-hospital.html">Cashless Ayushman Claims</a><span>Insurance • 5 min</span></div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand"><div class="logo-symbol"><i class="fa-solid fa-hospital"></i></div><span class="logo-name">S.K MULTI-SPECIALITY</span></div>
+        <p class="footer-about">24×7 Multi-Speciality healthcare hospital serving Vikas Nagar, Hastsal, Uttam Nagar, and West Delhi communities.</p>
+        <div class="footer-badge-item"><i class="fa-solid fa-location-dot text-red"></i> Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</div>
+      </div>
+      <div class="footer-col">
+        <h4>Specialities</h4>
+        <ul class="footer-links">
+          <li><a href="departments.html#general-medicine">General Medicine</a></li>
+          <li><a href="departments.html#surgery">Laparoscopic Surgery</a></li>
+          <li><a href="departments.html#ortho">Orthopaedics & Fracture</a></li>
+          <li><a href="departments.html#gynae">Gynaecology & Obstetrics</a></li>
+          <li><a href="facilities.html#diagnostics">Pathology Lab & Tests</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Health Blogs & Guides</a></li>
+          <li><a href="doctors.html">Doctor Directory</a></li>
+          <li><a href="facilities.html">Facilities & ICU</a></li>
+          <li><a href="contact.html">Contact & Emergency Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>24×7 Emergency Helpline</h4>
+        <div class="emergency-footer-card">
+          <i class="fa-solid fa-truck-medical text-red"></i>
+          <div><strong>Hospital Helpline (24 Hours):</strong><a href="tel:07703964716" class="foot-phone">077039 64716</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container footer-bottom-bar"><p>© 2026 S.K MULTI-SPECIALITY HOSPITAL. All Rights Reserved.</p></div></div>
+  </footer>
+
+  <!-- Mobile Sticky Bottom Action Bar -->
+  <div class="mobile-sticky-bottom-bar">
+    <div class="bottom-bar-inner">
+      <button class="m-bar-btn-text" onclick="openCallbackModal()"><i class="fa-solid fa-headset"></i><span>Request Callback</span></button>
+      <button class="m-bar-btn-pill" onclick="openBookingModal('Paediatrics')"><i class="fa-regular fa-calendar-days"></i><span>Book Appointment</span></button>
+      <button class="m-bar-btn-text" onclick="openHealthCheckModal()"><i class="fa-solid fa-stethoscope"></i><span>Health Checkup</span></button>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title-group"><i class="fa-regular fa-calendar-check text-red modal-head-icon"></i><div><h3>Book Doctor Appointment</h3><p>S.K MULTI-SPECIALITY HOSPITAL 24×7</p></div></div>
+        <button class="close-modal-btn" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="submitAppointment(event)">
+          <div class="form-group"><label>Hospital Facility</label><input type="text" value="S.K Multi-Speciality Hospital, Vikas Nagar" readonly></div>
+          <div class="form-group"><label>Patient Name *</label><input type="text" id="patientName" required placeholder="Full Name"></div>
+          <div class="form-group"><label>Mobile Phone *</label><input type="tel" id="patientPhone" required pattern="[0-9]{10}" placeholder="10-digit number"></div>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-regular fa-calendar-check"></i> Confirm Appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="emergencyModal">
+    <div class="modal-box modal-emergency">
+      <div class="modal-header bg-emergency-red">
+        <div class="modal-title-group text-white"><i class="fa-solid fa-truck-medical modal-head-icon text-white"></i><div><h3>24x7 Emergency & Critical Care</h3><p>S.K Hospital • West Delhi</p></div></div>
+        <button class="close-modal-btn text-white" onclick="closeModal('emergencyModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="emergency-hotline-banner">
+          <div class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+          <div><span class="hotline-sub">24X7 EMERGENCY HELPLINE</span><a href="tel:07703964716" class="hotline-number">077039 64716</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="callbackModal">
+    <div class="modal-box">
+      <div class="modal-header"><div class="modal-title-group"><i class="fa-solid fa-headset text-navy modal-head-icon"></i><div><h3>Request a Callback</h3><p>Staff will call you shortly</p></div></div><button class="close-modal-btn" onclick="closeModal('callbackModal')">&times;</button></div>
+      <div class="modal-body">
+        <form onsubmit="submitCallback(event)">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="cbName" required placeholder="Enter name"></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" id="cbPhone" required pattern="[0-9]{10}" placeholder="10-digit number"></div>
+          <button type="submit" class="btn btn-primary btn-block">Request Call Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="reportPortalModal">
+    <div class="modal-box">
+      <div class="modal-header"><div class="modal-title-group"><i class="fa-solid fa-file-waveform text-teal modal-head-icon"></i><div><h3>Diagnostic & Lab Reports</h3></div></div><button class="close-modal-btn" onclick="closeModal('reportPortalModal')">&times;</button></div>
+      <div class="modal-body">
+        <div class="form-group"><label>Mobile Number</label><input type="text" placeholder="Enter Mobile Number"></div>
+        <button class="btn btn-teal btn-block" onclick="fetchSampleReports()">View Reports</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

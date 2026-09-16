@@ -27,6 +27,7 @@
         <a href="departments.html"><i class="fa-solid fa-stethoscope"></i> Departments</a>
         <a href="facilities.html"><i class="fa-solid fa-hospital-user"></i> Facilities & ICU</a>
         <a href="insurance-packages.html"><i class="fa-solid fa-shield-halved"></i> Insurance & TPA</a>
+        <a href="blog.html"><i class="fa-solid fa-newspaper"></i> Health Blog</a>
         <a href="contact.html"><i class="fa-solid fa-phone"></i> Contact & Location</a>
       </div>
       <div class="top-right-actions">
@@ -109,6 +110,7 @@
           </li>
           <li><a href="facilities.html">Facilities & Beds</a></li>
           <li><a href="insurance-packages.html">Insurance & TPA</a></li>
+          <li><a href="blog.html">Health Blog</a></li>
           <li><a href="contact.html">Contact & Location</a></li>
         </ul>
       </nav>
@@ -130,42 +132,133 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
+    <!-- Mobile Drawer Menu (Fortis Style) -->
   <div class="mobile-drawer" id="mobileDrawer">
+    <!-- Clean White Header with Brand and Close button -->
     <div class="mobile-drawer-header">
-      <div class="drawer-logo">
-        <span class="logo-name">S.K MULTI-SPECIALITY</span>
-        <span class="badge-247-inline">24×7</span>
+      <div class="drawer-brand">
+        <div class="drawer-brand-icon"><i class="fa-solid fa-hospital"></i></div>
+        <span class="drawer-brand-name">S.K Hospital</span>
       </div>
-      <button class="close-drawer-btn" onclick="toggleMobileMenu()">&times;</button>
+      <button class="close-drawer-btn" onclick="toggleMobileMenu()" aria-label="Close menu">&times;</button>
     </div>
+
+    <!-- Drawer Body -->
     <div class="mobile-drawer-body">
-      <div class="drawer-actions">
-        <a href="tel:07703964716" class="btn btn-emergency-red btn-block">
-          <i class="fa-solid fa-phone-volume"></i> Emergency: 077039 64716
-        </a>
-        <button class="btn btn-navy btn-block" onclick="openBookingModal(); toggleMobileMenu();">
-          <i class="fa-regular fa-calendar-check"></i> Book Doctor Appointment
-        </button>
+      
+      <!-- Top Circular Action Grid (Fortis 3 + 2 layout) -->
+      <div class="drawer-quick-circles-grid">
+        <!-- Row 1: 3 Circles -->
+        <div class="drawer-circles-row">
+          <a href="facilities.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-blue">
+              <i class="fa-solid fa-bed-pulse"></i>
+            </div>
+            <span class="circle-label">Hospitals</span>
+          </a>
+
+          <a href="departments.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-purple">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <span class="circle-label">Specialities</span>
+          </a>
+
+          <a href="doctors.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-peach">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <span class="circle-label">Find a Doctor</span>
+          </a>
+        </div>
+
+        <!-- Row 2: 2 Centered Circles -->
+        <div class="drawer-circles-row centered-row">
+          <a href="insurance-packages.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-green">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <span class="circle-label">Ayushman & TPA</span>
+          </a>
+
+          <a href="blog.html" class="drawer-circle-item" onclick="toggleMobileMenu()">
+            <div class="circle-bubble bubble-amber">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <span class="circle-label">Health Blog</span>
+          </a>
+        </div>
       </div>
 
-      <div class="mobile-verified-strip">
-        <span class="m-badge-g"><i class="fa-brands fa-google text-red"></i> 4.3/5 Rating (13 Reviews)</span>
-        <span class="m-badge-mp"><i class="fa-solid fa-circle-check text-red"></i> Magicpin Verified</span>
-      </div>
+      <!-- Vertical List with outline colored icons & chevrons (Fortis Style) -->
+      <ul class="drawer-nav-vertical-list">
+        <li class="drawer-nav-item">
+          <a href="departments.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-green"><i class="fa-solid fa-hospital-user"></i></span>
+              <span>Our Centres of Excellence</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
 
-      <ul class="mobile-nav-list">
-        <li><a href="about.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital text-navy"></i> About S.K Hospital</a></li>
-        <li><a href="doctors.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-user-doctor text-teal"></i> Specialist Doctors</a></li>
-        <li><a href="departments.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-stethoscope text-red"></i> Specialities & Treatments</a></li>
-        <li><a href="facilities.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-hospital-user text-navy"></i> Facilities, ICU & Beds</a></li>
-        <li><a href="insurance-packages.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-shield-halved text-teal"></i> Insurance & TPA</a></li>
-        <li><a href="contact.html" onclick="toggleMobileMenu()"><i class="fa-solid fa-location-dot text-red"></i> Contact & Location</a></li>
+        <li class="drawer-nav-item">
+          <a href="facilities.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-purple"><i class="fa-solid fa-bed"></i></span>
+              <span>Patient Corner & Facilities</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="blog.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-blue"><i class="fa-regular fa-newspaper"></i></span>
+              <span>Health Blog & Media Center</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="about.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-info"><i class="fa-solid fa-circle-info"></i></span>
+              <span>About Us</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="contact.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-mail"><i class="fa-regular fa-envelope"></i></span>
+              <span>Contact Us & Location</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
+
+        <li class="drawer-nav-item">
+          <a href="insurance-packages.html" onclick="toggleMobileMenu()">
+            <div class="d-item-left">
+              <span class="d-item-icon d-icon-globe"><i class="fa-solid fa-shield-halved"></i></span>
+              <span>Cashless TPA & Ayushman PM-JAY</span>
+            </div>
+            <i class="fa-solid fa-chevron-right d-item-chevron"></i>
+          </a>
+        </li>
       </ul>
+
       <div class="drawer-address-footer">
-        <p><i class="fa-solid fa-location-dot text-red"></i> Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Hastsal, Delhi – 110059</p>
+        <p><i class="fa-solid fa-location-dot text-red"></i> <strong>S.K Multi-Speciality Hospital</strong><br>Shiv Vihar Road, near Bikaner Sweets, Vikas Nagar, Uttam Nagar, Delhi – 110059</p>
       </div>
+
     </div>
+  </div>
   </div>
 
   <main>
@@ -188,9 +281,10 @@
                 autocomplete="off"
                 oninput="handleSearchInput(this.value)"
                 onfocus="showSearchSuggestions()"
+                onkeydown="if(event.key === 'Enter') executeSearch()"
               >
-              <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" style="display:none;">&times;</button>
-              <button class="fortis-search-icon-btn" onclick="executeSearch()" aria-label="Search">
+              <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" style="display:none;" title="Clear Search">&times;</button>
+              <button class="fortis-search-icon-btn" onclick="executeSearch()" aria-label="Search" title="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
@@ -199,11 +293,21 @@
             <div class="search-dropdown-results" id="searchResultsDropdown">
               <div class="search-category-pills">
                 <span class="cat-pill active" onclick="filterSearchCategory('all')">All</span>
-                <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
                 <span class="cat-pill" onclick="filterSearchCategory('doctor')">Doctors</span>
+                <span class="cat-pill" onclick="filterSearchCategory('speciality')">Specialities</span>
                 <span class="cat-pill" onclick="filterSearchCategory('service')">24x7 Services</span>
               </div>
               <div class="search-results-list" id="searchResultsList"></div>
+              
+              <div class="search-popular-tags">
+                <span class="tag-lbl"><i class="fa-solid fa-fire text-red"></i> Popular:</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('General Medicine')">General Physician</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Orthopaedics')">Fracture & Ortho</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Gynaecology')">Gynaecologist</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Laparoscopic Surgery')">Surgery</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Emergency')">24x7 Emergency</span>
+                <span class="search-tag-chip" onclick="quickSearchTag('Ayushman')">Ayushman Card</span>
+              </div>
             </div>
           </div>
         </div>
@@ -689,6 +793,84 @@
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Health Blogs & Doctor Guidance Section -->
+    <section class="blog-section" id="blog-section" style="padding: 48px 0; background: #ffffff; border-top: 1px solid #e2e8f0;">
+      <div class="container">
+        <div class="section-header">
+          <div class="sec-title-wrap">
+            <div class="sec-badge"><i class="fa-solid fa-newspaper text-teal"></i> Doctor Verified Guidance</div>
+            <h2 class="section-title">Health Insights & Medical Blogs</h2>
+            <p class="section-subtitle">Stay informed with trusted health articles, prevention tips, and treatment advice from our specialist physicians</p>
+          </div>
+          <a href="blog.html" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> View All Articles</a>
+        </div>
+
+        <div class="blogs-cards-grid">
+          
+          <!-- Blog 1: Dengue & Fever -->
+          <article class="blog-card">
+            <div class="b-card-media media-red">
+              <i class="fa-solid fa-virus-covid b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-red"><i class="fa-solid fa-stethoscope"></i> General Medicine</span>
+              <h3 class="b-card-title">
+                <a href="blog-fever-dengue-prevention.html">Understanding Viral Fever & Dengue: When to Visit Emergency vs OPD</a>
+              </h3>
+              <p class="b-card-desc">
+                High fever, platelet drop, and warning signs. Learn how to manage hydration and when immediate hospital care is required.
+              </p>
+              <div class="b-card-footer">
+                <span>By Dr. S.K. Sharma</span>
+                <a href="blog-fever-dengue-prevention.html" class="b-read-more-link">Read Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog 2: Maternity & Normal Delivery -->
+          <article class="blog-card">
+            <div class="b-card-media media-red">
+              <i class="fa-solid fa-person-pregnant b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-peach"><i class="fa-solid fa-heart"></i> Maternity Care</span>
+              <h3 class="b-card-title">
+                <a href="blog-normal-delivery-maternity-guide.html">Normal Delivery vs C-Section: Essential Antenatal Care Guide</a>
+              </h3>
+              <p class="b-card-desc">
+                Preparing for safe normal delivery, trimester-wise nutrition, fetal monitoring, and postpartum maternal recovery.
+              </p>
+              <div class="b-card-footer">
+                <span>By Gynaecologist</span>
+                <a href="blog-normal-delivery-maternity-guide.html" class="b-read-more-link">Read Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog 3: Laparoscopic Surgery -->
+          <article class="blog-card">
+            <div class="b-card-media media-teal">
+              <i class="fa-solid fa-scissors b-card-icon"></i>
+            </div>
+            <div class="b-card-body">
+              <span class="blog-tag-badge tag-teal"><i class="fa-solid fa-scalpel"></i> Laparoscopy</span>
+              <h3 class="b-card-title">
+                <a href="blog-laparoscopic-surgery-benefits.html">Why Laparoscopic Keyhole Surgery is Safer & Faster: Gallstones & Appendix</a>
+              </h3>
+              <p class="b-card-desc">
+                Minimal pain, faster healing, small scars, and same-day discharge with advanced laparoscopic laser technology.
+              </p>
+              <div class="b-card-footer">
+                <span>By Laparoscopic Surgeon</span>
+                <a href="blog-laparoscopic-surgery-benefits.html" class="b-read-more-link">Read Guide <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
 
         </div>
       </div>
