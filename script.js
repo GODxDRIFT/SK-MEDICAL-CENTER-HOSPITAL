@@ -203,7 +203,7 @@ function renderSearchResults(query) {
       resultsHtml += `
         <div class="search-result-item" onclick="selectSearchResult('speciality', '${s.name}', '')">
           <div>
-            <div class="res-main-text"><i class="fa-solid fa-stethoscope text-purple"></i> ${s.name}</div>
+            <div class="res-main-text"><i class="fa-solid fa-stethoscope text-red"></i> ${s.name}</div>
             <div class="res-sub-text">${s.desc}</div>
           </div>
           <span class="res-type-badge">Speciality</span>
@@ -221,7 +221,7 @@ function renderSearchResults(query) {
       resultsHtml += `
         <div class="search-result-item" onclick="selectSearchResult('doctor', '${d.name}', '${d.spec}')">
           <div>
-            <div class="res-main-text"><i class="fa-solid fa-user-doctor text-green"></i> ${d.name}</div>
+            <div class="res-main-text"><i class="fa-solid fa-user-doctor text-navy"></i> ${d.name}</div>
             <div class="res-sub-text">${d.spec} | S.K Multi-Speciality Hospital</div>
           </div>
           <span class="res-type-badge">Doctor</span>
@@ -239,7 +239,7 @@ function renderSearchResults(query) {
       resultsHtml += `
         <div class="search-result-item" onclick="selectSearchResult('service', '${srv.name}', '')">
           <div>
-            <div class="res-main-text"><i class="fa-solid fa-truck-medical text-cyan"></i> ${srv.name}</div>
+            <div class="res-main-text"><i class="fa-solid fa-truck-medical text-red"></i> ${srv.name}</div>
             <div class="res-sub-text">${srv.desc}</div>
           </div>
           <span class="res-type-badge">24x7 Service</span>
