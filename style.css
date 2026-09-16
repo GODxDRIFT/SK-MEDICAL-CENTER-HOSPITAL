@@ -3479,6 +3479,18 @@ button, input, select, textarea {
 
 /* Tablets (<= 768px) */
 @media (max-width: 768px) {
+  .homepage {
+    padding-top: calc(62px + env(safe-area-inset-top, 0px));
+  }
+
+  .homepage .main-header {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
   body {
     padding-bottom: 70px;
   }
