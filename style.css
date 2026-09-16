@@ -834,6 +834,8 @@ button, input, select, textarea {
   display: inline-block;
   box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.8);
   animation: pulseRed 1.8s infinite;
+}
+
 @keyframes pulseRed {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.8); }
   70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(225, 29, 72, 0); }
@@ -3147,6 +3149,8 @@ button, input, select, textarea {
 
   .stat-divider {
     display: none;
+  }
+
   /* Fortis Hero & Hub Mobile Rules */
   .fortis-action-substrip {
     display: none;
@@ -4641,6 +4645,84 @@ button, input, select, textarea {
   }
 }
 
+/* ==========================================================================
+   MOBILE STICKY BOTTOM ACTION BAR (Fortis Style)
+   ========================================================================== */
 
+.mobile-sticky-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 -4px 20px rgba(11, 37, 69, 0.12);
+  border-top: 1px solid #e2e8f0;
+  z-index: 990;
+  padding: 8px 12px;
+}
 
+.mobile-sticky-bottom-bar .bottom-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
+.mobile-sticky-bottom-bar .m-bar-btn-text {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #0b2545;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+}
+
+.mobile-sticky-bottom-bar .m-bar-btn-text i {
+  font-size: 1rem;
+  color: #007791;
+}
+
+.mobile-sticky-bottom-bar .m-bar-btn-pill {
+  flex: 1.4;
+  background: #007791;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 119, 145, 0.35);
+  white-space: nowrap;
+}
+
+.mobile-sticky-bottom-bar .m-bar-btn-pill:hover,
+.mobile-sticky-bottom-bar .m-bar-btn-pill:active {
+  background: #005f73;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-bottom-bar {
+    display: block;
+  }
+  
+  body {
+    padding-bottom: 60px; /* Offset for sticky bottom bar */
+  }
+}
